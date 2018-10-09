@@ -1,0 +1,273 @@
+::selection {
+  background-color: #2d64c1;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2d64c1;
+  border-radius: 6px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  /* background-color: #f5f5f5; */
+}
+
+main {
+  flex: 1 0 auto;
+  padding-bottom: 45px;
+}
+
+nav ul a.active {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+  height: 100%;
+  width: 25% !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  top: 0 !important;
+  text-shadow: 0px 2px 2px black;
+}
+
+.caption h3,
+.caption p {
+  font-size: 2rem;
+}
+
+.caption a,
+.caption button {
+  text-shadow: 0px 2px 2px black;
+}
+
+.feature i.material-icons {
+  transition: all 0.5s ease;
+  box-shadow: inset 128px 128px 5px #ececec;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  will-change: transform, filter;
+}
+
+.feature:hover i.material-icons {
+  box-shadow: inset 128px 128px 5px #1565c0;
+  color: white !important;
+  transform: scale(1.15, 1.15);
+  filter: drop-shadow(0px 5px 5px gray);
+}
+
+.didattica-digitale,
+.data-science {
+  padding: 50px !important;
+}
+
+.didattica-digitale i.material-icons,
+.data-science i.material-icons {
+  transition: all 0.5s ease;
+  box-shadow: inset 128px 128px 5px #ececec;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+}
+
+.didattica-digitale:hover i.material-icons {
+  box-shadow: inset 128px 128px 5px #ff9800;
+  color: white !important;
+}
+
+.data-science:hover i.material-icons {
+  box-shadow: inset 128px 128px 5px #4caf50;
+  color: white !important;
+}
+
+.move-icon-forward i.material-icons {
+  transition: all 0.5s ease-out;
+}
+
+.move-icon-forward:hover i.material-icons {
+  transform: translateX(8px);
+}
+
+#go-to-contact::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098d1;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+#go-to-contact:hover::before {
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+#go-to-contact {
+  transition: color 0.5s ease-out;
+}
+
+#go-to-contact i.material-icons {
+  transition: transform 0.25s ease-out;
+}
+
+#go-to-contact:hover {
+  color: white !important;
+}
+
+#go-to-contact:hover i.material-icons {
+  transform: scale(1.2, 1.2);
+}
+
+.rounded {
+  border-radius: 30px;
+}
+
+.rounded .card-image {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.rounded .card-action {
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+
+#in-evidenza {
+  padding-bottom: 100px;
+  background-image: url("http://www.educabile.it/img/contatti-1920.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#sedi {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+#form {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+@media only screen and (max-width: 960px) {
+  .caption {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: center;
+  }
+
+  .caption h3 {
+    padding-top: 2.5em;
+  }
+}
+
+#footer-logo {
+  position: fixed;
+  bottom: 41px !important;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 64px;
+  z-index: 1;
+  color: white;
+  margin-bottom: -20px;
+}
+
+footer svg {
+  filter: none;
+  transition: all 0.5s ease;
+}
+
+footer svg path {
+  will-change: fill;
+  transition: fill 0.325s ease-out;
+}
+
+footer a:hover svg {
+  filter: drop-shadow(0px 3px 4px #333);
+}
+
+footer a:hover:nth-child(1) svg g:nth-child(2) path {
+  fill: #3b5998 !important;
+}
+
+footer a:hover:nth-child(2) svg g:nth-child(2) path {
+  fill: #1da1f2 !important;
+}
+
+footer a:hover:nth-child(3) svg g:nth-child(2) path {
+  fill: #dd4b39 !important;
+}
+
+footer a:hover:nth-child(4) svg g:nth-child(2) path {
+  fill: #0077b5 !important;
+}
+
+footer a:hover:nth-child(5) svg g:nth-child(2) path {
+  fill: red !important;
+}
+
+.hiddendiv {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 0px;
+  }
+
+  footer {
+    position: static;
+  }
+
+  footer .row {
+    margin-bottom: 0px;
+  }
+}
