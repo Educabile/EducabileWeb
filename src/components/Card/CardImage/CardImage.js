@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "class-names";
 import PropTypes from "prop-types";
 import Button from "../../Button/Button";
+import Icon from "@mdi/react";
+import { mdiChevronRight } from "@mdi/js";
 
 const CardImage = props => {
   const { children, className, image, fab, reveal, style } = props;
@@ -32,8 +34,12 @@ const CardImage = props => {
             floating
             node={fab.node}
             to={fab.to}
+            style={{
+              display: "inline-flex",
+              justifyContent: "center"
+            }}
           >
-            <i className="material-icons">{fab.icon}</i>
+            <Icon path={mdiChevronRight} size="1.5rem" color="white" />
           </Button>
         </div>
       )}

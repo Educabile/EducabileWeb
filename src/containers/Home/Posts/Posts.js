@@ -89,6 +89,8 @@ class Posts extends Component {
               style={{
                 transition: "all .5s ease-out"
               }}
+              to="/blog/tagged/didattica-digitale"
+              node={Link}
             >
               Didattica Digitale
             </Button>
@@ -104,6 +106,8 @@ class Posts extends Component {
               style={{
                 transition: "all .5s ease-out"
               }}
+              to="/blog/tagged/data-technology"
+              node={Link}
             >
               Data Science
             </Button>
@@ -158,7 +162,6 @@ class Posts extends Component {
     this.setState({
       posts: posts.map((post, index) => {
         let actions = this.renderActions(post);
-        console.log(post);
         return (
           <Col s={12} xl={4} key={post.slug}>
             <Card

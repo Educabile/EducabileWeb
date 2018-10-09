@@ -1,5 +1,7 @@
 import React from "react";
 import { Row } from "react-materialize";
+import Icon from "@mdi/react";
+import { mdiSchool, mdiLifebuoy, mdiServerNetwork, mdiBank } from "@mdi/js";
 import Col from "../../components/Col/Col";
 import Container from "../../components/Container/Container";
 import Parallax from "../../components/Parallax/Parallax";
@@ -33,7 +35,7 @@ const DidatticaDigitale = () => {
 
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/cta-1920.jpeg">
-            test
+            <Icon path={mdiSchool} size={5} color="white" />
           </Parallax>
         </Col>
       </Row>
@@ -41,7 +43,7 @@ const DidatticaDigitale = () => {
       <Row>
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/supporto-ai-progetti-1920.jpg">
-            test
+            <Icon path={mdiLifebuoy} size={5} color="white" />
           </Parallax>
         </Col>
 
@@ -87,7 +89,7 @@ const DidatticaDigitale = () => {
 
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/piattaforme-ambienti-1920.jpeg">
-            test
+            <Icon path={mdiBank} size={5} color="white" />
           </Parallax>
         </Col>
       </Row>
@@ -95,6 +97,7 @@ const DidatticaDigitale = () => {
       <Row>
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/infrastrutture-di-rete-1920.jpeg">
+            <Icon path={mdiServerNetwork} size={5} color="white" />
             test
           </Parallax>
         </Col>

@@ -4,14 +4,20 @@ import Col from "../../components/Col/Col";
 import Container from "../../components/Container/Container";
 import Parallax from "../../components/Parallax/Parallax";
 import Icon from "@mdi/react";
-import { mdiAccount } from "@mdi/js";
+import {
+  mdiAccount,
+  mdiHeartPulse,
+  mdiBriefcase,
+  mdiAccountGroup,
+  mdiChartLineStacked
+} from "@mdi/js";
 
 const DataTechnology = () => {
   return (
     <div>
       <Row>
         <Col s={12} xl={3}>
-          <Icon path={mdiAccount}>w</Icon>
+          <Icon path={mdiAccount} />
         </Col>
 
         <Col s={12} xl={3}>
@@ -29,7 +35,7 @@ const DataTechnology = () => {
       <Row>
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/supporto-ai-progetti-1920.jpg">
-            test
+            <Icon path={mdiChartLineStacked} size={5} color="white" />
           </Parallax>
         </Col>
 
@@ -69,7 +75,7 @@ const DataTechnology = () => {
 
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/piattaforme-ambienti-1920.jpeg">
-            test
+            <Icon path={mdiHeartPulse} size={5} color="white" />
           </Parallax>
         </Col>
       </Row>
@@ -77,7 +83,7 @@ const DataTechnology = () => {
       <Row>
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/infrastrutture-di-rete-1920.jpeg">
-            test
+            <Icon path={mdiBriefcase} size={5} color="white" />
           </Parallax>
         </Col>
 
@@ -126,7 +132,7 @@ const DataTechnology = () => {
 
         <Col s={12} xl={6}>
           <Parallax imageSrc="http://www.educabile.it/img/piattaforme-ambienti-1920.jpeg">
-            test
+            <Icon path={mdiAccountGroup} size={5} color="white" />
           </Parallax>
         </Col>
       </Row>

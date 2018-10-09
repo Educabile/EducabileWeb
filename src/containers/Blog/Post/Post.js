@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Icon, Button, Preloader } from "react-materialize";
+import { Button, Preloader } from "react-materialize";
+import Icon from "@mdi/react";
+import { mdiArrowLeft } from "@mdi/js";
 import Parallax from "../../../components/Parallax/Parallax";
 import Container from "../../../components/Container/Container";
 import axios from "axios";
@@ -52,24 +54,11 @@ class Post extends Component {
               this.state.post._embedded["wp:featuredmedia"][0].media_details
                 .sizes.full.source_url
             }
-          >
-            <h1
-              className="white-text"
-              style={{
-                textShadow: "0px 2px 20px #333",
-                position: "absolute",
-                top: "30%",
-                left: "50%",
-                transform: "translate(-50%, -30%)"
-              }}
-            >
-              {this.state.post.title.rendered}
-            </h1>
-          </Parallax>
+          />
           <Container
             className="section white z-depth-2"
             style={{
-              transform: "translateY(-10vh)",
+              transform: "translateY(-20vh)",
               borderRadius: "20px"
             }}
           >
@@ -81,14 +70,19 @@ class Post extends Component {
               onClick={() => {
                 this.props.history.goBack();
               }}
+              style={{ display: "inline-flex", alignItems: "center" }}
             >
-              <Icon left large>
-                arrow_back
-              </Icon>
+              <Icon
+                path={mdiArrowLeft}
+                size="1.3rem"
+                color="#1565C0"
+                style={{ transform: "translateX(-35%)" }}
+              />
               Torna indietro
             </Button>
 
             <Container>
+              <h1 className="center">{this.state.post.title.rendered}</h1>
               <span
                 className="flow-text grey-text "
                 dangerouslySetInnerHTML={{

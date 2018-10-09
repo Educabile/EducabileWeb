@@ -73,21 +73,64 @@ nav ul a.active {
   text-shadow: 0px 2px 2px black;
 }
 
-.feature i.material-icons {
+.caption button {
+  display: flex;
+  align-items: center;
+}
+
+.caption svg {
+  fill: white;
+  filter: drop-shadow(0px 2px 2px black);
+  transform: translateX(50%);
+}
+
+#azienda a {
+  display: flex;
+  justify-content: center;
+}
+
+#azienda button {
+  display: flex;
+  align-items: center;
+}
+
+.feature svg {
   transition: all 0.5s ease;
-  box-shadow: inset 128px 128px 5px #ececec;
+  /* box-shadow: inset 128px 128px 5px #ececec; */
   border-radius: 50%;
   width: 100px;
   height: 100px;
   line-height: 100px;
-  will-change: transform, filter;
+  will-change: transform, fill, filter;
+  fill: #1565c0 !important;
+  position: relative;
 }
 
-.feature:hover i.material-icons {
-  box-shadow: inset 128px 128px 5px #1565c0;
-  color: white !important;
+.feature-icon {
+  position: relative;
+}
+
+.feature-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: #ececec;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+
+.feature:hover svg {
+  fill: white !important;
   transform: scale(1.15, 1.15);
-  filter: drop-shadow(0px 5px 5px gray);
+}
+
+.feature:hover .feature-icon::before {
+  background-color: #1565c0;
+  filter: drop-shadow(0px 5px 5px #333);
 }
 
 .didattica-digitale,
@@ -95,32 +138,71 @@ nav ul a.active {
   padding: 50px !important;
 }
 
-.didattica-digitale i.material-icons,
-.data-science i.material-icons {
-  transition: all 0.5s ease;
-  box-shadow: inset 128px 128px 5px #ececec;
-  border-radius: 50%;
+.didattica-digitale .icon,
+.data-science .icon {
+  position: relative;
+}
+
+.didattica-digitale .icon::before,
+.data-science .icon::before {
+  content: "";
+  position: absolute;
   width: 100px;
   height: 100px;
-  line-height: 100px;
-}
-
-.didattica-digitale:hover i.material-icons {
-  box-shadow: inset 128px 128px 5px #ff9800;
-  color: white !important;
-}
-
-.data-science:hover i.material-icons {
-  box-shadow: inset 128px 128px 5px #4caf50;
-  color: white !important;
-}
-
-.move-icon-forward i.material-icons {
+  top: 50%;
+  left: 50%;
+  background-color: #ececec;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
   transition: all 0.5s ease-out;
 }
 
-.move-icon-forward:hover i.material-icons {
-  transform: translateX(8px);
+.didattica-digitale svg,
+.data-science svg {
+  transition: all 0.5s ease;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+}
+
+.didattica-digitale svg path,
+.data-science svg path {
+  transition: all 0.5s ease-out;
+}
+
+.didattica-digitale:hover svg path,
+.data-science:hover svg path {
+  fill: white !important;
+}
+
+.didattica-digitale:hover .icon::before {
+  background-color: #ff9800;
+}
+
+.data-science:hover .icon::before {
+  background-color: #4caf50;
+}
+
+.move-icon-forward svg {
+  transition: all 0.5s ease-out;
+  transform: translateX(35%);
+  fill: white;
+}
+
+.move-icon-forward:hover svg {
+  transform: translateX(75%);
+}
+
+#destinatari a {
+  display: flex;
+  justify-content: center;
+}
+
+#destinatari button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #go-to-contact::before {
@@ -148,16 +230,37 @@ nav ul a.active {
   transition: color 0.5s ease-out;
 }
 
-#go-to-contact i.material-icons {
+#go-to-contact svg {
   transition: transform 0.25s ease-out;
+  transform: translateX(35%);
 }
 
 #go-to-contact:hover {
   color: white !important;
 }
 
-#go-to-contact:hover i.material-icons {
-  transform: scale(1.2, 1.2);
+#go-to-contact:hover svg {
+  fill: white;
+}
+
+#servizi > div > a {
+  display: flex;
+  justify-content: center;
+}
+
+#blog-btn {
+  display: inline-flex;
+  justify-content: center;
+}
+
+#blog-btn svg {
+  transform: translateX(35%);
+}
+
+#servizi button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rounded {
@@ -191,6 +294,15 @@ nav ul a.active {
 #form {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+#form button {
+  display: inline-flex;
+  align-items: center;
+}
+
+#form button svg {
+  transform: translateX(-35%);
 }
 
 @media only screen and (max-width: 960px) {

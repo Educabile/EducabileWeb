@@ -7,9 +7,21 @@ import {
   Row,
   Divider,
   CardPanel,
-  Icon,
   Input
 } from "react-materialize";
+import Icon from "@mdi/react";
+import {
+  mdiArrowRight,
+  mdiDomain,
+  mdiAccountMultiple,
+  mdiSchool,
+  mdiForum,
+  mdiPencil,
+  mdiPollBox,
+  mdiLibraryBooks,
+  mdiSend
+} from "@mdi/js";
+
 import Slider from "../../components/Slider/Slider";
 import Slide from "../../components/Slide/Slide";
 import Caption from "../../components/Capiton/Caption";
@@ -30,9 +42,8 @@ class Home extends Component {
                 Sviluppo di piattaforme e infrastrutture in ambienti di Data
                 Science
               </h5>
-              <Button className="green" large>
-                Leggi di piu'
-                <Icon right>arrow_forward</Icon>
+              <Button className="green hoverable" large>
+                Leggi di piu' <Icon path={mdiArrowRight} size={1} />
               </Button>
             </Caption>
           </Slide>
@@ -45,7 +56,7 @@ class Home extends Component {
               </h5>
               <Button className="orange" large>
                 Leggi di piu'
-                <Icon right>arrow_forward</Icon>
+                <Icon path={mdiArrowRight} size={1} />
               </Button>
             </Caption>
           </Slide>
@@ -57,7 +68,7 @@ class Home extends Component {
               </h5>
               <Button className="green" large>
                 Leggi di piu'
-                <Icon right>arrow_forward</Icon>
+                <Icon path={mdiArrowRight} size={1} />
               </Button>
             </Caption>
           </Slide>
@@ -70,7 +81,7 @@ class Home extends Component {
               </h5>
               <Button className="orange" large>
                 Leggi di piu'
-                <Icon right>arrow_forward</Icon>
+                <Icon path={mdiArrowRight} size={1} />
               </Button>
             </Caption>
           </Slide>
@@ -107,7 +118,7 @@ class Home extends Component {
             >
               <Button className="hoverable move-icon-forward" large>
                 Scopri di piu'
-                <Icon right>arrow_forward</Icon>
+                <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
             </HashLink>
           </Container>
@@ -128,9 +139,9 @@ class Home extends Component {
             >
               <Col s={12} m={6} xl={4} style={{ display: "flex" }}>
                 <CardPanel className="feature hoverable rounded">
-                  <Icon className="blue-text text-darken-3" medium>
-                    business
-                  </Icon>
+                  <div className="feature-icon">
+                    <Icon path={mdiDomain} size={3} />
+                  </div>
                   <h5>Aziende</h5>
 
                   <p className="flow-text grey-text">
@@ -143,9 +154,13 @@ class Home extends Component {
 
               <Col s={12} m={6} xl={4} style={{ display: "flex" }}>
                 <CardPanel className="feature hoverable rounded">
-                  <Icon className="blue-text text-darken-3" medium>
-                    people
-                  </Icon>
+                  <div className="feature-icon">
+                    <Icon
+                      path={mdiAccountMultiple}
+                      className="blue-text text-darken-3"
+                      size={3}
+                    />
+                  </div>
                   <h5>Professionisti</h5>
 
                   <p className="flow-text grey-text">
@@ -158,9 +173,14 @@ class Home extends Component {
 
               <Col s={12} m={12} xl={4} style={{ display: "flex" }}>
                 <CardPanel className="feature hoverable rounded">
-                  <Icon className="blue-text text-darken-3" medium>
-                    school
-                  </Icon>
+                  <div className="feature-icon">
+                    <Icon
+                      path={mdiSchool}
+                      className="blue-text text-darken-3"
+                      size={3}
+                    />
+                  </div>
+
                   <h5>Istituzioni Scolastiche</h5>
 
                   <p className="flow-text grey-text">
@@ -193,7 +213,7 @@ class Home extends Component {
                 id="go-to-contact"
               >
                 Entra in contatto con noi
-                <Icon right>question_answer</Icon>
+                <Icon path={mdiForum} size="1.3rem" />
               </Button>
             </HashLink>
           </Container>
@@ -242,14 +262,15 @@ class Home extends Component {
           </Container>
         </Section>
 
-        <Section className="grey lighten-4">
+        <Section id="servizi" className="grey lighten-4">
           <Container className="center">
             <Row>
               <Link to="/didattica-digitale">
                 <Col s={12} m={6} className="didattica-digitale center">
-                  <Icon className="orange-text" medium>
-                    mode_edit
-                  </Icon>
+                  <div className="icon">
+                    <Icon path={mdiPencil} size={3} color="#ff9800" />
+                  </div>
+
                   <h5>Didattica Digitale</h5>
                   <p className="flow-text grey-text left-align">
                     Educabile vede questo ambito non solo come area commerciale
@@ -259,12 +280,12 @@ class Home extends Component {
                 </Col>
               </Link>
 
-              <Link to="/data-science">
+              <Link to="/data-technology">
                 <Col s={12} m={6} className="data-science center">
-                  <Icon className="green-text" medium>
-                    assessment
-                  </Icon>
-                  <h5>Data Science</h5>
+                  <div className="icon">
+                    <Icon path={mdiPollBox} size={3} color="#4CAF50" />
+                  </div>
+                  <h5>Data Technology</h5>
                   <p className="flow-text grey-text left-align">
                     Educabile si propone come partner per promuovere e
                     sviluppare la ricerca anche nel segmento dei professionisti
@@ -274,10 +295,16 @@ class Home extends Component {
               </Link>
             </Row>
 
-            <Button large waves="light" className="move-icon-forward hoverable">
-              <Icon right>arrow_forward</Icon>
-              Consulta i servizi
-            </Button>
+            <Link to="/servizi">
+              <Button
+                large
+                waves="light"
+                className="move-icon-forward hoverable"
+              >
+                Consulta i servizi
+                <Icon path={mdiArrowRight} size="1.3rem" />
+              </Button>
+            </Link>
           </Container>
         </Section>
 
@@ -290,8 +317,9 @@ class Home extends Component {
 
             <Posts />
 
-            <Button large waves="light" node={Link} to="/blog">
-              Vai all'archivio completo <Icon right>library_books</Icon>
+            <Button id="blog-btn" large waves="light" node={Link} to="/blog">
+              Vai all'archivio completo{" "}
+              <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
             </Button>
           </Container>
         </Section>
@@ -365,7 +393,7 @@ class Home extends Component {
                   <Input s={12} type="textarea" label="Corpo del messaggio" />
                   <div>
                     <Button waves="light" large className="right">
-                      <Icon right>send</Icon>
+                      <Icon path={mdiSend} size="1.3rem" color="white" />
                       Invia
                     </Button>
                   </div>
