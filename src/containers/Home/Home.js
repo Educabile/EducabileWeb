@@ -18,6 +18,7 @@ import {
   mdiForum,
   mdiPencil,
   mdiPollBox,
+  mdiGooglePhysicalWeb,
   mdiLibraryBooks,
   mdiSend
 } from "@mdi/js";
@@ -89,19 +90,20 @@ class Home extends Component {
 
         <Section id="azienda" className="white">
           <Container className="center">
-            <h2>
+            <h2 className="hide-on-large-only">
               <span className="blue-text text-darken-3">Educabile</span> una
-              Startup Innovativa
+              StartUp Innovativa
             </h2>
 
             <p className="flow-text grey-text left-align">
-              Ci proponiamo come referente affidabile nel gestire scenari
-              complessi ad alto contenuto tecnologico, offre un supporto
-              specialistico all’avanguardia per una vasta gamma di soluzioni
-              basate su piattaforme open source e social network dedicati, rende
-              disponibili figure di elevato profilo professionale : Dottori di
-              Ricerca, Ricercatori Senior, Professori Universitari e
-              Professionisti di decennale esperienza
+              <span className="blue-text text-darken-3 dropcap">E</span>
+              ducabile è una StartUp Innovativa attiva nei settori
+              dell’Information e Communication Technology e della Data
+              Technology, opera principalmente nella risoluzione e nel governo
+              di processi complessi nell’ambito della Smart Education, quale
+              insieme di strumenti innovativi di disseminazione e divulgazione
+              per l’apprendimento interattivo, e progetti di Ricerca Industriale
+              e Sviluppo Sperimentale.
             </p>
 
             <HashLink
@@ -126,7 +128,7 @@ class Home extends Component {
 
         <Section id="destinatari" className="grey lighten-4">
           <Container className="center ">
-            <h2>
+            <h2 className="hide-on-large-only">
               I <span className="blue-text text-darken-3">Destinatari</span>
             </h2>
 
@@ -147,7 +149,10 @@ class Home extends Component {
                   <p className="flow-text grey-text">
                     Educabile vede questo ambito non solo come area commerciale
                     ma anche come luogo di ricerca e di sviluppo
-                    tecnico-scientifico.
+                    tecnico-scientifico. I servizi di consulenza e progettazione
+                    offerti diventano opportunità di scambio osmotico di
+                    esperienze produttive e ricerca di soluzioni innovative nel
+                    campo dei processi di sviluppo industriale...
                   </p>
                 </CardPanel>
               </Col>
@@ -166,7 +171,9 @@ class Home extends Component {
                   <p className="flow-text grey-text">
                     Educabile si propone come partner per promuovere e
                     sviluppare la ricerca anche nel segmento dei professionisti
-                    con innovative soluzioni di trasferimento tecnologico.
+                    con innovative soluzioni di trasferimento tecnologico. I
+                    benefici vanno dal miglioramento dei livelli essenziali di
+                    assistenza all'erogazione di servizi di knowledge sharing...
                   </p>
                 </CardPanel>
               </Col>
@@ -186,13 +193,15 @@ class Home extends Component {
                   <p className="flow-text grey-text">
                     I servizi proposti in questa area, riguardano gli ambienti
                     di apprendimento e si qualificano come innovativi e
-                    tecnologicamente all’avanguardia.
+                    tecnologicamente all’avanguardia. Educabile supporta le
+                    Istituzioni Scolastiche nel realizzare percorsi didattici
+                    interattivi, contestualizzati, personalizzati...
                   </p>
                 </CardPanel>
               </Col>
             </Row>
 
-            <h3>Vuoi saperne di piu'?</h3>
+            {/* <h3>Vuoi saperne di piu'?</h3> */}
 
             <HashLink
               to="/#contatti"
@@ -249,15 +258,16 @@ class Home extends Component {
 
         <Section id="aree-di-intervento" className="white">
           <Container className="center">
-            <h2 className="blue-text text-darken-3">Aree di Intervento</h2>
+            <h2 className="hide-on-large-only blue-text text-darken-3">
+              Aree di Intervento
+            </h2>
             <p className="flow-text grey-text left-align">
               Ci proponiamo come referente affidabile nel gestire scenari
-              complessi ad alto contenuto tecnologico, offre un supporto
+              complessi ad alto contenuto tecnologico offrendo un supporto
               specialistico all’avanguardia per una vasta gamma di soluzioni
-              basate su piattaforme open source e social network dedicati, rende
-              disponibili figure di elevato profilo professionale : Dottori di
-              Ricerca, Ricercatori Senior, Professori Universitari e
-              Professionisti di decennale esperienza
+              disponendo di profili, metodologie e strumenti innovativi per la
+              risoluzione delle più disparate problematiche nel settore
+              dell’ICT, della Data Technology e della Smart Education.
             </p>
           </Container>
         </Section>
@@ -266,30 +276,49 @@ class Home extends Component {
           <Container className="center">
             <Row>
               <Link to="/didattica-digitale">
-                <Col s={12} m={6} className="didattica-digitale center">
+                <Col s={12} m={4} className="didattica-digitale center">
                   <div className="icon">
                     <Icon path={mdiPencil} size={3} color="#ff9800" />
                   </div>
 
                   <h5>Didattica Digitale</h5>
                   <p className="flow-text grey-text left-align">
-                    Educabile vede questo ambito non solo come area commerciale
-                    ma anche come luogo di ricerca e di sviluppo
-                    tecnico-scientifico.
+                    Dalla Scuola 2.0 ad un approccio su “strategie didattiche e
+                    metodologie” verso la fruizione collettiva e individuale del
+                    web e di contenuti, per l’interazione di aggregazioni
+                    diverse in gruppi di apprendimento
                   </p>
                 </Col>
               </Link>
 
               <Link to="/data-technology">
-                <Col s={12} m={6} className="data-science center">
+                <Col s={12} m={4} className="data-science center">
                   <div className="icon">
                     <Icon path={mdiPollBox} size={3} color="#4CAF50" />
                   </div>
                   <h5>Data Technology</h5>
                   <p className="flow-text grey-text left-align">
-                    Educabile si propone come partner per promuovere e
-                    sviluppare la ricerca anche nel segmento dei professionisti
-                    con innovative soluzioni di trasferimento tecnologico.
+                    Decliniamo le diverse azioni di Data Technology in ambienti
+                    complessi con approcci altamente innovativi
+                  </p>
+                </Col>
+              </Link>
+
+              <Link to="/internet-of-things">
+                <Col s={12} m={4} className="internet-of-things center">
+                  <div className="icon">
+                    <Icon
+                      path={mdiGooglePhysicalWeb}
+                      size={3}
+                      color="#9c27b0"
+                    />
+                  </div>
+                  <h5>Internet Of Things</h5>
+                  <p className="flow-text grey-text left-align">
+                    Sviluppo di piattaforme e infrastrutture in ambienti di Data
+                    Science attraverso l’integrazione di strumenti di
+                    intelligenza artificiale pervasiva mediante tecnologie
+                    avanzate di Machine Learning e Data Mining.
                   </p>
                 </Col>
               </Link>
@@ -310,7 +339,7 @@ class Home extends Component {
 
         <Section id="in-evidenza" className="grey lighten-2 center">
           <Container>
-            <h2>
+            <h2 className="hide-on-large-only">
               <span>In</span>{" "}
               <span className="blue-text text-darken-3">Evidenza</span>
             </h2>
@@ -318,7 +347,7 @@ class Home extends Component {
             <Posts />
 
             <Button id="blog-btn" large waves="light" node={Link} to="/blog">
-              Vai all'archivio completo{" "}
+              Vai al blog{" "}
               <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
             </Button>
           </Container>
@@ -330,7 +359,9 @@ class Home extends Component {
           style={{ backgroundColor: "#e9eaee" }}
         >
           <Container>
-            <h2 className="blue-text text-darken-3">Contatti</h2>
+            <h2 className="hide-on-large-only blue-text text-darken-3">
+              Contatti
+            </h2>
 
             <Row
               className="z-depth-1-half"
