@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import classNames from "class-names";
 import PropTypes from "prop-types";
 import Scrollspy from "react-scrollspy";
-
+import { Icon } from "@mdi/react";
+import { mdiMenu } from "@mdi/js";
 class Navbar extends Component {
   componentDidMount() {
     window.M.Sidenav.init(this._sidenav, {});
@@ -47,8 +48,13 @@ class Navbar extends Component {
               {logo}
             </a>
           )}
-          <a href="#!" data-target="mobile-nav" className="sidenav-trigger">
-            <i className="material-icons">menu</i>
+          <a
+            href="#!"
+            data-target="mobile-nav"
+            className="sidenav-trigger"
+            style={{ display: "flex" }}
+          >
+            <Icon path={mdiMenu} size="2.5rem" color="white" />
           </a>
           <ul className={navMobileCSS}>
             <Scrollspy
