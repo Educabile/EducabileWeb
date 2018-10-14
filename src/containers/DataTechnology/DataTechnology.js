@@ -51,6 +51,13 @@ const DataTechnology = () => {
             analizzare dati al fine di influenzare i processi decisionali
             attraverso innovative metodologie di inferenza.
           </p>
+
+          <p className="grey-text flow-text">
+            Implementazione di Sistemi collaborativi geograficamente distribuiti
+            attraverso ecosistemi digitali dinamici i cui membri collaborano su
+            reti di comunicazione decentralizzate basate su uno scambio aperto
+            di informazioni ad alto impatto sulle dinamiche sociali.
+          </p>
         </Col>
       </Row>
 
