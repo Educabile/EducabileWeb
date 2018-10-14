@@ -52,7 +52,7 @@ class Navbar extends Component {
             href="#!"
             data-target="mobile-nav"
             className="sidenav-trigger show-on-medium-and-down hide-on-med-and-up"
-            style={{ display: "flex !important" }}
+            style={{ top: "15%" }}
           >
             <Icon path={mdiMenu} size="2.5rem" color="white" />
           </a>
