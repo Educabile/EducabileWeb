@@ -1,27 +1,27 @@
-import React from "react";
-import classNames from "class-names";
-import PropTypes from "prop-types";
+import React from 'react'
+import classNames from 'class-names'
+import PropTypes from 'prop-types'
 
 const Caption = props => {
-  const { children, className, align, style } = props;
+  const { children, className, align, style } = props
 
   const captionCSS = classNames(
-    "caption",
+    'caption',
     {
-      [`${align}-align`]: align
+      [`${align}-align`]: align,
     },
     className
-  );
+  )
 
   return (
     <div className={captionCSS} style={style}>
       {children}
     </div>
-  );
-};
+  )
+}
 
 Caption.propTypes = {
-  align: PropTypes.oneOf(["left", "center", "right"])
-};
+  align: PropTypes.oneOf(['left', 'center', 'right']),
+}
 
-export default Caption;
+export default Caption

@@ -1,10 +1,10 @@
-import React from "react";
-import Slider from "../../components/Slider/Slider";
-import Slide from "../../components/Slide/Slide";
-import Caption from "../../components/Capiton/Caption";
-import { Button } from "react-materialize";
-import Icon from "@mdi/react";
-import { mdiArrowRight } from "@mdi/js";
+import React from 'react'
+import Slider from '../../components/Slider/Slider'
+import Slide from '../../components/Slide/Slide'
+import Caption from '../../components/Capiton/Caption'
+import { Button } from 'react-materialize'
+import Icon from '@mdi/react'
+import { mdiArrowRight } from '@mdi/js'
 
 const FeaturesSlider = ({ options }) => {
   return (
@@ -24,8 +24,7 @@ const FeaturesSlider = ({ options }) => {
         <Caption align="left">
           <h3>Formazione</h3>
           <h5 className="light grey-text text-lighten-3">
-            Corsi di tipo laboratoriale con l'ausilio di specifiche figure terze
-            (mentori)
+            Corsi di tipo laboratoriale con l'ausilio di specifiche figure terze (mentori)
           </h5>
           <Button className="orange" large>
             Leggi di piu'
@@ -49,8 +48,7 @@ const FeaturesSlider = ({ options }) => {
         <Caption align="left">
           <h3>Piattaforme ed ambienti per la didattica</h3>
           <h5 className="light grey-text text-lighten-3">
-            sperimentare dotazioni d'aula alternative privilegiandone la
-            semplicita' d'utilizzo
+            sperimentare dotazioni d'aula alternative privilegiandone la semplicita' d'utilizzo
           </h5>
           <Button className="orange" large>
             Leggi di piu'
@@ -59,7 +57,7 @@ const FeaturesSlider = ({ options }) => {
         </Caption>
       </Slide>
     </Slider>
-  );
-};
+  )
+}
 
-export default FeaturesSlider;
+export default FeaturesSlider

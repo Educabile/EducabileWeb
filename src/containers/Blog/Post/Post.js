@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { Button, Preloader } from "react-materialize";
-import Icon from "@mdi/react";
-import { mdiArrowLeft } from "@mdi/js";
-import Parallax from "../../../components/Parallax/Parallax";
-import Container from "../../../components/Container/Container";
-import axios from "axios";
+import React, { Component } from 'react'
+import { Button, Preloader } from 'react-materialize'
+import Icon from '@mdi/react'
+import { mdiArrowLeft } from '@mdi/js'
+import Parallax from '../../../components/Parallax/Parallax'
+import Container from '../../../components/Container/Container'
+import axios from 'axios'
 
 class Post extends Component {
   state = {
-    post: null
-  };
+    post: null,
+  }
 
   componentDidMount() {
     axios
@@ -20,27 +20,26 @@ class Post extends Component {
       )
       .then(res => {
         this.setState({
-          post: res.data[0]
-        });
+          post: res.data[0],
+        })
       })
       .catch(err => {
-        console.log(err);
-      });
+        console.log(err)
+      })
   }
 
   render() {
     let post = (
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "calc(100vh - 70px)"
-        }}
-      >
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: 'calc(100vh - 70px)',
+        }}>
         <Preloader />
       </div>
-    );
+    )
 
     if (this.state.post) {
       post = (
@@ -48,35 +47,32 @@ class Post extends Component {
           <Parallax
             style={{
               height: 380,
-              backgroundColor: "rgba(0,0,0, .125)"
+              backgroundColor: 'rgba(0,0,0, .125)',
             }}
             imageSrc={
-              this.state.post._embedded["wp:featuredmedia"][0].media_details
-                .sizes.full.source_url
+              this.state.post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url
             }
           />
           <Container
             className="section white z-depth-2"
             style={{
-              transform: "translateY(-20vh)",
-              borderRadius: "20px"
-            }}
-          >
+              transform: 'translateY(-20vh)',
+              borderRadius: '20px',
+            }}>
             <Button
               className="white blue-text text-darken-3"
               flat
               large
               waves="light"
               onClick={() => {
-                this.props.history.goBack();
+                this.props.history.goBack()
               }}
-              style={{ display: "inline-flex", alignItems: "center" }}
-            >
+              style={{ display: 'inline-flex', alignItems: 'center' }}>
               <Icon
                 path={mdiArrowLeft}
                 size="1.3rem"
                 color="#1565C0"
-                style={{ transform: "translateX(-35%)" }}
+                style={{ transform: 'translateX(-35%)' }}
               />
               Torna indietro
             </Button>
@@ -86,17 +82,17 @@ class Post extends Component {
               <span
                 className="flow-text grey-text "
                 dangerouslySetInnerHTML={{
-                  __html: this.state.post.content.rendered
+                  __html: this.state.post.content.rendered,
                 }}
               />
             </Container>
           </Container>
         </React.Fragment>
-      );
+      )
     }
 
-    return post;
+    return post
   }
 }
 
-export default Post;
+export default Post

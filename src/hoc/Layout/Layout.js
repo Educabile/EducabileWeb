@@ -1,7 +1,7 @@
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import { Button } from "react-materialize";
-import Icon, { Stack } from "@mdi/react";
+import React from 'react'
+import Navbar from '../../components/Navbar/Navbar'
+import { Button } from 'react-materialize'
+import Icon, { Stack } from '@mdi/react'
 import {
   mdiEye,
   mdiClipboardText,
@@ -10,12 +10,12 @@ import {
   mdiGooglePlus,
   mdiLinkedin,
   mdiYoutube,
-  mdiCheckboxBlank
-} from "@mdi/js";
-import { HashLink as Link } from "react-router-hash-link";
+  mdiCheckboxBlank,
+} from '@mdi/js'
+import { HashLink as Link } from 'react-router-hash-link'
 
 const Layout = props => {
-  const offset = 60;
+  const offset = 60
 
   return (
     <React.Fragment>
@@ -30,10 +30,9 @@ const Layout = props => {
                   el.getBoundingClientRect().top -
                   document.body.getBoundingClientRect().top -
                   offset,
-                behavior: "smooth"
-              });
-            }}
-          >
+                behavior: 'smooth',
+              })
+            }}>
             Azienda
           </Link>
           <Link
@@ -45,10 +44,9 @@ const Layout = props => {
                   el.getBoundingClientRect().top -
                   document.body.getBoundingClientRect().top -
                   offset,
-                behavior: "smooth"
-              });
-            }}
-          >
+                behavior: 'smooth',
+              })
+            }}>
             Destinatari
           </Link>
           <Link
@@ -60,10 +58,9 @@ const Layout = props => {
                   el.getBoundingClientRect().top -
                   document.body.getBoundingClientRect().top -
                   offset,
-                behavior: "smooth"
-              });
-            }}
-          >
+                behavior: 'smooth',
+              })
+            }}>
             Aree di Intervento
           </Link>
           <Link
@@ -75,10 +72,9 @@ const Layout = props => {
                   el.getBoundingClientRect().top -
                   document.body.getBoundingClientRect().top -
                   offset,
-                behavior: "smooth"
-              });
-            }}
-          >
+                behavior: 'smooth',
+              })
+            }}>
             In Evidenza
           </Link>
           <Link
@@ -90,10 +86,9 @@ const Layout = props => {
                   el.getBoundingClientRect().top -
                   document.body.getBoundingClientRect().top -
                   offset,
-                behavior: "smooth"
-              });
-            }}
-          >
+                behavior: 'smooth',
+              })
+            }}>
             Contatti
           </Link>
         </Navbar>
@@ -119,15 +114,14 @@ const Layout = props => {
               node={Link}
               to="/privacy-policy#"
               style={{
-                display: "inline-flex",
-                fontSize: "small",
-                textTransform: "capitalize"
-              }}
-            >
+                display: 'inline-flex',
+                fontSize: 'small',
+                textTransform: 'capitalize',
+              }}>
               <Icon path={mdiEye} size={0.7} color="white" />
               &nbsp; Privacy Policy
             </Button>
-            {"|"}
+            {'|'}
             <Button
               className="blue darken-3 white-text"
               waves="light"
@@ -135,11 +129,10 @@ const Layout = props => {
               node={Link}
               to="/note-legali"
               style={{
-                display: "inline-flex",
-                fontSize: "small",
-                textTransform: "capitalize"
-              }}
-            >
+                display: 'inline-flex',
+                fontSize: 'small',
+                textTransform: 'capitalize',
+              }}>
               <Icon path={mdiClipboardText} size={0.7} color="white" />
               &nbsp; Note Legali
             </Button>
@@ -153,8 +146,7 @@ const Layout = props => {
             <a
               href="https://www.facebook.com/educabile/"
               rel="external noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               <Stack size={1.8}>
                 <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
                 <Icon path={mdiFacebook} color="#1565C0" size={1.2} />
@@ -163,8 +155,7 @@ const Layout = props => {
             <a
               href="https://twitter.com/Educabile_Srl"
               rel="external noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               <Stack size={1.8}>
                 <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
                 <Icon path={mdiTwitter} color="#1565C0" size={1.2} />
@@ -173,8 +164,7 @@ const Layout = props => {
             <a
               href="https://plus.google.com/116358556609411124672"
               rel="external noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               <Stack size={1.8}>
                 <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
                 <Icon path={mdiGooglePlus} color="#1565C0" size={1.2} />
@@ -183,8 +173,7 @@ const Layout = props => {
             <a
               href="https://it.linkedin.com/company/educabile"
               rel="external noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               <Stack size={1.8}>
                 <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
                 <Icon path={mdiLinkedin} color="#1565C0" size={1.2} />
@@ -193,8 +182,7 @@ const Layout = props => {
             <a
               href="https://www.youtube.com/channel/UCi7MiFTtF2fsIz7Yc-XL3fg"
               rel="external noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               <Stack size={1.8}>
                 <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
                 <Icon path={mdiYoutube} color="#1565C0" size={1.2} />
@@ -204,7 +192,7 @@ const Layout = props => {
         </div>
       </footer>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

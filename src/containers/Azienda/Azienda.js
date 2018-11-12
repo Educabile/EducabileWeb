@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Azienda = props => {
-  return null;
-};
+  return null
+}
 
-export default Azienda;
+export default Azienda

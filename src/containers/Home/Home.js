@@ -1,15 +1,8 @@
-import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import {
-  Button,
-  Section,
-  Row,
-  Divider,
-  CardPanel,
-  Input
-} from "react-materialize";
-import Icon from "@mdi/react";
+import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
+import { Button, Section, Row, Divider, CardPanel, Input } from 'react-materialize'
+import Icon from '@mdi/react'
 import {
   mdiArrowRight,
   mdiDomain,
@@ -20,14 +13,14 @@ import {
   mdiPollBox,
   mdiGooglePhysicalWeb,
   mdiLibraryBooks,
-  mdiSend
-} from "@mdi/js";
+  mdiSend,
+} from '@mdi/js'
 
-import FeaturesSlider from "./FeaturesSlider";
-import Container from "../../components/Container/Container";
-import Carousel from "../../components/Carousel/Carousel";
-import Col from "../../components/Col/Col";
-import Posts from "./Posts/Posts";
+import FeaturesSlider from './FeaturesSlider'
+import Container from '../../components/Container/Container'
+import Carousel from '../../components/Carousel/Carousel'
+import Col from '../../components/Col/Col'
+import Posts from './Posts/Posts'
 
 class Home extends Component {
   render() {
@@ -38,19 +31,16 @@ class Home extends Component {
         <Section id="azienda" className="white">
           <Container className="center">
             <h2 className="hide-on-large-only">
-              <span className="blue-text text-darken-3">Educabile</span> una
-              StartUp Innovativa
+              <span className="blue-text text-darken-3">Educabile</span> una StartUp Innovativa
             </h2>
 
             <p className="flow-text grey-text left-align">
               <span className="blue-text text-darken-3 dropcap">E</span>
-              ducabile è una StartUp Innovativa attiva nei settori
-              dell’Information e Communication Technology e della Data
-              Technology, opera principalmente nella risoluzione e nel governo
-              di processi complessi nell’ambito della Smart Education, quale
-              insieme di strumenti innovativi di disseminazione e divulgazione
-              per l’apprendimento interattivo, e progetti di Ricerca Industriale
-              e Sviluppo Sperimentale.
+              ducabile è una StartUp Innovativa attiva nei settori dell’Information e Communication
+              Technology e della Data Technology, opera principalmente nella risoluzione e nel
+              governo di processi complessi nell’ambito della Smart Education, quale insieme di
+              strumenti innovativi di disseminazione e divulgazione per l’apprendimento interattivo,
+              e progetti di Ricerca Industriale e Sviluppo Sperimentale.
             </p>
 
             <HashLink
@@ -58,13 +48,10 @@ class Home extends Component {
               scroll={el => {
                 window.scrollTo({
                   top:
-                    el.getBoundingClientRect().top -
-                    document.body.getBoundingClientRect().top -
-                    64,
-                  behavior: "smooth"
-                });
-              }}
-            >
+                    el.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 64,
+                  behavior: 'smooth',
+                })
+              }}>
               <Button className="hoverable move-icon-forward" large>
                 Scopri di piu'
                 <Icon path={mdiArrowRight} size="1.3rem" />
@@ -81,12 +68,11 @@ class Home extends Component {
 
             <Row
               style={{
-                display: "flex",
-                alignItems: "stretch",
-                flexWrap: "wrap"
-              }}
-            >
-              <Col s={12} m={6} xl={4} style={{ display: "flex" }}>
+                display: 'flex',
+                alignItems: 'stretch',
+                flexWrap: 'wrap',
+              }}>
+              <Col s={12} m={6} xl={4} style={{ display: 'flex' }}>
                 <CardPanel className="feature hoverable rounded">
                   <div className="feature-icon">
                     <Icon path={mdiDomain} size={3} />
@@ -94,54 +80,43 @@ class Home extends Component {
                   <h5>Aziende</h5>
 
                   <p className="flow-text grey-text">
-                    Educabile vede questo ambito non solo come area commerciale
-                    ma anche come luogo di ricerca e di sviluppo
-                    tecnico-scientifico. I servizi di consulenza e progettazione
-                    offerti diventano opportunità di scambio osmotico di
-                    esperienze produttive e ricerca di soluzioni innovative nel
-                    campo dei processi di sviluppo industriale...
+                    Educabile vede questo ambito non solo come area commerciale ma anche come luogo
+                    di ricerca e di sviluppo tecnico-scientifico. I servizi di consulenza e
+                    progettazione offerti diventano opportunità di scambio osmotico di esperienze
+                    produttive e ricerca di soluzioni innovative nel campo dei processi di sviluppo
+                    industriale...
                   </p>
                 </CardPanel>
               </Col>
 
-              <Col s={12} m={6} xl={4} style={{ display: "flex" }}>
+              <Col s={12} m={6} xl={4} style={{ display: 'flex' }}>
                 <CardPanel className="feature hoverable rounded">
                   <div className="feature-icon">
-                    <Icon
-                      path={mdiAccountMultiple}
-                      className="blue-text text-darken-3"
-                      size={3}
-                    />
+                    <Icon path={mdiAccountMultiple} className="blue-text text-darken-3" size={3} />
                   </div>
                   <h5>Professionisti</h5>
 
                   <p className="flow-text grey-text">
-                    Educabile si propone come partner per promuovere e
-                    sviluppare la ricerca anche nel segmento dei professionisti
-                    con innovative soluzioni di trasferimento tecnologico. I
-                    benefici vanno dal miglioramento dei livelli essenziali di
+                    Educabile si propone come partner per promuovere e sviluppare la ricerca anche
+                    nel segmento dei professionisti con innovative soluzioni di trasferimento
+                    tecnologico. I benefici vanno dal miglioramento dei livelli essenziali di
                     assistenza all'erogazione di servizi di knowledge sharing...
                   </p>
                 </CardPanel>
               </Col>
 
-              <Col s={12} m={12} xl={4} style={{ display: "flex" }}>
+              <Col s={12} m={12} xl={4} style={{ display: 'flex' }}>
                 <CardPanel className="feature hoverable rounded">
                   <div className="feature-icon">
-                    <Icon
-                      path={mdiSchool}
-                      className="blue-text text-darken-3"
-                      size={3}
-                    />
+                    <Icon path={mdiSchool} className="blue-text text-darken-3" size={3} />
                   </div>
 
                   <h5>Istituzioni Scolastiche</h5>
 
                   <p className="flow-text grey-text">
-                    I servizi proposti in questa area, riguardano gli ambienti
-                    di apprendimento e si qualificano come innovativi e
-                    tecnologicamente all’avanguardia. Educabile supporta le
-                    Istituzioni Scolastiche nel realizzare percorsi didattici
+                    I servizi proposti in questa area, riguardano gli ambienti di apprendimento e si
+                    qualificano come innovativi e tecnologicamente all’avanguardia. Educabile
+                    supporta le Istituzioni Scolastiche nel realizzare percorsi didattici
                     interattivi, contestualizzati, personalizzati...
                   </p>
                 </CardPanel>
@@ -155,19 +130,15 @@ class Home extends Component {
               scroll={el => {
                 window.scrollTo({
                   top:
-                    el.getBoundingClientRect().top -
-                    document.body.getBoundingClientRect().top -
-                    64,
-                  behavior: "smooth"
-                });
-              }}
-            >
+                    el.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 64,
+                  behavior: 'smooth',
+                })
+              }}>
               <Button
                 className="amber grey-text hoverable text-darken-3"
                 large
                 waves="light"
-                id="go-to-contact"
-              >
+                id="go-to-contact">
                 Entra in contatto con noi
                 <Icon path={mdiForum} size="1.3rem" />
               </Button>
@@ -188,13 +159,13 @@ class Home extends Component {
                 fullWidth: false,
                 noWrap: false,
                 padding: 200,
-                indicators: true
+                indicators: true,
               }}
               images={[
-                "http://www.educabile.it/img/logo-geofotogrammetrica-256.png",
-                "http://www.educabile.it/img/logo-qequipe-256.png",
-                "http://www.educabile.it/img/logo-banat-university-256.png",
-                "http://www.educabile.it/img/logo-ict-consulting-256.png"
+                'http://www.educabile.it/img/logo-geofotogrammetrica-256.png',
+                'http://www.educabile.it/img/logo-qequipe-256.png',
+                'http://www.educabile.it/img/logo-banat-university-256.png',
+                'http://www.educabile.it/img/logo-ict-consulting-256.png',
               ]}
               centerImages
             />
@@ -205,16 +176,13 @@ class Home extends Component {
 
         <Section id="aree-di-intervento" className="white">
           <Container className="center">
-            <h2 className="hide-on-large-only blue-text text-darken-3">
-              Aree di Intervento
-            </h2>
+            <h2 className="hide-on-large-only blue-text text-darken-3">Aree di Intervento</h2>
             <p className="flow-text grey-text left-align">
-              Ci proponiamo come referente affidabile nel gestire scenari
-              complessi ad alto contenuto tecnologico offrendo un supporto
-              specialistico all’avanguardia per una vasta gamma di soluzioni
-              disponendo di profili, metodologie e strumenti innovativi per la
-              risoluzione delle più disparate problematiche nel settore
-              dell’ICT, della Data Technology e della Smart Education.
+              Ci proponiamo come referente affidabile nel gestire scenari complessi ad alto
+              contenuto tecnologico offrendo un supporto specialistico all’avanguardia per una vasta
+              gamma di soluzioni disponendo di profili, metodologie e strumenti innovativi per la
+              risoluzione delle più disparate problematiche nel settore dell’ICT, della Data
+              Technology e della Smart Education.
             </p>
           </Container>
         </Section>
@@ -230,10 +198,9 @@ class Home extends Component {
 
                   <h5>Didattica Digitale</h5>
                   <p className="flow-text grey-text left-align">
-                    Dalla Scuola 2.0 ad un approccio su “strategie didattiche e
-                    metodologie” verso la fruizione collettiva e individuale del
-                    web e di contenuti, per l’interazione di aggregazioni
-                    diverse in gruppi di apprendimento
+                    Dalla Scuola 2.0 ad un approccio su “strategie didattiche e metodologie” verso
+                    la fruizione collettiva e individuale del web e di contenuti, per l’interazione
+                    di aggregazioni diverse in gruppi di apprendimento
                   </p>
                 </Col>
               </Link>
@@ -245,8 +212,8 @@ class Home extends Component {
                   </div>
                   <h5>Data Technology</h5>
                   <p className="flow-text grey-text left-align">
-                    Decliniamo le diverse azioni di Data Technology in ambienti
-                    complessi con approcci altamente innovativi
+                    Decliniamo le diverse azioni di Data Technology in ambienti complessi con
+                    approcci altamente innovativi
                   </p>
                 </Col>
               </Link>
@@ -254,29 +221,20 @@ class Home extends Component {
               <Link to="/internet-of-things">
                 <Col s={12} m={4} className="internet-of-things center">
                   <div className="icon">
-                    <Icon
-                      path={mdiGooglePhysicalWeb}
-                      size={3}
-                      color="#9c27b0"
-                    />
+                    <Icon path={mdiGooglePhysicalWeb} size={3} color="#9c27b0" />
                   </div>
                   <h5>Internet Of Things</h5>
                   <p className="flow-text grey-text left-align">
-                    Sviluppo di piattaforme e infrastrutture in ambienti di Data
-                    Science attraverso l’integrazione di strumenti di
-                    intelligenza artificiale pervasiva mediante tecnologie
-                    avanzate di Machine Learning e Data Mining.
+                    Sviluppo di piattaforme e infrastrutture in ambienti di Data Science attraverso
+                    l’integrazione di strumenti di intelligenza artificiale pervasiva mediante
+                    tecnologie avanzate di Machine Learning e Data Mining.
                   </p>
                 </Col>
               </Link>
             </Row>
 
             <Link to="/servizi">
-              <Button
-                large
-                waves="light"
-                className="move-icon-forward hoverable"
-              >
+              <Button large waves="light" className="move-icon-forward hoverable">
                 Consulta i servizi
                 <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
@@ -287,39 +245,27 @@ class Home extends Component {
         <Section id="in-evidenza" className="grey lighten-2 center">
           <Container>
             <h2 className="hide-on-large-only">
-              <span>In</span>{" "}
-              <span className="blue-text text-darken-3">Evidenza</span>
+              <span>In</span> <span className="blue-text text-darken-3">Evidenza</span>
             </h2>
 
             <Posts />
 
             <Button id="blog-btn" large waves="light" node={Link} to="/blog">
-              Vai al blog{" "}
-              <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
+              Vai al blog <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
             </Button>
           </Container>
         </Section>
 
-        <Section
-          id="contatti"
-          className="center"
-          style={{ backgroundColor: "#e9eaee" }}
-        >
+        <Section id="contatti" className="center" style={{ backgroundColor: '#e9eaee' }}>
           <Container>
-            <h2 className="hide-on-large-only blue-text text-darken-3">
-              Contatti
-            </h2>
+            <h2 className="hide-on-large-only blue-text text-darken-3">Contatti</h2>
 
             <Row
               className="z-depth-1-half"
-              style={{ display: "flex", flexWrap: "wrap", borderRadius: 30 }}
-            >
+              style={{ display: 'flex', flexWrap: 'wrap', borderRadius: 30 }}>
               <Col id="sedi" s={12} l={5} className="white">
                 <h4 className="blue-text text-darken-3">Sede Legale</h4>
-                <p
-                  className="left-align"
-                  style={{ fontSize: "smaller", fontWeight: "bold" }}
-                >
+                <p className="left-align" style={{ fontSize: 'smaller', fontWeight: 'bold' }}>
                   Via E. Nicolardi, 109 - 80131 - Napoli (NA)
                   <br />
                   P. IVA 08485831211 | educabile@pec.it
@@ -331,10 +277,7 @@ class Home extends Component {
 
                 <br />
                 <h4 className="blue-text text-darken-3">Sede Operativa</h4>
-                <p
-                  className="left-align"
-                  style={{ fontSize: "smaller", fontWeight: "bold" }}
-                >
+                <p className="left-align" style={{ fontSize: 'smaller', fontWeight: 'bold' }}>
                   Via Coroglio, 57/d - Città della Scienza 80124 - Napoli (NA)
                   <br />
                   Incubatore Campania Newsteel Srl
@@ -347,23 +290,15 @@ class Home extends Component {
                 <br />
 
                 <h4 className="blue-text text-darken-3">Ufficio Estero</h4>
-                <p
-                  className="left-align"
-                  style={{ fontSize: "smaller", fontWeight: "bold" }}
-                >
+                <p className="left-align" style={{ fontSize: 'smaller', fontWeight: 'bold' }}>
                   300645 Timisoara (RO) - 119 Aradului Street
                   <br />
-                  Banat’s University of Agricultural Sciences and Veterinary
-                  Medicine “King Michael I of Romania”
+                  Banat’s University of Agricultural Sciences and Veterinary Medicine “King Michael
+                  I of Romania”
                 </p>
               </Col>
 
-              <Col
-                id="form"
-                s={12}
-                l={7}
-                className="grey lighten-4 valign-wrapper"
-              >
+              <Col id="form" s={12} l={7} className="grey lighten-4 valign-wrapper">
                 <Section>
                   <Input s={6} label="Nome e Cognome" />
                   <Input s={6} type="email" label="Email" />
@@ -381,8 +316,8 @@ class Home extends Component {
           </Container>
         </Section>
       </Fragment>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

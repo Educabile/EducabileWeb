@@ -1,125 +1,103 @@
-import React from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React from 'react'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
 
 class Carousel extends React.Component {
   constructor(props) {
-    super(props);
-    this.renderFixedItem = this.renderFixedItem.bind(this);
-    this.renderImages = this.renderImages.bind(this);
-    this.renderItems = this.renderItems.bind(this);
-    this.startAutoplay = this.startAutoplay.bind(this);
-    this.stopAutoplay = this.stopAutoplay.bind(this);
+    super(props)
+    this.renderFixedItem = this.renderFixedItem.bind(this)
+    this.renderImages = this.renderImages.bind(this)
+    this.renderItems = this.renderItems.bind(this)
+    this.startAutoplay = this.startAutoplay.bind(this)
+    this.stopAutoplay = this.stopAutoplay.bind(this)
   }
 
   componentDidMount() {
-    const { options = {} } = this.props;
+    const { options = {} } = this.props
 
-    if (typeof window.M !== "undefined") {
-      this.instance = window.M.Carousel.init(this._carousel, options);
+    if (typeof window.M !== 'undefined') {
+      this.instance = window.M.Carousel.init(this._carousel, options)
     }
 
-    this.startAutoplay();
-    this._carousel.addEventListener("mouseenter", this.stopAutoplay);
-    this._carousel.addEventListener("mouseleave", this.startAutoplay);
+    this.startAutoplay()
+    this._carousel.addEventListener('mouseenter', this.stopAutoplay)
+    this._carousel.addEventListener('mouseleave', this.startAutoplay)
   }
 
   componentWillUnmount() {
-    if (typeof window.M !== "undefined") {
-      this.instance.destroy();
+    if (typeof window.M !== 'undefined') {
+      this.instance.destroy()
     }
 
-    this._carousel.removeEventListener("mouseenter", this.stopAutoplay);
-    this._carousel.removeEventListener("mouseleave", this.startAutoplay);
+    this._carousel.removeEventListener('mouseenter', this.stopAutoplay)
+    this._carousel.removeEventListener('mouseleave', this.startAutoplay)
   }
 
   startAutoplay() {
     this.intervalId = setInterval(() => {
-      this.instance.next();
-    }, 2250);
+      this.instance.next()
+    }, 2250)
   }
 
   stopAutoplay() {
-    clearInterval(this.intervalId);
-    this.intervalId = null;
+    clearInterval(this.intervalId)
+    this.intervalId = null
   }
 
   renderImages(child, centerImages) {
-    if (typeof child === "string") {
+    if (typeof child === 'string') {
       return (
         <a
-          className={cx("carousel-item", {
-            "valign-wrapper": centerImages
-          })}
-        >
+          className={cx('carousel-item', {
+            'valign-wrapper': centerImages,
+          })}>
           <img src={child} alt="" />
         </a>
-      );
+      )
     }
     return React.cloneElement(child, {
-      className: cx(child.props.className, "carousel-item")
-    });
+      className: cx(child.props.className, 'carousel-item'),
+    })
   }
 
   renderItems(child) {
-    return <div className="carousel-item">{child}</div>;
+    return <div className="carousel-item">{child}</div>
   }
 
   renderFixedItem() {
-    const { fixedItem } = this.props;
-    return (
-      fixedItem && <div className="carousel-fixed-item center">{fixedItem}</div>
-    );
+    const { fixedItem } = this.props
+    return fixedItem && <div className="carousel-fixed-item center">{fixedItem}</div>
   }
 
   render() {
-    const {
-      children,
-      className,
-      carouselId,
-      images,
-      centerImages,
-      options = {}
-    } = this.props;
+    const { children, className, carouselId, images, centerImages, options = {} } = this.props
 
     if (children) {
       return (
         <div
           id={carouselId}
           ref={el => {
-            this._carousel = el;
+            this._carousel = el
           }}
-          className={cx(
-            "carousel",
-            { "carousel-slider": options.fullWidth },
-            className
-          )}
-        >
+          className={cx('carousel', { 'carousel-slider': options.fullWidth }, className)}>
           {this.renderFixedItem()}
           {React.Children.map(children, child => this.renderItems(child))}
         </div>
-      );
+      )
     } else if (images) {
       return (
         <div
           id={carouselId}
           ref={el => {
-            this._carousel = el;
+            this._carousel = el
           }}
-          className={cx(
-            "carousel",
-            { "carousel-slider": options.fullWidth },
-            className
-          )}
-        >
+          className={cx('carousel', { 'carousel-slider': options.fullWidth }, className)}>
           {this.renderFixedItem()}
-          {React.Children.map(images, child =>
-            this.renderImages(child, centerImages)
-          )}
+          {React.Children.map(images, child => this.renderImages(child, centerImages))}
         </div>
-      );
+      )
     } else {
-      return null;
+      return null
     }
   }
 }
@@ -189,8 +167,8 @@ Carousel.propTypes = {
     /*
     * Callback for when a new slide is cycled to. (Default: null)
     */
-    onCycleTo: PropTypes.func
-  })
-};
+    onCycleTo: PropTypes.func,
+  }),
+}
 
-export default Carousel;
+export default Carousel
