@@ -1,0 +1,11 @@
+
+package.json
+yarn.lock
+package-lock.json
+build
+docs
+logs
+.vscode
+.gitignore
+/node_modules
+.prettierignore
