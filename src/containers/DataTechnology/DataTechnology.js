@@ -1,16 +1,15 @@
-import React from "react";
-import { Row, Section } from "react-materialize";
-import Col from "../../components/Col/Col";
-import Container from "../../components/Container/Container";
-import Parallax from "../../components/Parallax/Parallax";
-import Icon from "@mdi/react";
+import React from 'react';
+import { Row, Section } from 'react-materialize';
+import Col from '../../components/Col/Col';
+import Parallax from '../../components/Parallax/Parallax';
+import Icon from '@mdi/react';
 import {
   mdiAccount,
   mdiHeartPulse,
   mdiBriefcase,
   mdiAccountGroup,
   mdiChartLineStacked
-} from "@mdi/js";
+} from '@mdi/js';
 
 const DataTechnology = () => {
   return (
@@ -41,7 +40,7 @@ const DataTechnology = () => {
 
         <Col s={12} xl={6}>
           <h2 className="center">
-            Piattaforme{" "}
+            Piattaforme{' '}
             <span className="blue-text text-darken-3">Innovative</span>
           </h2>
 
@@ -64,7 +63,7 @@ const DataTechnology = () => {
       <Row>
         <Col s={12} xl={6}>
           <h2 className="center">
-            <span className="blue-text text-darken-3">Healthcare</span>{" "}
+            <span className="blue-text text-darken-3">Healthcare</span>{' '}
             Management System
           </h2>
 
@@ -96,8 +95,8 @@ const DataTechnology = () => {
 
         <Col s={12} xl={6}>
           <h2 className="center">
-            Digital{" "}
-            <span className="blue-text text-darken-3">Cultural Heritage</span>{" "}
+            Digital{' '}
+            <span className="blue-text text-darken-3">Cultural Heritage</span>{' '}
             Framework
           </h2>
 
@@ -115,7 +114,7 @@ const DataTechnology = () => {
       <Row>
         <Col s={12} xl={6}>
           <h2 className="center">
-            Servizi di{" "}
+            Servizi di{' '}
             <span className="blue-text text-darken-3">
               Consulenza Strategica
             </span>

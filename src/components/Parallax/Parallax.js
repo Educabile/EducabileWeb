@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import cx from "class-names";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import cx from 'class-names';
+import PropTypes from 'prop-types';
 
 class Parallax extends Component {
   componentDidMount() {
@@ -18,10 +18,10 @@ class Parallax extends Component {
   render() {
     const { className, children, imageSrc, style } = this.props;
     return (
-      <div className={cx("parallax-container", className)} style={style}>
+      <div className={cx('parallax-container', className)} style={style}>
         {children}
         <div className="parallax" ref={div => (this._parallax = div)}>
-          <img src={imageSrc} />
+          <img alt="" src={imageSrc} />
         </div>
       </div>
     );
