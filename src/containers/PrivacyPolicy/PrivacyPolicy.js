@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
       <p className="flow-text">
         In questa pagina si descrivono le modalità di gestione del sito in riferimento al
         trattamento dei dati personali degli utenti che lo consultano. Si tratta di un’informativa
-        che è resa anche ai sensi dell'art. 13 del d.lgs. n. 196/2003 - Codice in materia di
+        che è resa anche ai sensi dell&apos;art. 13 del d.lgs. n. 196/2003 - Codice in materia di
         protezione dei dati personali a coloro che interagiscono con i servizi web della Educabile
         Srl accessibili per via telematica a partire dall’indirizzo:
         <a href="https://www.educabile.it">https://www.educabile.it</a>. L’informativa è resa solo
@@ -87,20 +87,20 @@ const PrivacyPolicy = () => {
         utenti e non consentono l’acquisizione di dati personali identificativi dell’utente.{' '}
       </p>
 
-      <h2 className="light">Facoltativita' del trattamento dei dati</h2>
+      <h2 className="light">Facoltativit&aacute; del trattamento dei dati</h2>
 
       <p className="flow-text">
         A parte quanto specificato per i dati di navigazione, l’utente è libero di fornire i dati
         personali riportati nei moduli di richiesta al Garante o comunque indicati in contatti con
-        l'Ufficio per sollecitare l’invio di materiale informativo o di altre comunicazioni. Il loro
-        mancato conferimento può comportare l’impossibilità di ottenere quanto richiesto. Per
+        l&apos;Ufficio per sollecitare l’invio di materiale informativo o di altre comunicazioni. Il
+        loro mancato conferimento può comportare l’impossibilità di ottenere quanto richiesto. Per
         completezza va ricordato che in alcuni casi (non oggetto dell’ordinaria gestione di questo
-        sito) l’Autorità può richiedere notizie e informazioni ai sensi dell'art 157 del d.lgs. n.
-        196/2003, ai fini del controllo sul trattamento dei dati personali. In questi casi la
+        sito) l’Autorità può richiedere notizie e informazioni ai sensi dell&apos;art 157 del d.lgs.
+        n. 196/2003, ai fini del controllo sul trattamento dei dati personali. In questi casi la
         risposta è obbligatoria a pena di sanzione amministrativa.
       </p>
 
-      <h2 className="light">Modalita' del trattamento</h2>
+      <h2 className="light">Modalit&aacute; del trattamento</h2>
 
       <p className="flow-text">
         I dati personali sono trattati con strumenti automatizzati per il tempo strettamente

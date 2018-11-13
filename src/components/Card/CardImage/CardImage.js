@@ -50,6 +50,9 @@ CardImage.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   style: PropTypes.object,
+  image: PropTypes.string,
+  fab: PropTypes.bool,
+  reveal: PropTypes.bool,
 }
 
 export default CardImage

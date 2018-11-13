@@ -101,6 +101,8 @@ Navbar.propTypes = {
   fixed: PropTypes.bool,
   children: PropTypes.node.isRequired,
   extendedWith: PropTypes.arrayOf(PropTypes.node),
+  className: PropTypes.string,
+  style: PropTypes.object,
 }
 
 Navbar.defaultProps = {

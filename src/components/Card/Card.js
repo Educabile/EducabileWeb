@@ -46,20 +46,18 @@ class Card extends Component {
       boh = (
         <React.Fragment>
           <CardImage image={image} fab={fab}>
-            {fab &&
-              !fab.large && (
-                <CardTitle className={title.className}>
-                  {typeof title === 'object' ? title.title : title}
-                </CardTitle>
-              )}
+            {fab && !fab.large && (
+              <CardTitle className={title.className}>
+                {typeof title === 'object' ? title.title : title}
+              </CardTitle>
+            )}
           </CardImage>
           <CardContent>
-            {fab &&
-              fab.large && (
-                <CardTitle className={title.className}>
-                  {typeof title === 'object' ? title.title : title}
-                </CardTitle>
-              )}
+            {fab && fab.large && (
+              <CardTitle className={title.className}>
+                {typeof title === 'object' ? title.title : title}
+              </CardTitle>
+            )}
             {children}
           </CardContent>
           <CardAction>{actions}</CardAction>
@@ -87,7 +85,7 @@ class Card extends Component {
             <CardTitle reveal>{title}</CardTitle>
           </CardContent>
           <CardAction>{actions}</CardAction>
-          <div class="card-reveal">
+          <div className="card-reveal">
             <CardTitle className={title.className} closeReveal>
               {typeof title === 'object' ? title.title : title}
             </CardTitle>
@@ -119,6 +117,12 @@ Card.propTypes = {
   horizontal: PropTypes.bool,
   actions: PropTypes.arrayOf(PropTypes.object),
   style: PropTypes.object,
+  stickyActions: PropTypes.bool,
+  fab: PropTypes.bool,
+  reveal: PropTypes.bool,
+  small: PropTypes.bool,
+  medium: PropTypes.bool,
+  large: PropTypes.bool,
 }
 
 Card.defaultProps = {}

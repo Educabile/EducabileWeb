@@ -71,6 +71,8 @@ class Button extends Component {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   node: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  className: PropTypes.string,
+  style: PropTypes,
   to: PropTypes.string,
   href: PropTypes.string,
   waves: PropTypes.oneOf([true, 'light', 'red', 'yellow', 'orange', 'purple', 'green', 'teal']),

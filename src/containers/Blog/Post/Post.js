@@ -5,6 +5,7 @@ import { mdiArrowLeft } from '@mdi/js'
 import Parallax from '../../../components/Parallax/Parallax'
 import Container from '../../../components/Container/Container'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 
 class Post extends Component {
   state = {
@@ -23,9 +24,7 @@ class Post extends Component {
           post: res.data[0],
         })
       })
-      .catch(err => {
-        console.log(err)
-      })
+      .catch(() => {})
   }
 
   render() {
@@ -93,6 +92,11 @@ class Post extends Component {
 
     return post
   }
+}
+
+Post.propTypes = {
+  history: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
 }
 
 export default Post

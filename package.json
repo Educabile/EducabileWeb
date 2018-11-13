@@ -27,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
     "eject": "react-scripts eject"
   },
   "homepage": "http://143.225.48.253/other/educabile.it/",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import cx from 'class-names'
-
+import PropTypes from 'prop-types'
 class Slider extends Component {
   componentDidMount() {
     this.instance = window.M.Slider.init(this._slider, {
@@ -29,6 +29,12 @@ class Slider extends Component {
       </div>
     )
   }
+}
+
+Slider.propTypes = {
+  options: PropTypes.object,
+  children: PropTypes.node,
+  className: PropTypes.string,
 }
 
 export default Slider

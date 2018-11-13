@@ -13,6 +13,7 @@ const Slide = props => {
 
 Slide.propTypes = {
   image: PropTypes.string.isRequired,
+  children: PropTypes.node,
 }
 
 export default Slide
