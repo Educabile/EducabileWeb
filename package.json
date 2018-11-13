@@ -27,6 +27,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test --env=jsdom",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
     "eject": "react-scripts eject"
   },
   "homepage": "http://143.225.48.253/other/educabile.it/",

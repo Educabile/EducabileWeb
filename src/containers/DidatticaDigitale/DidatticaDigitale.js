@@ -17,7 +17,7 @@ const DidatticaDigitale = () => {
               Le metodologie fanno riferimento a quelle già ampiamente condivise dalla ricerca a
               livello Internazionale nell’ambito della ricerca-azione e della sperimentazione
               didattica. <br /> <br />
-              Le azioni partono dall' esame delle criticità e confronto delle metodologie per
+              Le azioni partono dall&apos;esame delle criticità e confronto delle metodologie per
               passare alla ricerca di strategie di risoluzione delle criticità e realizzazione di
               materiale operativo. Seguono test di efficacia sottoposto a gruppi di lavoro
               collaborativo per completarsi con attività di monitoraggio e valutazione dell’azione.{' '}

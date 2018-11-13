@@ -5,5 +5,9 @@
         "index.js": "javascriptreact",
         "App.js": "javascriptreact",
         "**/**.module.css": "scss"
-  }
+  },
+  "eslint.options": {
+    "configFile": ".eslintrc.json"
+  },
+  "eslint.enable": true
 }

@@ -11,6 +11,7 @@ const Container = props => (
 Container.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  style: PropTypes.object,
 }
 
 export default Container

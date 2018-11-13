@@ -21,7 +21,10 @@ const Caption = props => {
 }
 
 Caption.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  style: PropTypes.object,
 }
 
 export default Caption
