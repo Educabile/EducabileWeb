@@ -21,9 +21,11 @@ class Posts extends Component {
   }
 
   componentDidMount() {
+    const { REACT_APP_WORDPRESS_URL } = process.env
+
     axios
       .get(
-        'http://143.225.48.253/other/wordpress/wp-json/wp/v2/posts?_embed&order=desc&order_by=date&per_page=3'
+        `${REACT_APP_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed&order=desc&order_by=date&per_page=3`
       )
       .then(response => {
         this.renderPosts(response.data)

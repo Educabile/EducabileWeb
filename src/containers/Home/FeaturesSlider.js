@@ -8,9 +8,11 @@ import { mdiArrowRight } from '@mdi/js'
 import PropTypes from 'prop-types'
 
 const FeaturesSlider = ({ options }) => {
+  const { REACT_APP_ASSETS_URL } = process.env
+
   return (
     <Slider className="white" options={options}>
-      <Slide image="http://www.educabile.it/img/slide0-1920.jpg">
+      <Slide image={`${REACT_APP_ASSETS_URL}/slide0-1920.jpg`}>
         <Caption align="left">
           <h3>Piattaforme Innovative</h3>
           <h5 className="light grey-text text-lighten-3">
@@ -21,7 +23,7 @@ const FeaturesSlider = ({ options }) => {
           </Button>
         </Caption>
       </Slide>
-      <Slide image="http://www.educabile.it/img/cta-1920.jpeg">
+      <Slide image={`${REACT_APP_ASSETS_URL}/cta-1920.jpeg`}>
         <Caption align="left">
           <h3>Formazione</h3>
           <h5 className="light grey-text text-lighten-3">
@@ -33,7 +35,7 @@ const FeaturesSlider = ({ options }) => {
           </Button>
         </Caption>
       </Slide>
-      <Slide image="http://www.educabile.it/img/consulenza-dt-1920.jpeg">
+      <Slide image={`${REACT_APP_ASSETS_URL}/consulenza-dt-1920.jpeg`}>
         <Caption align="left">
           <h3>Servizi di Consulenza Strategica</h3>
           <h5 className="light grey-text text-lighten-3">
@@ -45,7 +47,7 @@ const FeaturesSlider = ({ options }) => {
           </Button>
         </Caption>
       </Slide>
-      <Slide image="http://www.educabile.it/img/piattaforme-ambienti-1920.jpeg">
+      <Slide image={`${REACT_APP_ASSETS_URL}/piattaforme-ambienti-1920.jpeg`}>
         <Caption align="left">
           <h3>Piattaforme ed ambienti per la didattica</h3>
           <h5 className="light grey-text text-lighten-3">
