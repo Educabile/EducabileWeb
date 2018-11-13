@@ -53,7 +53,7 @@ class Home extends Component {
                 })
               }}>
               <Button className="hoverable move-icon-forward" large>
-                Scopri di piu'
+                Scopri di pi&uacute;
                 <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
             </HashLink>
@@ -100,7 +100,7 @@ class Home extends Component {
                     Educabile si propone come partner per promuovere e sviluppare la ricerca anche
                     nel segmento dei professionisti con innovative soluzioni di trasferimento
                     tecnologico. I benefici vanno dal miglioramento dei livelli essenziali di
-                    assistenza all'erogazione di servizi di knowledge sharing...
+                    assistenza all&apos;erogazione di servizi di knowledge sharing...
                   </p>
                 </CardPanel>
               </Col>

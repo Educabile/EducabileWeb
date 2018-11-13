@@ -28,9 +28,7 @@ class Posts extends Component {
       .then(response => {
         this.renderPosts(response.data)
       })
-      .catch(error => {
-        console.log(error)
-      })
+      .catch(() => {})
   }
 
   renderImage(post) {
@@ -126,13 +124,13 @@ class Posts extends Component {
     var width = window.innerWidth
       ? window.innerWidth
       : document.documentElement.clientWidth
-        ? document.documentElement.clientWidth
-        : window.screen.width
+      ? document.documentElement.clientWidth
+      : window.screen.width
     var height = window.innerHeight
       ? window.innerHeight
       : document.documentElement.clientHeight
-        ? document.documentElement.clientHeight
-        : window.screen.height
+      ? document.documentElement.clientHeight
+      : window.screen.height
 
     var left = width / 2 - 700 / 2 + dualScreenLeft
     var top = height / 2 - 600 / 2 + dualScreenTop

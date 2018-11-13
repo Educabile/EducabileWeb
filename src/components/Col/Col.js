@@ -27,6 +27,7 @@ const Col = props => {
 }
 
 Col.propTypes = {
+  id: PropTypes.string,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   s: PropTypes.number,
@@ -36,6 +37,7 @@ Col.propTypes = {
   offset: PropTypes.string,
   push: PropTypes.string,
   pull: PropTypes.string,
+  style: PropTypes.object,
 }
 
 export default Col

@@ -13,6 +13,7 @@ import {
   mdiCheckboxBlank,
 } from '@mdi/js'
 import { HashLink as Link } from 'react-router-hash-link'
+import PropTypes from 'prop-types'
 
 const Layout = props => {
   const offset = 60
@@ -193,6 +194,10 @@ const Layout = props => {
       </footer>
     </React.Fragment>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node,
 }
 
 export default Layout

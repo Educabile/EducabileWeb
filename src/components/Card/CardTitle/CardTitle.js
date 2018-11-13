@@ -16,8 +16,8 @@ const CardTitle = props => {
   return (
     <span className={titleCSS} style={style}>
       {children}
-      {reveal && <i class="material-icons right">more_vert</i>}
-      {closeReveal && <i class="material-icons right">close</i>}
+      {reveal && <i className="material-icons right">more_vert</i>}
+      {closeReveal && <i className="material-icons right">close</i>}
     </span>
   )
 }
@@ -26,6 +26,8 @@ CardTitle.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   style: PropTypes.object,
+  reveal: PropTypes.bool,
+  closeReveal: PropTypes.bool,
 }
 
 export default CardTitle
