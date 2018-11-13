@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+        "**/components/**/*.js": "javascriptreact",
+        "**/containers/**/*.js": "javascriptreact",
+        "index.js": "javascriptreact",
+        "App.js": "javascriptreact",
+        "**/**.module.css": "scss"
+  }
+}
