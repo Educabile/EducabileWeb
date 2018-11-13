@@ -31,6 +31,7 @@
   },
   "homepage": "http://143.225.48.253/other/educabile.it/",
   "devDependencies": {
+    "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.15.2"
   }
 }
