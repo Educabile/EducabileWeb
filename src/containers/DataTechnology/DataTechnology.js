@@ -12,6 +12,8 @@ import {
 } from '@mdi/js'
 
 const DataTechnology = () => {
+  const { REACT_APP_ASSETS_URL } = process.env
+
   return (
     <div>
       <Row>
@@ -33,7 +35,7 @@ const DataTechnology = () => {
 
       <Row>
         <Col s={12} xl={6}>
-          <Parallax imageSrc="http://www.educabile.it/img/supporto-ai-progetti-1920.jpg">
+          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/supporto-ai-progetti-1920.jpg`}>
             <Icon path={mdiChartLineStacked} size={5} color="white" />
           </Parallax>
         </Col>
@@ -75,7 +77,7 @@ const DataTechnology = () => {
         </Col>
 
         <Col s={12} xl={6}>
-          <Parallax imageSrc="http://www.educabile.it/img/piattaforme-ambienti-1920.jpeg">
+          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/piattaforme-ambienti-1920.jpeg`}>
             <Icon path={mdiHeartPulse} size={5} color="white" />
           </Parallax>
         </Col>
@@ -83,7 +85,7 @@ const DataTechnology = () => {
 
       <Row>
         <Col s={12} xl={6}>
-          <Parallax imageSrc="http://www.educabile.it/img/infrastrutture-di-rete-1920.jpeg">
+          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/infrastrutture-di-rete-1920.jpeg`}>
             <Icon path={mdiBriefcase} size={5} color="white" />
           </Parallax>
         </Col>
@@ -123,7 +125,7 @@ const DataTechnology = () => {
         </Col>
 
         <Col s={12} xl={6}>
-          <Parallax imageSrc="http://www.educabile.it/img/piattaforme-ambienti-1920.jpeg">
+          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/piattaforme-ambienti-1920.jpeg`}>
             <Icon path={mdiAccountGroup} size={5} color="white" />
           </Parallax>
         </Col>

@@ -24,6 +24,8 @@ import Posts from './Posts/Posts'
 
 class Home extends Component {
   render() {
+    const { REACT_APP_ASSETS_URL } = process.env
+
     return (
       <Fragment>
         <FeaturesSlider />
@@ -162,10 +164,10 @@ class Home extends Component {
                 indicators: true,
               }}
               images={[
-                'http://www.educabile.it/img/logo-geofotogrammetrica-256.png',
-                'http://www.educabile.it/img/logo-qequipe-256.png',
-                'http://www.educabile.it/img/logo-banat-university-256.png',
-                'http://www.educabile.it/img/logo-ict-consulting-256.png',
+                `${REACT_APP_ASSETS_URL}/logo-geofotogrammetrica-256.png`,
+                `${REACT_APP_ASSETS_URL}/logo-qequipe-256.png`,
+                `${REACT_APP_ASSETS_URL}/logo-banat-university-256.png`,
+                `${REACT_APP_ASSETS_URL}/logo-ict-consulting-256.png`,
               ]}
               centerImages
             />
