@@ -28,18 +28,19 @@
     "build": "craco build",
     "test": "craco test --env=jsdom",
     "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
     "pretty": "prettier --write src/**/*.js",
     "eject": "react-scripts eject"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn pretty"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
-      "yarn lint",
       "yarn pretty",
+      "yarn lint:fix",
       "git add"
     ]
   },  
