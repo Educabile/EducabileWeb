@@ -24,15 +24,16 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
     "lint": "eslint src/**/*.js src/**/*.jsx",
     "eject": "react-scripts eject"
   },
   "homepage": "http://143.225.48.253/other/educabile.it/",
   "devDependencies": {
-    "eslint-plugin-react": "^7.11.1",
+    "@craco/craco": "^2.2.3",
+    "postcss-preset-env": "^6.4.0",
     "prettier": "^1.15.2"
   },
   "browserslist": [
