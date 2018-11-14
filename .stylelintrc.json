@@ -6,7 +6,7 @@
     "./config/**",
     "./**/*.js"
   ],
-  "extends": "stylelint-config-standard",
+  "extends": "stylelint-config-prettier",
   "plugins": [
     "stylelint-high-performance-animation",
     "stylelint-value-no-unknown-custom-properties",

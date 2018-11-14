@@ -60,7 +60,7 @@
     "postcss-preset-env": "^6.4.0",
     "prettier": "^1.15.2",
     "stylelint": "^9.8.0",
-    "stylelint-config-standard": "^18.2.0",
+    "stylelint-config-prettier": "^4.0.0",
     "stylelint-high-performance-animation": "^1.1.1",
     "stylelint-images": "^2.0.0",
     "stylelint-value-no-unknown-custom-properties": "^2.0.0"
