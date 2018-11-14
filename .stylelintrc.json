@@ -1,0 +1,21 @@
+{
+  "ignoreFiles": [
+    "./node_modules/**",
+    "./public/**",
+    "./build/**",
+    "./config/**",
+    "./**/*.js"
+  ],
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-high-performance-animation",
+    "stylelint-value-no-unknown-custom-properties",
+    "stylelint-images"
+  ],
+  "rules": {
+    "plugin/no-low-performance-animation-properties": true,
+    "csstools/value-no-unknown-custom-properties": true,
+    "images/broken": true
+        
+  }  
+}
