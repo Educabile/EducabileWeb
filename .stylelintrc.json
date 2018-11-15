@@ -10,7 +10,8 @@
     "stylelint-declaration-block-no-ignored-properties",
     "stylelint-no-indistinguishable-colors",
     "stylelint-selector-no-empty",
-    "stylelint-no-unsupported-browser-features"
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-at-rule-no-children"
   ],
   "rules": {
     "plugin/no-low-performance-animation-properties": [
@@ -78,6 +79,12 @@
     "plugin/stylelint-selector-no-empty": true,
     "plugin/no-unsupported-browser-features": [
       true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "aditayvm/at-rule-no-children": [
+      "always",
       {
         "severity": "warning"
       }
