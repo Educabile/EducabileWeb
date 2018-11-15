@@ -15,6 +15,7 @@
     "stylelint-group-selectors"
   ],
   "rules": {
+    "value-no-vendor-prefix": true,
     "plugin/no-low-performance-animation-properties": [
       true,
       {
