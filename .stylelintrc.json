@@ -15,7 +15,17 @@
     "stylelint-group-selectors"
   ],
   "rules": {
-    "value-no-vendor-prefix": true,
+    "property-blacklist": ["will-change"],
+    "max-empty-lines": 1,
+    "no-missing-end-of-source-newline": true,
+    "no-empty-first-line": true,
+    "no-unknown-animations": true,
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "message": "We automatically add necessary vendor-prefixes based on browserslist"
+      }
+    ],
     "plugin/no-low-performance-animation-properties": [
       true,
       {
