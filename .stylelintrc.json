@@ -94,13 +94,8 @@
         "severity": "warning"
       }
     ],
-<<<<<<< HEAD
     "plugin/stylelint-group-selectors": [
       true,
-=======
-    "aditayvm/at-rule-no-children": [
-      "always",
->>>>>>> 357bc0a58a94cbf8cb98fca0161459ad436e4163
       {
         "severity": "warning"
       }
