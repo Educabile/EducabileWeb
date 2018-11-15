@@ -43,13 +43,25 @@
       "yarn lint:fix",
       "git add"
     ]
-  },  
+  },
   "homepage": "http://143.225.48.253/other/educabile.it/",
   "devDependencies": {
     "@craco/craco": "^2.2.3",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
+    "postcss-brand-colors": "^3.0.0",
+    "postcss-calc": "^7.0.1",
+    "postcss-convert-values": "^4.0.1",
+    "postcss-easing-gradients": "^3.0.1",
+    "postcss-font-magician": "^2.2.1",
+    "postcss-normalize-charset": "^4.0.1",
+    "postcss-normalize-url": "^4.0.1",
+    "postcss-ordered-values": "^4.1.1",
     "postcss-preset-env": "^6.4.0",
+    "postcss-pseudo-content-insert": "^0.3.0",
+    "postcss-resemble-image": "^2.1.1",
+    "postcss-unique-selectors": "^4.0.1",
+    "postcss-will-change-transition": "^1.2.0",
     "prettier": "^1.15.2"
   },
   "browserslist": [
