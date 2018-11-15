@@ -11,7 +11,6 @@
     "stylelint-no-indistinguishable-colors",
     "stylelint-selector-no-empty",
     "stylelint-no-unsupported-browser-features",
-    "stylelint-at-rule-no-children",
     "stylelint-group-selectors"
   ],
   "rules": {
@@ -91,12 +90,6 @@
     "plugin/stylelint-selector-no-empty": true,
     "plugin/no-unsupported-browser-features": [
       true,
-      {
-        "severity": "warning"
-      }
-    ],
-    "aditayvm/at-rule-no-children": [
-      "always",
       {
         "severity": "warning"
       }
