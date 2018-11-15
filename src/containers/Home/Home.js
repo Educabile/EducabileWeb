@@ -21,11 +21,13 @@ import Container from '../../components/Container/Container'
 import Carousel from '../../components/Carousel/Carousel'
 import Col from '../../components/Col/Col'
 import Posts from './Posts/Posts'
+import LogoGeofotogrammetrica from '../../assets/img/loghi-partner/geofotogrammetrica-256.png'
+import LogoQequipe from '../../assets/img/loghi-partner/qequipe-256.png'
+import LogoBanatUniversity from '../../assets/img/loghi-partner/banat-university-256.png'
+import LogoIctConsulting from '../../assets/img/loghi-partner/ict-consulting-256.png'
 
 class Home extends Component {
   render() {
-    const { REACT_APP_ASSETS_URL } = process.env
-
     return (
       <Fragment>
         <FeaturesSlider />
@@ -163,12 +165,7 @@ class Home extends Component {
                 padding: 200,
                 indicators: true,
               }}
-              images={[
-                `${REACT_APP_ASSETS_URL}/logo-geofotogrammetrica-256.png`,
-                `${REACT_APP_ASSETS_URL}/logo-qequipe-256.png`,
-                `${REACT_APP_ASSETS_URL}/logo-banat-university-256.png`,
-                `${REACT_APP_ASSETS_URL}/logo-ict-consulting-256.png`,
-              ]}
+              images={[LogoGeofotogrammetrica, LogoQequipe, LogoBanatUniversity, LogoIctConsulting]}
               centerImages
             />
 

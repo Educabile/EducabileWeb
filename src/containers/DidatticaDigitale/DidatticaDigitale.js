@@ -5,10 +5,12 @@ import { mdiSchool, mdiLifebuoy, mdiServerNetwork, mdiBank } from '@mdi/js'
 import Col from '../../components/Col/Col'
 import Container from '../../components/Container/Container'
 import Parallax from '../../components/Parallax/Parallax'
+import SupportoAiProgetti from '../../assets/img/supporto-ai-progetti-1920.jpg'
+import PiattaformeAmbienti from '../../assets/img/piattaforme-ambienti-1920.jpg'
+import InfrastruttureDiRete from '../../assets/img/infrastrutture-di-rete-1920.jpg'
+import CTA from '../../assets/img/cta-1920.jpg'
 
 const DidatticaDigitale = () => {
-  const { REACT_APP_ASSETS_URL } = process.env
-
   return (
     <div>
       <Row>
@@ -33,7 +35,7 @@ const DidatticaDigitale = () => {
         </Col>
 
         <Col s={12} xl={6}>
-          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/cta-1920.jpeg`}>
+          <Parallax imageSrc={CTA}>
             <Icon path={mdiSchool} size={5} color="white" />
           </Parallax>
         </Col>
@@ -41,7 +43,7 @@ const DidatticaDigitale = () => {
 
       <Row>
         <Col s={12} xl={6}>
-          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/supporto-ai-progetti-1920.jpg`}>
+          <Parallax imageSrc={SupportoAiProgetti}>
             <Icon path={mdiLifebuoy} size={5} color="white" />
           </Parallax>
         </Col>
@@ -81,7 +83,7 @@ const DidatticaDigitale = () => {
         </Col>
 
         <Col s={12} xl={6}>
-          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/piattaforme-ambienti-1920.jpeg`}>
+          <Parallax imageSrc={PiattaformeAmbienti}>
             <Icon path={mdiBank} size={5} color="white" />
           </Parallax>
         </Col>
@@ -89,7 +91,7 @@ const DidatticaDigitale = () => {
 
       <Row>
         <Col s={12} xl={6}>
-          <Parallax imageSrc={`${REACT_APP_ASSETS_URL}/infrastrutture-di-rete-1920.jpeg`}>
+          <Parallax imageSrc={InfrastruttureDiRete}>
             <Icon path={mdiServerNetwork} size={5} color="white" />
             test
           </Parallax>
