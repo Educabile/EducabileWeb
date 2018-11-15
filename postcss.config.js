@@ -2,7 +2,11 @@ module.exports = {
   plugins: [
     require('postcss-flexbugs-fixes'),
     require('postcss-brand-colors'),
-    require('postcss-resemble-image').default,
+    require('postcss-assets')({
+      basePath: 'src/assets/',
+      loadPaths: ['img/'],
+      relative: true,
+    }),
     require('postcss-easing-gradients'),
     require('postcss-font-magician')({
       variants: {
