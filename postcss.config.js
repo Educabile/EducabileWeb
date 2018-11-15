@@ -4,8 +4,17 @@ module.exports = {
     require('postcss-brand-colors'),
     require('postcss-resemble-image').default,
     require('postcss-easing-gradients'),
-    // TODO: Load every font we use here
-    require('postcss-font-magician'),
+    require('postcss-font-magician')({
+      variants: {
+        Raleway: {
+          '400': ['woff, eot, woff2'],
+        },
+        Roboto: {
+          '400': ['woff, eot, woff2'],
+        },
+      },
+      foundries: ['google'],
+    }),
     require('postcss-calc'),
     require('postcss-pseudo-content-insert'),
     require('postcss-unique-selectors'),
