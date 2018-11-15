@@ -11,7 +11,8 @@
     "stylelint-no-indistinguishable-colors",
     "stylelint-selector-no-empty",
     "stylelint-no-unsupported-browser-features",
-    "stylelint-at-rule-no-children"
+    "stylelint-at-rule-no-children",
+    "stylelint-group-selectors"
   ],
   "rules": {
     "plugin/no-low-performance-animation-properties": [
@@ -85,6 +86,12 @@
     ],
     "aditayvm/at-rule-no-children": [
       "always",
+      {
+        "severity": "warning"
+      }
+    ],
+    "plugin/stylelint-group-selectors": [
+      true,
       {
         "severity": "warning"
       }
