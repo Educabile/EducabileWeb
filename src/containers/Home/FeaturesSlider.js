@@ -6,13 +6,15 @@ import { Button } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiArrowRight } from '@mdi/js'
 import PropTypes from 'prop-types'
+import FirstSlide from '../../assets/img/slide0-1920.jpg'
+import SecondSlide from '../../assets/img/cta-1920.jpg'
+import ThirdSlide from '../../assets/img/consulenza-dt-1920.jpg'
+import FourthSlide from '../../assets/img/piattaforme-ambienti-1920.jpg'
 
 const FeaturesSlider = ({ options }) => {
-  const { REACT_APP_ASSETS_URL } = process.env
-
   return (
     <Slider className="white" options={options}>
-      <Slide image={`${REACT_APP_ASSETS_URL}/slide0-1920.jpg`}>
+      <Slide image={FirstSlide}>
         <Caption align="left">
           <h3>Piattaforme Innovative</h3>
           <h5 className="light grey-text text-lighten-3">
@@ -23,7 +25,7 @@ const FeaturesSlider = ({ options }) => {
           </Button>
         </Caption>
       </Slide>
-      <Slide image={`${REACT_APP_ASSETS_URL}/cta-1920.jpeg`}>
+      <Slide image={SecondSlide}>
         <Caption align="left">
           <h3>Formazione</h3>
           <h5 className="light grey-text text-lighten-3">
@@ -35,7 +37,7 @@ const FeaturesSlider = ({ options }) => {
           </Button>
         </Caption>
       </Slide>
-      <Slide image={`${REACT_APP_ASSETS_URL}/consulenza-dt-1920.jpeg`}>
+      <Slide image={ThirdSlide}>
         <Caption align="left">
           <h3>Servizi di Consulenza Strategica</h3>
           <h5 className="light grey-text text-lighten-3">
@@ -47,7 +49,7 @@ const FeaturesSlider = ({ options }) => {
           </Button>
         </Caption>
       </Slide>
-      <Slide image={`${REACT_APP_ASSETS_URL}/piattaforme-ambienti-1920.jpeg`}>
+      <Slide image={FourthSlide}>
         <Caption align="left">
           <h3>Piattaforme ed ambienti per la didattica</h3>
           <h5 className="light grey-text text-lighten-3">

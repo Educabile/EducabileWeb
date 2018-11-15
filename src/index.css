@@ -741,6 +741,36 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale .icon::before,
+  .data-science .icon::before,
+  .internet-of-things .icon::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    background-color: #ececec;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: none;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 50%;
+      background-color: #ececec;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: none;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .didattica-digitale .icon::before,
 .data-science .icon::before,
 .internet-of-things .icon::before {
@@ -795,6 +825,18 @@ nav ul a.active {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg,
+  .data-science svg,
+  .internet-of-things svg {
+    transition: none;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    position: relative;
   }
 }
 
@@ -1247,6 +1289,14 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg path,
+  .data-science svg path .internet-of-things svg path,
+  #go-to-contact {
+    transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .didattica-digitale svg path,
 .data-science svg path .internet-of-things svg path,
 #go-to-contact {
@@ -1389,7 +1439,7 @@ nav ul a.active {
 
 #in-evidenza {
   /* stylelint-disable-next-line */
-  background-image: resemble-image(url('http://www.educabile.it/img/contatti-1920.jpeg'));
+  background-image: resolve(cta-1920.jpg);
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
