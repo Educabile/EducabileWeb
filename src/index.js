@@ -7,8 +7,10 @@ import { BrowserRouter } from 'react-router-dom'
 import ScrollToTop from './hoc/ScrollToTop/ScrollToTop'
 import registerServiceWorker from './registerServiceWorker'
 
+const { PUBLIC_URL } = process.env
+
 const app = (
-  <BrowserRouter basename="/other/educabile.it/">
+  <BrowserRouter basename={PUBLIC_URL}>
     <ScrollToTop>
       <App />
     </ScrollToTop>

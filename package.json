@@ -25,8 +25,9 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
     "test": "craco test --env=jsdom",
+    "build:staging": "env-cmd .env.staging craco build",
+    "build:production": "env-cmd .env.production craco build",
     "lint:js": "eslint src/**/*.js",
     "lint:js:fix": "eslint src/**/*.js --fix",
     "lint:css": "stylelint src/**/*.css",
@@ -52,9 +53,9 @@
       "git add"
     ]
   },
-  "homepage": "http://143.225.48.253/other/educabile.it/",
   "devDependencies": {
     "@craco/craco": "^2.2.3",
+    "env-cmd": "^8.0.2",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
     "postcss-assets": "^5.0.0",
