@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^2.2.3",
+    "conventional-changelog-cli": "^2.0.11",
     "env-cmd": "^8.0.2",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
@@ -72,6 +73,7 @@
     "postcss-unique-selectors": "^4.0.1",
     "postcss-will-change-transition": "^1.2.0",
     "prettier": "^1.15.2",
+    "release-it": "^7.6.3",
     "stylelint": "^9.8.0",
     "stylelint-a11y": "^1.1.9",
     "stylelint-config-prettier": "^4.0.0",
