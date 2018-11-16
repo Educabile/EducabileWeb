@@ -49,12 +49,6 @@
         "severity": "warning"
       }
     ],
-    "a11y/line-height-is-vertical-rhythmed": [
-      true,
-      {
-        "severity": "warning"
-      }
-    ],
     "a11y/no-display-none": [
       true,
       {
