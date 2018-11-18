@@ -6,10 +6,12 @@ import { Button } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiArrowRight } from '@mdi/js'
 import PropTypes from 'prop-types'
-import FirstSlide from '../../assets/img/slide0-1920.jpg'
-import SecondSlide from '../../assets/img/cta-1920.jpg'
-import ThirdSlide from '../../assets/img/consulenza-dt-1920.jpg'
-import FourthSlide from '../../assets/img/piattaforme-ambienti-1920.jpg'
+import {
+  slide0Jpg as FirstSlide,
+  ctaJpg as SecondSlide,
+  consulezaDtJpg as ThirdSlide,
+  piattaformeAmbientiJpg as FourthSlide,
+} from '../../assets/img'
 
 const FeaturesSlider = ({ options }) => {
   return (

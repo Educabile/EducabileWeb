@@ -831,6 +831,96 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale .icon::before,
+  .data-science .icon::before,
+  .internet-of-things .icon::before {
+    background-color: #ececec;
+    border-radius: 50%;
+    content: '';
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: none;
+    width: 100px;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      background-color: #ececec;
+      border-radius: 50%;
+      content: '';
+      height: 100px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: none;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale .icon::before,
+  .data-science .icon::before,
+  .internet-of-things .icon::before {
+    background-color: #ececec;
+    border-radius: 50%;
+    content: '';
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: none;
+    width: 100px;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      background-color: #ececec;
+      border-radius: 50%;
+      content: '';
+      height: 100px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: none;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale .icon::before,
+  .data-science .icon::before,
+  .internet-of-things .icon::before {
+    background-color: #ececec;
+    border-radius: 50%;
+    content: '';
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: none;
+    width: 100px;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      background-color: #ececec;
+      border-radius: 50%;
+      content: '';
+      height: 100px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: none;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .didattica-digitale .icon::before,
 .data-science .icon::before,
 .internet-of-things .icon::before {
@@ -883,6 +973,42 @@ nav ul a.active {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+    transition: none;
+    width: 100px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg,
+  .data-science svg,
+  .internet-of-things svg {
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+    transition: none;
+    width: 100px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg,
+  .data-science svg,
+  .internet-of-things svg {
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+    transition: none;
+    width: 100px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg,
+  .data-science svg,
+  .internet-of-things svg {
+    height: 100px;
+    line-height: 100px;
+    position: relative;
     transition: none;
     width: 100px;
   }
@@ -1397,6 +1523,30 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg path,
+  .data-science svg path .internet-of-things svg path,
+  #go-to-contact {
+    transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg path,
+  .data-science svg path .internet-of-things svg path,
+  #go-to-contact {
+    transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg path,
+  .data-science svg path .internet-of-things svg path,
+  #go-to-contact {
+    transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .didattica-digitale svg path,
 .data-science svg path .internet-of-things svg path,
 #go-to-contact {
@@ -1540,7 +1690,7 @@ nav ul a.active {
 #in-evidenza {
   background-attachment: fixed;
   /* stylelint-disable-next-line */
-  background-image: resolve(cta-1920.jpg);
+  background-image: resolve(cta.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

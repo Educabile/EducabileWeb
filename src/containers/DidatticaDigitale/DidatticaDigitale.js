@@ -5,10 +5,12 @@ import { mdiSchool, mdiLifebuoy, mdiServerNetwork, mdiBank } from '@mdi/js'
 import Col from '../../components/Col/Col'
 import Container from '../../components/Container/Container'
 import Parallax from '../../components/Parallax/Parallax'
-import SupportoAiProgetti from '../../assets/img/supporto-ai-progetti-1920.jpg'
-import PiattaformeAmbienti from '../../assets/img/piattaforme-ambienti-1920.jpg'
-import InfrastruttureDiRete from '../../assets/img/infrastrutture-di-rete-1920.jpg'
-import CTA from '../../assets/img/cta-1920.jpg'
+import {
+  supportoAiProgettiJpg as SupportoAiProgetti,
+  piattaformeAmbientiJpg as PiattaformeAmbienti,
+  infrastruttureDiReteJpg as InfrastruttureDiRete,
+  ctaJpg as CTA,
+} from '../../assets/img'
 
 const DidatticaDigitale = () => {
   return (
