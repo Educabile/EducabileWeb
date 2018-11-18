@@ -10,10 +10,9 @@ const getFileName = path => getFileInfo(path).split('.')[0]
 
 const getFileExtension = path => getFileInfo(path).split('.')[1]
 
-const getImageSizesFromConfig = () => {
-  const { IMAGE_SIZES } = process.env
-
-  return IMAGE_SIZES.split(',')
+const getImageSizesFromConfig = imageSizes => {
+  return imageSizes
+    .split(',')
     .map(sizes => sizes.split('x'))
     .map(sizes => [parseInt(sizes[0]), parseInt(sizes[1])])
 }

@@ -6,7 +6,7 @@
     "es6": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jest/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -14,7 +14,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "import"],
+  "plugins": ["react", "import", "jest"],
   "rules": {
     "import/no-unresolved": 0,
     "react/jsx-no-undef": 2,
