@@ -21,10 +21,12 @@ import Container from '../../components/Container/Container'
 import Carousel from '../../components/Carousel/Carousel'
 import Col from '../../components/Col/Col'
 import Posts from './Posts/Posts'
-import LogoGeofotogrammetrica from '../../assets/img/loghi-partner/geofotogrammetrica-256.png'
-import LogoQequipe from '../../assets/img/loghi-partner/qequipe-256.png'
-import LogoBanatUniversity from '../../assets/img/loghi-partner/banat-university-256.png'
-import LogoIctConsulting from '../../assets/img/loghi-partner/ict-consulting-256.png'
+import {
+  banatUniversityPng as LogoBanatUniversity,
+  geofotogrammetricaPng as LogoGeofotogrammetrica,
+  qequipePng as LogoQequipe,
+  ictConsultingPng as LogoIctConsulting,
+} from '../../assets/img/partners-logos'
 
 class Home extends Component {
   render() {

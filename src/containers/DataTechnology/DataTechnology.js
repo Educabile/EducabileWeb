@@ -10,9 +10,11 @@ import {
   mdiAccountGroup,
   mdiChartLineStacked,
 } from '@mdi/js'
-import SupportoAiProgetti from '../../assets/img/supporto-ai-progetti-1920.jpg'
-import PiattaformeAmbienti from '../../assets/img/piattaforme-ambienti-1920.jpg'
-import InfrastruttureDiRete from '../../assets/img/infrastrutture-di-rete-1920.jpg'
+import {
+  supportoAiProgettiJpg as SupportoAiProgetti,
+  piattaformeAmbientiJpg as PiattaformeAmbienti,
+  infrastruttureDiReteJpg as InfrastruttureDiRete,
+} from '../../assets/img'
 
 const DataTechnology = () => {
   return (
