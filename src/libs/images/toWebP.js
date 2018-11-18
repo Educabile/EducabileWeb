@@ -14,6 +14,6 @@ glob(process.argv[2] || 'src/assets/img/**/*.{jpg,jpeg,png}', {}, (err, img) => 
 
     sharp(img)
       .webp()
-      .toFile(`${path}/${fileName}200x300.webp`)
+      .toFile(`${path}/${fileName}.webp`)
   })
 })
