@@ -34,8 +34,8 @@
     "lint:css:fix": "stylelint src/**/*.css --fix",
     "pretty:js": "prettier --write src/**/*.js",
     "pretty:css": "prettier --write src/**/*.css",
-    "assets":"run-s assets:resize assets:webp",
-    "assets:resize":"env-cmd .env node src/libs/images/resizeAll.js",
+    "assets": "run-s assets:resize assets:webp",
+    "assets:resize": "env-cmd .env node src/libs/images/resizeAll.js",
     "assets:webp": "node src/libs/images/toWebP.js",
     "eject": "react-scripts eject"
   },
@@ -97,7 +97,8 @@
     "stylelint-no-indistinguishable-colors": "^1.2.1",
     "stylelint-order": "^1.0.0",
     "stylelint-selector-no-empty": "^1.0.2",
-    "stylelint-value-no-unknown-custom-properties": "^2.0.0"
+    "stylelint-value-no-unknown-custom-properties": "^2.0.0",
+    "webpcss": "^1.2.2"
   },
   "browserslist": [
     "last 2 versions",
