@@ -13,7 +13,7 @@ import {
   mdiShareVariant,
 } from '@mdi/js'
 import idgen from '../../../idgen'
-import axios from 'axios'
+import wp from '../../../axios-wordpress'
 
 class Posts extends Component {
   state = {
@@ -21,12 +21,7 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    const { REACT_APP_WORDPRESS_URL } = process.env
-
-    axios
-      .get(
-        `${REACT_APP_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed&order=desc&order_by=date&per_page=3`
-      )
+    wp.get('posts?_embed&order=desc&order_by=date&per_page=3')
       .then(response => {
         this.renderPosts(response.data)
       })

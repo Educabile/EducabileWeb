@@ -4,7 +4,7 @@ import Icon from '@mdi/react'
 import { mdiArrowLeft } from '@mdi/js'
 import Parallax from '../../../components/Parallax/Parallax'
 import Container from '../../../components/Container/Container'
-import axios from 'axios'
+import wp from '../../../axios-wordpress'
 import PropTypes from 'prop-types'
 
 class Post extends Component {
@@ -13,14 +13,7 @@ class Post extends Component {
   }
 
   componentDidMount() {
-    const { REACT_APP_WORDPRESS_URL } = process.env
-
-    axios
-      .get(
-        `${REACT_APP_WORDPRESS_URL}/wp-json/wp/v2/posts?_embed&slug=${
-          this.props.match.params.postSlug
-        }`
-      )
+    wp.get(`posts?_embed&slug=${this.props.match.params.postSlug}`)
       .then(res => {
         this.setState({
           post: res.data[0],
