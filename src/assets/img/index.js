@@ -12,6 +12,8 @@ import slide0Jpg from './slide0.jpg'
 import slide0WebP from './slide0.webp'
 import supportoAiProgettiJpg from './supporto-ai-progetti.jpg'
 import supportoAiProgettiWebP from './supporto-ai-progetti.webp'
+import logoEducabilePng from './logo-educabile.png'
+import logoEducabileWebP from './logo-educabile.webp'
 
 export {
   consulezaDtJpg,
@@ -28,4 +30,6 @@ export {
   slide0WebP,
   supportoAiProgettiJpg,
   supportoAiProgettiWebP,
+  logoEducabilePng,
+  logoEducabileWebP,
 }

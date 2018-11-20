@@ -15,6 +15,7 @@ import {
 import { HashLink as Link } from 'react-router-hash-link'
 import PropTypes from 'prop-types'
 import { withNamespaces } from 'react-i18next'
+import { logoEducabilePng, logoEducabileWebP } from '../../assets/img'
 
 const Layout = ({ children, t }) => {
   const offset = 60
@@ -97,14 +98,17 @@ const Layout = ({ children, t }) => {
       </header>
       <main>{children}</main>
       <Link to="/#">
-        <img
-          id="footer-logo"
-          className="hide-on-med-and-down"
-          // FIXME: Add this image to the assets folder and reference it here
-          src="http://143.225.48.253/other/_educabile.it/img/logo_225x225.png"
-          alt="Logo Educabile"
-          title="Educabile Srl"
-        />
+        <picture>
+          <source srcSet={logoEducabileWebP} type="image/webp" />
+          <source srcSet={logoEducabilePng} type="image/png" />
+          <img
+            id="footer-logo"
+            className="hide-on-med-and-down"
+            src={logoEducabilePng}
+            alt="Logo Educabile"
+            title="Educabile Srl"
+          />
+        </picture>
       </Link>
 
       <footer className="blue darken-3">
