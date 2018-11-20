@@ -28,6 +28,8 @@ import {
   ictConsultingPng as LogoIctConsulting,
 } from '../../assets/img/partners-logos'
 import PropTypes from 'prop-types'
+import LazyLoad from 'react-lazy-load'
+
 class Home extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
@@ -238,9 +240,9 @@ class Home extends Component {
         <Section id="in-evidenza" className="grey lighten-2 center">
           <Container>
             <h2 className="hide-on-large-only">{t('inEvidenza.title')}</h2>
-
-            <Posts />
-
+            <LazyLoad offset={500}>
+              <Posts />
+            </LazyLoad>
             <Button id="blog-btn" large waves="light" node={Link} to="/blog">
               {t('inEvidenza.blogBtn')}
               <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
