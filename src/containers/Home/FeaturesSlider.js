@@ -12,8 +12,10 @@ import {
   consulezaDtJpg as ThirdSlide,
   piattaformeAmbientiJpg as FourthSlide,
 } from '../../assets/img'
+import { withNamespaces } from 'react-i18next'
 
-const FeaturesSlider = ({ options }) => {
+// TODO: Check if we are going to fetch slides from a BE; In such case we need a way to translate them server side
+const FeaturesSlider = ({ options, t }) => {
   return (
     <Slider className="white" options={options}>
       <Slide image={FirstSlide}>
@@ -23,7 +25,8 @@ const FeaturesSlider = ({ options }) => {
             Sviluppo di piattaforme e infrastrutture in ambienti di Data Science
           </h5>
           <Button className="green hoverable" large>
-            Leggi di pi&uacute; <Icon path={mdiArrowRight} size={1} />
+            {t('common:leggiDiPiu')}
+            <Icon path={mdiArrowRight} size={1} />
           </Button>
         </Caption>
       </Slide>
@@ -34,7 +37,7 @@ const FeaturesSlider = ({ options }) => {
             Corsi di tipo laboratoriale con l&apos;ausilio di specifiche figure terze (mentori)
           </h5>
           <Button className="orange" large>
-            Leggi di pi&acute;
+            {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
         </Caption>
@@ -46,7 +49,7 @@ const FeaturesSlider = ({ options }) => {
             Progetti di ricerca e di consulenza tecnico scientifica
           </h5>
           <Button className="green" large>
-            Leggi di pi&acute;
+            {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
         </Caption>
@@ -59,7 +62,7 @@ const FeaturesSlider = ({ options }) => {
             d&apos;utilizzo
           </h5>
           <Button className="orange" large>
-            Leggi di pi&uacute;
+            {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
         </Caption>
@@ -70,6 +73,7 @@ const FeaturesSlider = ({ options }) => {
 
 FeaturesSlider.propTypes = {
   options: PropTypes.object,
+  t: PropTypes.func.isRequired,
 }
 
 FeaturesSlider.defaultProps = {
@@ -78,4 +82,4 @@ FeaturesSlider.defaultProps = {
   },
 }
 
-export default FeaturesSlider
+export default withNamespaces()(FeaturesSlider)

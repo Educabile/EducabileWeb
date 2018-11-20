@@ -1,0 +1,53 @@
+{
+  "azienda": {
+    "content": "Educabile è una StartUp Innovativa attiva nei settori dell’Information e Communication Technology e della Data Technology, opera principalmente nella risoluzione e nel governo di processi complessi nell’ambito della Smart Education, quale insieme di strumenti innovativi di disseminazione e divulgazione per l’apprendimento interattivo, e progetti di Ricerca Industriale e Sviluppo Sperimentale."
+  },
+  "destinatari": {
+    "aziende": {
+      "title": "Aziende",
+      "content": "Educabile vede questo ambito non solo come area commerciale ma anche come luogo di ricerca e di sviluppo tecnico-scientifico. I servizi di consulenza e progettazione offerti diventano opportunità di scambio osmotico di esperienze produttive e ricerca di soluzioni innovative nel campo dei processi di sviluppo industriale..."
+    },
+    "professionisti": {
+      "title": "Professionisti",
+      "content": "Educabile si propone come partner per promuovere e sviluppare la ricerca anche nel segmento dei professionisti con innovative soluzioni di trasferimento tecnologico. I benefici vanno dal miglioramento dei livelli essenziali diassistenza all'erogazione di servizi di knowledge sharing..."
+    },
+    "istituzioniScolastiche": {
+      "title": "Istituzioni Scolastiche",
+      "content": "I servizi proposti in questa area, riguardano gli ambienti di apprendimento e si qualificano come innovativi e tecnologicamente all’avanguardia. Educabile supporta le Istituzioni Scolastiche nel realizzare percorsi didattici interattivi, contestualizzati, personalizzati..."
+    },
+    "contattiBtn": "Entra in contatto con noi"
+  },
+  "partner": {
+    "title": "I Nostri Partner"
+  },
+  "areeDiIntervento": {
+    "title": "Aree di Intervento",
+    "content": "Ci proponiamo come referente affidabile nel gestire scenari complessi ad alto contenuto tecnologico offrendo un supporto specialistico all’avanguardia per una vasta gamma di soluzioni disponendo di profili, metodologie e strumenti innovativi per la risoluzione delle più disparate problematiche nel settore dell’ICT, della DataTechnology e della Smart Education."
+  },
+  "servizi": {
+    "didatticaDigitale": {
+      "content": "Dalla Scuola 2.0 ad un approccio su “strategie didattiche e metodologie” versola fruizione collettiva e individuale del web e di contenuti, per l’interazione di aggregazioni diverse in gruppi di apprendimento"
+    },
+    "dataTechnology": {
+      "content": "Decliniamo le diverse azioni di Data Technology in ambienti complessi con approcci altamente innovativi"
+    },
+    "serviziBtn": "Consulta i servizi"
+  },
+  "inEvidenza": {
+    "title": "In Evidenza",
+    "blogBtn": "Vai al blog"
+  },
+  "contatti": {
+    "title": "Contatti",
+    "sedeLegale": "Sede Legale",
+    "sedeOperativa": "Sede Operativa",
+    "ufficioEstero": "Ufficio Estero",
+    "form": {
+      "nomeCognome": "Nome e Cognome",
+      "email": "Email",
+      "oggettoDelMessaggio": "Oggetto del messaggio",
+      "corpoDelMessaggio": "Corpo del messaggio",
+      "inviaBtn": "Invia"
+    }
+  }
+}

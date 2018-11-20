@@ -14,8 +14,14 @@ import {
 } from '@mdi/js'
 import idgen from '../../../idgen'
 import wp from '../../../axios-wordpress'
+import { withNamespaces } from 'react-i18next'
+import PropTypes from 'prop-types'
 
 class Posts extends Component {
+  static propTypes = {
+    t: PropTypes.func.isRequired,
+  }
+
   state = {
     posts: null,
   }
@@ -67,6 +73,7 @@ class Posts extends Component {
   }
 
   renderActions(post, index) {
+    const { t } = this.props
     let actions = []
 
     if (post._embedded['wp:term'][1].length > 0) {
@@ -85,7 +92,7 @@ class Posts extends Component {
               }}
               to="/blog/tagged/didattica-digitale"
               node={Link}>
-              Didattica Digitale
+              {t('didatticaDigitale')}
             </Button>
           )
           break
@@ -101,7 +108,7 @@ class Posts extends Component {
               }}
               to="/blog/tagged/data-technology"
               node={Link}>
-              Data Science
+              {t('dataScience')}
             </Button>
           )
           break
@@ -265,4 +272,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts
+export default withNamespaces()(Posts)

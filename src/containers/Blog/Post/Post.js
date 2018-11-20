@@ -5,24 +5,28 @@ import { mdiArrowLeft } from '@mdi/js'
 import Parallax from '../../../components/Parallax/Parallax'
 import Container from '../../../components/Container/Container'
 import wp from '../../../axios-wordpress'
+import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 
 class Post extends Component {
+  static propTypes = {
+    t: PropTypes.func.isRequired,
+  }
+
   state = {
     post: null,
   }
 
   componentDidMount() {
-    wp.get(`posts?_embed&slug=${this.props.match.params.postSlug}`)
-      .then(res => {
-        this.setState({
-          post: res.data[0],
-        })
+    wp.get(`posts?_embed&slug=${this.props.match.params.postSlug}`).then(res => {
+      this.setState({
+        post: res.data[0],
       })
-      .catch(() => {})
+    })
   }
 
   render() {
+    const { t } = this.props
     let post = (
       <div
         style={{
@@ -37,7 +41,7 @@ class Post extends Component {
 
     if (this.state.post) {
       post = (
-        <React.Fragment>
+        <>
           <Parallax
             style={{
               height: 380,
@@ -68,7 +72,7 @@ class Post extends Component {
                 color="#1565C0"
                 style={{ transform: 'translateX(-35%)' }}
               />
-              Torna indietro
+              {t('common:tornaIndietro')}
             </Button>
 
             <Container>
@@ -81,7 +85,7 @@ class Post extends Component {
               />
             </Container>
           </Container>
-        </React.Fragment>
+        </>
       )
     }
 
@@ -94,4 +98,4 @@ Post.propTypes = {
   match: PropTypes.object.isRequired,
 }
 
-export default Post
+export default withNamespaces()(Post)
