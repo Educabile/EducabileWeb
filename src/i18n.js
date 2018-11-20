@@ -19,6 +19,9 @@ i18n
             it: 'v1.0',
           },
         },
+        {
+          loadPath: 'locales/{{lng}}/{{ns}}.json',
+        },
       ],
     },
     fallbackLng: 'it',
