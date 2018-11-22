@@ -14,12 +14,14 @@ import {
 } from '@mdi/js'
 import { HashLink as Link } from 'react-router-hash-link'
 import PropTypes from 'prop-types'
+import { withNamespaces } from 'react-i18next'
+import { logoEducabilePng, logoEducabileWebP } from '../../assets/img'
 
-const Layout = props => {
+const Layout = ({ children, t }) => {
   const offset = 60
 
   return (
-    <React.Fragment>
+    <>
       <header>
         <Navbar logo="Educabile" className="z-depth-3" fixed>
           <Link
@@ -34,7 +36,7 @@ const Layout = props => {
                 behavior: 'smooth',
               })
             }}>
-            Azienda
+            {t('azienda')}
           </Link>
           <Link
             className="sidenav-close"
@@ -48,7 +50,7 @@ const Layout = props => {
                 behavior: 'smooth',
               })
             }}>
-            Destinatari
+            {t('destinatari')}
           </Link>
           <Link
             className="sidenav-close"
@@ -62,7 +64,7 @@ const Layout = props => {
                 behavior: 'smooth',
               })
             }}>
-            Aree di Intervento
+            {t('areeDiIntervento')}
           </Link>
           <Link
             className="sidenav-close"
@@ -76,7 +78,7 @@ const Layout = props => {
                 behavior: 'smooth',
               })
             }}>
-            In Evidenza
+            {t('inEvidenza')}
           </Link>
           <Link
             className="sidenav-close"
@@ -90,19 +92,23 @@ const Layout = props => {
                 behavior: 'smooth',
               })
             }}>
-            Contatti
+            {t('contatti')}
           </Link>
         </Navbar>
       </header>
-      <main>{props.children}</main>
+      <main>{children}</main>
       <Link to="/#">
-        <img
-          id="footer-logo"
-          className="hide-on-med-and-down"
-          src="http://143.225.48.253/other/_educabile.it/img/logo_225x225.png"
-          alt="Logo Educabile"
-          title="Educabile Srl"
-        />
+        <picture>
+          <source srcSet={logoEducabileWebP} type="image/webp" />
+          <source srcSet={logoEducabilePng} type="image/png" />
+          <img
+            id="footer-logo"
+            className="hide-on-med-and-down"
+            src={logoEducabilePng}
+            alt="Logo Educabile"
+            title="Educabile Srl"
+          />
+        </picture>
       </Link>
 
       <footer className="blue darken-3">
@@ -118,9 +124,12 @@ const Layout = props => {
                 display: 'inline-flex',
                 fontSize: 'small',
                 textTransform: 'capitalize',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: 145,
               }}>
               <Icon path={mdiEye} size={0.7} color="white" />
-              &nbsp; Privacy Policy
+              {t('footer:privacyPolicy')}
             </Button>
             {'|'}
             <Button
@@ -133,14 +142,17 @@ const Layout = props => {
                 display: 'inline-flex',
                 fontSize: 'small',
                 textTransform: 'capitalize',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: 145,
               }}>
               <Icon path={mdiClipboardText} size={0.7} color="white" />
-              &nbsp; Note Legali
+              {t('footer:noteLegali')}
             </Button>
           </div>
 
           <div className="col s12 xl4 center light" style={{ paddingTop: 12 }}>
-            Copyright &copy; 2017 Educabile Srl - an Innovative Startup Company
+            {t('footer:copyright')}
           </div>
 
           <div className="col s12 xl4 center" style={{ paddingTop: 2 }}>
@@ -192,12 +204,13 @@ const Layout = props => {
           </div>
         </div>
       </footer>
-    </React.Fragment>
+    </>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node,
+  t: PropTypes.func.isRequired,
 }
 
-export default Layout
+export default withNamespaces(['navbar', 'footer'])(Layout)

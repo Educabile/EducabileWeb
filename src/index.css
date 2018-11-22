@@ -37,12 +37,15 @@ html {
 }
 
 .dropcap {
-  float: left;
-  font-size: 55px;
-  line-height: 45px;
-  padding-left: 3px;
-  padding-right: 8px;
-  padding-top: 4px;
+  &::first-letter {
+    color: #1565c0;
+    float: left;
+    font-size: 55px;
+    line-height: 45px;
+    padding-left: 3px;
+    padding-right: 8px;
+    padding-top: 4px;
+  }
 }
 
 body {
@@ -954,21 +957,9 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-.didattica-digitale .icon::before,
-.data-science .icon::before,
-.internet-of-things .icon::before {
-  background-color: #ececec;
-  border-radius: 50%;
-  content: '';
-  height: 100px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: none;
-  width: 100px;
-
-  @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale .icon::before,
+  .data-science .icon::before,
+  .internet-of-things .icon::before {
     background-color: #ececec;
     border-radius: 50%;
     content: '';
@@ -979,8 +970,20 @@ nav ul a.active {
     transform: translate(-50%, -50%);
     transition: none;
     width: 100px;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      background-color: #ececec;
+      border-radius: 50%;
+      content: '';
+      height: 100px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: none;
+      width: 100px;
+    }
   }
-}
 }
 
 .didattica-digitale .icon::before,
@@ -1360,16 +1363,18 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-.didattica-digitale svg,
-.data-science svg,
-.internet-of-things svg {
-  height: 100px;
-  line-height: 100px;
-  position: relative;
-  transition: none;
-  width: 100px;
+  .didattica-digitale svg,
+  .data-science svg,
+  .internet-of-things svg {
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+    transition: none;
+    width: 100px;
+  }
 }
-}
+
+
 
 .didattica-digitale svg,
 .data-science svg,
@@ -1600,12 +1605,14 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-.didattica-digitale svg path,
-.data-science svg path .internet-of-things svg path,
-#go-to-contact {
-  transition: none;
+  .didattica-digitale svg path,
+  .data-science svg path .internet-of-things svg path,
+  #go-to-contact {
+    transition: none;
+  }
 }
-}
+
+
 
 .didattica-digitale svg path,
 .data-science svg path .internet-of-things svg path,

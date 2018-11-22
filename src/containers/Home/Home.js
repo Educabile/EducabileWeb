@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-import { Button, Section, Row, Divider, CardPanel, Input } from 'react-materialize'
+import { Button, Section, Row, Divider, CardPanel, Input, Preloader } from 'react-materialize'
 import Icon from '@mdi/react'
 import {
   mdiArrowRight,
@@ -15,7 +15,7 @@ import {
   mdiLibraryBooks,
   mdiSend,
 } from '@mdi/js'
-
+import { withNamespaces } from 'react-i18next'
 import FeaturesSlider from './FeaturesSlider'
 import Container from '../../components/Container/Container'
 import Carousel from '../../components/Carousel/Carousel'
@@ -27,11 +27,34 @@ import {
   qequipePng as LogoQequipe,
   ictConsultingPng as LogoIctConsulting,
 } from '../../assets/img/partners-logos'
+import PropTypes from 'prop-types'
+import LazyLoad from 'react-lazy-load'
 
 class Home extends Component {
+  static propTypes = {
+    t: PropTypes.func.isRequired,
+    tReady: PropTypes.bool.isRequired,
+  }
+
   render() {
+    const { t, tReady } = this.props
+
+    if (!tReady) {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 'calc(100vh - 104px)',
+          }}>
+          <Preloader />
+        </div>
+      )
+    }
+
     return (
-      <Fragment>
+      <>
         <FeaturesSlider />
 
         <Section id="azienda" className="white">
@@ -40,14 +63,7 @@ class Home extends Component {
               <span className="blue-text text-darken-3">Educabile</span> una StartUp Innovativa
             </h2>
 
-            <p className="flow-text grey-text left-align">
-              <span className="blue-text text-darken-3 dropcap">E</span>
-              ducabile è una StartUp Innovativa attiva nei settori dell’Information e Communication
-              Technology e della Data Technology, opera principalmente nella risoluzione e nel
-              governo di processi complessi nell’ambito della Smart Education, quale insieme di
-              strumenti innovativi di disseminazione e divulgazione per l’apprendimento interattivo,
-              e progetti di Ricerca Industriale e Sviluppo Sperimentale.
-            </p>
+            <p className="flow-text grey-text left-align dropcap">{t('azienda.content')}</p>
 
             <HashLink
               to="/#destinatari"
@@ -59,7 +75,7 @@ class Home extends Component {
                 })
               }}>
               <Button className="hoverable move-icon-forward" large>
-                Scopri di pi&uacute;
+                {t('common:scopriDiPiu')}
                 <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
             </HashLink>
@@ -83,15 +99,9 @@ class Home extends Component {
                   <div className="feature-icon">
                     <Icon path={mdiDomain} size={3} />
                   </div>
-                  <h5>Aziende</h5>
+                  <h5>{t('destinatari.aziende.title')}</h5>
 
-                  <p className="flow-text grey-text">
-                    Educabile vede questo ambito non solo come area commerciale ma anche come luogo
-                    di ricerca e di sviluppo tecnico-scientifico. I servizi di consulenza e
-                    progettazione offerti diventano opportunità di scambio osmotico di esperienze
-                    produttive e ricerca di soluzioni innovative nel campo dei processi di sviluppo
-                    industriale...
-                  </p>
+                  <p className="flow-text grey-text">{t('destinatari.aziende.content')}</p>
                 </CardPanel>
               </Col>
 
@@ -100,14 +110,9 @@ class Home extends Component {
                   <div className="feature-icon">
                     <Icon path={mdiAccountMultiple} className="blue-text text-darken-3" size={3} />
                   </div>
-                  <h5>Professionisti</h5>
+                  <h5>{t('destinatari.professionisti.title')}</h5>
 
-                  <p className="flow-text grey-text">
-                    Educabile si propone come partner per promuovere e sviluppare la ricerca anche
-                    nel segmento dei professionisti con innovative soluzioni di trasferimento
-                    tecnologico. I benefici vanno dal miglioramento dei livelli essenziali di
-                    assistenza all&apos;erogazione di servizi di knowledge sharing...
-                  </p>
+                  <p className="flow-text grey-text">{t('destinatari.professionisti.content')}</p>
                 </CardPanel>
               </Col>
 
@@ -117,13 +122,10 @@ class Home extends Component {
                     <Icon path={mdiSchool} className="blue-text text-darken-3" size={3} />
                   </div>
 
-                  <h5>Istituzioni Scolastiche</h5>
+                  <h5> {t('destinatari.istituzioniScolastiche.title')}</h5>
 
                   <p className="flow-text grey-text">
-                    I servizi proposti in questa area, riguardano gli ambienti di apprendimento e si
-                    qualificano come innovativi e tecnologicamente all’avanguardia. Educabile
-                    supporta le Istituzioni Scolastiche nel realizzare percorsi didattici
-                    interattivi, contestualizzati, personalizzati...
+                    {t('destinatari.istituzioniScolastiche.content')}
                   </p>
                 </CardPanel>
               </Col>
@@ -145,7 +147,7 @@ class Home extends Component {
                 large
                 waves="light"
                 id="go-to-contact">
-                Entra in contatto con noi
+                {t('destinatari.contattiBtn')}
                 <Icon path={mdiForum} size="1.3rem" />
               </Button>
             </HashLink>
@@ -153,9 +155,7 @@ class Home extends Component {
         </Section>
 
         <Section className="white">
-          <h2 className="center">
-            I Nostri <span className="blue-text text-darken-3">Partner</span>
-          </h2>
+          <h2 className="center">{t('partner.title')} </h2>
 
           <Container>
             <Divider />
@@ -177,14 +177,10 @@ class Home extends Component {
 
         <Section id="aree-di-intervento" className="white">
           <Container className="center">
-            <h2 className="hide-on-large-only blue-text text-darken-3">Aree di Intervento</h2>
-            <p className="flow-text grey-text left-align">
-              Ci proponiamo come referente affidabile nel gestire scenari complessi ad alto
-              contenuto tecnologico offrendo un supporto specialistico all’avanguardia per una vasta
-              gamma di soluzioni disponendo di profili, metodologie e strumenti innovativi per la
-              risoluzione delle più disparate problematiche nel settore dell’ICT, della Data
-              Technology e della Smart Education.
-            </p>
+            <h2 className="hide-on-large-only blue-text text-darken-3">
+              {t('areeDiIntervento.title')}
+            </h2>
+            <p className="flow-text grey-text left-align">{t('areeDiIntervento.content')}</p>
           </Container>
         </Section>
 
@@ -197,11 +193,9 @@ class Home extends Component {
                     <Icon path={mdiPencil} size={3} color="#ff9800" />
                   </div>
 
-                  <h5>Didattica Digitale</h5>
+                  <h5> {t('common:didatticaDigitale')}</h5>
                   <p className="flow-text grey-text left-align">
-                    Dalla Scuola 2.0 ad un approccio su “strategie didattiche e metodologie” verso
-                    la fruizione collettiva e individuale del web e di contenuti, per l’interazione
-                    di aggregazioni diverse in gruppi di apprendimento
+                    {t('servizi.didatticaDigitale.content')}
                   </p>
                 </Col>
               </Link>
@@ -211,14 +205,14 @@ class Home extends Component {
                   <div className="icon">
                     <Icon path={mdiPollBox} size={3} color="#4CAF50" />
                   </div>
-                  <h5>Data Technology</h5>
+                  <h5> {t('common:dataScience')}</h5>
                   <p className="flow-text grey-text left-align">
-                    Decliniamo le diverse azioni di Data Technology in ambienti complessi con
-                    approcci altamente innovativi
+                    {t('servizi.dataTechnology.content')}
                   </p>
                 </Col>
               </Link>
 
+              {/* TODO: Remove this section and add it into Data Technology page */}
               <Link to="/internet-of-things">
                 <Col s={12} m={4} className="internet-of-things center">
                   <div className="icon">
@@ -236,7 +230,7 @@ class Home extends Component {
 
             <Link to="/servizi">
               <Button large waves="light" className="move-icon-forward hoverable">
-                Consulta i servizi
+                {t('servizi.serviziBtn')}
                 <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
             </Link>
@@ -245,27 +239,26 @@ class Home extends Component {
 
         <Section id="in-evidenza" className="grey lighten-2 center">
           <Container>
-            <h2 className="hide-on-large-only">
-              <span>In</span> <span className="blue-text text-darken-3">Evidenza</span>
-            </h2>
-
-            <Posts />
-
+            <h2 className="hide-on-large-only">{t('inEvidenza.title')}</h2>
+            <LazyLoad offset={500}>
+              <Posts />
+            </LazyLoad>
             <Button id="blog-btn" large waves="light" node={Link} to="/blog">
-              Vai al blog <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
+              {t('inEvidenza.blogBtn')}
+              <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
             </Button>
           </Container>
         </Section>
 
         <Section id="contatti" className="center" style={{ backgroundColor: '#e9eaee' }}>
           <Container>
-            <h2 className="hide-on-large-only blue-text text-darken-3">Contatti</h2>
+            <h2 className="hide-on-large-only blue-text text-darken-3">{t('contatti.title')}</h2>
 
             <Row
               className="z-depth-1-half"
               style={{ display: 'flex', flexWrap: 'wrap', borderRadius: 30 }}>
               <Col id="sedi" s={12} l={5} className="white">
-                <h4 className="blue-text text-darken-3">Sede Legale</h4>
+                <h4 className="blue-text text-darken-3">{t('contatti.sedeLegale')}</h4>
                 <p className="left-align" style={{ fontSize: 'smaller', fontWeight: 'bold' }}>
                   Via E. Nicolardi, 109 - 80131 - Napoli (NA)
                   <br />
@@ -277,7 +270,7 @@ class Home extends Component {
                 </p>
 
                 <br />
-                <h4 className="blue-text text-darken-3">Sede Operativa</h4>
+                <h4 className="blue-text text-darken-3">{t('contatti.sedeOperativa')}</h4>
                 <p className="left-align" style={{ fontSize: 'smaller', fontWeight: 'bold' }}>
                   Via Coroglio, 57/d - Città della Scienza 80124 - Napoli (NA)
                   <br />
@@ -290,7 +283,7 @@ class Home extends Component {
 
                 <br />
 
-                <h4 className="blue-text text-darken-3">Ufficio Estero</h4>
+                <h4 className="blue-text text-darken-3">{t('contatti.ufficioEstero')}</h4>
                 <p className="left-align" style={{ fontSize: 'smaller', fontWeight: 'bold' }}>
                   300645 Timisoara (RO) - 119 Aradului Street
                   <br />
@@ -301,14 +294,14 @@ class Home extends Component {
 
               <Col id="form" s={12} l={7} className="grey lighten-4 valign-wrapper">
                 <Section>
-                  <Input s={6} label="Nome e Cognome" />
-                  <Input s={6} type="email" label="Email" />
-                  <Input s={12} type="text" label="Oggetto del messaggio" />
-                  <Input s={12} type="textarea" label="Corpo del messaggio" />
+                  <Input s={6} label={t('contatti.form.nomeCognome')} />
+                  <Input s={6} type="email" label={t('contatti.form.email')} />
+                  <Input s={12} type="text" label={t('contatti.form.oggettoDelMessaggio')} />
+                  <Input s={12} type="textarea" label={t('contatti.form.corpoDelMessaggio')} />
                   <div>
                     <Button waves="light" large className="right">
                       <Icon path={mdiSend} size="1.3rem" color="white" />
-                      Invia
+                      {t('contatti.form.inviaBtn')}
                     </Button>
                   </div>
                 </Section>
@@ -316,9 +309,9 @@ class Home extends Component {
             </Row>
           </Container>
         </Section>
-      </Fragment>
+      </>
     )
   }
 }
 
-export default Home
+export default withNamespaces('homepage')(Home)
