@@ -3,19 +3,10 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 
 class Carousel extends React.Component {
-  constructor(props) {
-    super(props)
-    this.renderFixedItem = this.renderFixedItem.bind(this)
-    this.renderImages = this.renderImages.bind(this)
-    this.renderItems = this.renderItems.bind(this)
-    this.startAutoplay = this.startAutoplay.bind(this)
-    this.stopAutoplay = this.stopAutoplay.bind(this)
-  }
-
   componentDidMount() {
     const { options = {} } = this.props
 
-    if (typeof window.M !== 'undefined') {
+    if (typeof M !== 'undefined') {
       this.instance = window.M.Carousel.init(this._carousel, options)
     }
 
@@ -25,7 +16,7 @@ class Carousel extends React.Component {
   }
 
   componentWillUnmount() {
-    if (typeof window.M !== 'undefined') {
+    if (typeof M !== 'undefined') {
       this.instance.destroy()
     }
 
@@ -33,38 +24,36 @@ class Carousel extends React.Component {
     this._carousel.removeEventListener('mouseleave', this.startAutoplay)
   }
 
-  startAutoplay() {
+  startAutoplay = () => {
     this.intervalId = setInterval(() => {
       this.instance.next()
     }, 2250)
   }
 
-  stopAutoplay() {
+  stopAutoplay = () => {
     clearInterval(this.intervalId)
     this.intervalId = null
   }
 
-  renderImages(child, centerImages) {
-    if (typeof child === 'string') {
+  renderImages = (images, centerImages) => {
+    if (typeof images === 'string') {
       return (
         <a
           className={cx('carousel-item', {
             'valign-wrapper': centerImages,
           })}>
-          <img src={child} alt="" />
+          {images}
         </a>
       )
     }
-    return React.cloneElement(child, {
-      className: cx(child.props.className, 'carousel-item'),
+    return React.cloneElement(images, {
+      className: cx(images.props.className, 'carousel-item', {
+        'valign-wrapper': centerImages,
+      }),
     })
   }
 
-  renderItems(child) {
-    return <div className="carousel-item">{child}</div>
-  }
-
-  renderFixedItem() {
+  renderFixedItem = () => {
     const { fixedItem } = this.props
     return fixedItem && <div className="carousel-fixed-item center">{fixedItem}</div>
   }
@@ -81,7 +70,7 @@ class Carousel extends React.Component {
           }}
           className={cx('carousel', { 'carousel-slider': options.fullWidth }, className)}>
           {this.renderFixedItem()}
-          {React.Children.map(children, child => this.renderItems(child))}
+          {React.Children.map(children, images => this.renderImages(images, centerImages))}
         </div>
       )
     } else if (images) {
@@ -93,7 +82,7 @@ class Carousel extends React.Component {
           }}
           className={cx('carousel', { 'carousel-slider': options.fullWidth }, className)}>
           {this.renderFixedItem()}
-          {React.Children.map(images, child => this.renderImages(child, centerImages))}
+          {React.Children.map(images, images => this.renderImages(images, centerImages))}
         </div>
       )
     } else {
