@@ -8,6 +8,7 @@ module.exports = {
       loadPaths: ['img/'],
       relative: true,
     }),
+    require('postcss-color-function'),
     require('postcss-easing-gradients'),
     require('postcss-font-magician')({
       variants: {

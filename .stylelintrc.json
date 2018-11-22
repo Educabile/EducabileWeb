@@ -79,7 +79,9 @@
         "severity": "warning"
       }
     ],
-    "csstree/validator": true,
+    "csstree/validator": {
+      "ignore": ["background", "background-image"]
+    },
     "plugin/declaration-block-no-ignored-properties": true,
     "plugin/stylelint-selector-no-empty": true,
     "plugin/stylelint-group-selectors": [

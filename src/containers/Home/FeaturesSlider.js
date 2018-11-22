@@ -24,7 +24,7 @@ const FeaturesSlider = ({ options, t }) => {
           <h5 className="light grey-text text-lighten-3">
             Sviluppo di piattaforme e infrastrutture in ambienti di Data Science
           </h5>
-          <Button className="green hoverable" large>
+          <Button className="greenGradient hoverable" large>
             {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
@@ -36,7 +36,7 @@ const FeaturesSlider = ({ options, t }) => {
           <h5 className="light grey-text text-lighten-3">
             Corsi di tipo laboratoriale con l&apos;ausilio di specifiche figure terze (mentori)
           </h5>
-          <Button className="orange" large>
+          <Button className="orangeGradient hoverable" large>
             {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
@@ -48,7 +48,7 @@ const FeaturesSlider = ({ options, t }) => {
           <h5 className="light grey-text text-lighten-3">
             Progetti di ricerca e di consulenza tecnico scientifica
           </h5>
-          <Button className="green" large>
+          <Button className="greenGradient hoverable" large>
             {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
@@ -61,7 +61,7 @@ const FeaturesSlider = ({ options, t }) => {
             sperimentare dotazioni d&apos;aula alternative privilegiandone la semplicit&aacute;
             d&apos;utilizzo
           </h5>
-          <Button className="orange" large>
+          <Button className="orangeGradient hoverable" large>
             {t('common:leggiDiPiu')}
             <Icon path={mdiArrowRight} size={1} />
           </Button>
