@@ -22,10 +22,14 @@ import Carousel from '../../components/Carousel/Carousel'
 import Col from '../../components/Col/Col'
 import Posts from './Posts/Posts'
 import {
-  banatUniversityPng as LogoBanatUniversity,
-  geofotogrammetricaPng as LogoGeofotogrammetrica,
-  qequipePng as LogoQequipe,
-  ictConsultingPng as LogoIctConsulting,
+  banatUniversityPng,
+  banatUniversityWebP,
+  geofotogrammetricaPng,
+  geofotogrammetricaWebP,
+  qequipePng,
+  qequipeWebP,
+  ictConsultingPng,
+  ictConsultingWebP,
 } from '../../assets/img/partners-logos'
 import PropTypes from 'prop-types'
 import LazyLoad from 'react-lazy-load'
@@ -164,12 +168,31 @@ class Home extends Component {
               options={{
                 fullWidth: false,
                 noWrap: false,
-                padding: 200,
+                padding: 325,
                 indicators: true,
               }}
-              images={[LogoGeofotogrammetrica, LogoQequipe, LogoBanatUniversity, LogoIctConsulting]}
-              centerImages
-            />
+              centerImages={true}>
+              <picture>
+                <source srcSet={banatUniversityWebP} type="image/webp" />
+                <source srcSet={banatUniversityPng} type="image/png" />
+                <img src={banatUniversityPng} alt="" />
+              </picture>
+              <picture>
+                <source srcSet={geofotogrammetricaWebP} type="image/webp" />
+                <source srcSet={geofotogrammetricaPng} type="image/png" />
+                <img src={geofotogrammetricaPng} alt="" />
+              </picture>
+              <picture>
+                <source srcSet={qequipeWebP} type="image/webp" />
+                <source srcSet={qequipePng} type="image/png" />
+                <img src={qequipePng} alt="" />
+              </picture>
+              <picture>
+                <source srcSet={ictConsultingWebP} type="image/webp" />
+                <source srcSet={ictConsultingPng} type="image/png" />
+                <img src={ictConsultingPng} alt="" />
+              </picture>
+            </Carousel>
 
             <Divider />
           </Container>
