@@ -85,6 +85,7 @@
     "postcss-assets": "^5.0.0",
     "postcss-brand-colors": "^3.0.0",
     "postcss-calc": "^7.0.1",
+    "postcss-color-function": "^4.0.1",
     "postcss-convert-values": "^4.0.1",
     "postcss-easing-gradients": "^3.0.1",
     "postcss-font-magician": "^2.2.1",

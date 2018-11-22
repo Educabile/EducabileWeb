@@ -1,4 +1,8 @@
 @value blue: #1565C0;
+@value blueGradient: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));
 @value orange: #FF9800;
+@value orangeGradient: linear-gradient(to right, orange, ease-out, color(orange tint(15%)));
 @value green: #4CAF50;
+@value greenGradient: linear-gradient(to right, green, ease-out, color(green tint(10%)));
 @value purple: #9C27B0;
+@value purpleGradient: linear-gradient(to right, purple, ease-out, color(purple tint(15%)));

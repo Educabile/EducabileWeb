@@ -74,7 +74,7 @@ class Home extends Component {
                   behavior: 'smooth',
                 })
               }}>
-              <Button className="hoverable move-icon-forward" large>
+              <Button className="hoverable move-icon-forward blueGradient" large>
                 {t('common:scopriDiPiu')}
                 <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
@@ -229,7 +229,7 @@ class Home extends Component {
             </Row>
 
             <Link to="/servizi">
-              <Button large waves="light" className="move-icon-forward hoverable">
+              <Button large waves="light" className="move-icon-forward hoverable blueGradient">
                 {t('servizi.serviziBtn')}
                 <Icon path={mdiArrowRight} size="1.3rem" />
               </Button>
@@ -243,7 +243,13 @@ class Home extends Component {
             <LazyLoad offset={500}>
               <Posts />
             </LazyLoad>
-            <Button id="blog-btn" large waves="light" node={Link} to="/blog">
+            <Button
+              id="blog-btn"
+              large
+              waves="light"
+              node={Link}
+              to="/blog"
+              className="blueGradient">
               {t('inEvidenza.blogBtn')}
               <Icon path={mdiLibraryBooks} size="1.3rem" color="white" />
             </Button>
@@ -299,7 +305,7 @@ class Home extends Component {
                   <Input s={12} type="text" label={t('contatti.form.oggettoDelMessaggio')} />
                   <Input s={12} type="textarea" label={t('contatti.form.corpoDelMessaggio')} />
                   <div>
-                    <Button waves="light" large className="right">
+                    <Button waves="light" large className="right blueGradient">
                       <Icon path={mdiSend} size="1.3rem" color="white" />
                       {t('contatti.form.inviaBtn')}
                     </Button>

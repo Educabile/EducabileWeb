@@ -48,11 +48,11 @@ class Posts extends Component {
     if (post._embedded['wp:term'][1].length > 0) {
       switch (post._embedded['wp:term'][1][0].slug) {
         case 'data-science':
-          css = 'green'
+          css = 'greenGradient'
           break
 
         case 'didattica-digitale':
-          css = 'orange'
+          css = 'orangeGradient'
           break
 
         case 'undefined':
@@ -86,7 +86,7 @@ class Posts extends Component {
           actions.push(
             <Button
               key={`card-${index}-action-${idgen()}`}
-              className="orange chip white-text left hoverable"
+              className="orangeGradient chip white-text left hoverable"
               style={{
                 transition: 'all .5s ease-out',
               }}
@@ -101,7 +101,7 @@ class Posts extends Component {
           actions.push(
             <Button
               key={`card-${index}-action-${idgen()}`}
-              className="green chip white-text left hoverable"
+              className="greenGradient chip white-text left hoverable"
               large
               style={{
                 transition: 'all .5s ease-out',
