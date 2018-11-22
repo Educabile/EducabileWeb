@@ -77,6 +77,7 @@
     "postcss-convert-values": "^4.0.1",
     "postcss-easing-gradients": "^3.0.1",
     "postcss-font-magician": "^2.2.1",
+    "postcss-modules-values-replace": "^3.0.1",
     "postcss-normalize-charset": "^4.0.1",
     "postcss-normalize-url": "^4.0.1",
     "postcss-ordered-values": "^4.1.1",

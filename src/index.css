@@ -1,5 +1,8 @@
+@value colors: './style/colors.css';
+@value blue, green, orange, purple from colors;
+
 ::selection {
-  background-color: #2d64c1;
+  background-color: blue;
   color: white;
 }
 
@@ -110,7 +113,7 @@ nav ul a.active {
   .feature svg {
     /* box-shadow: inset 128px 128px 5px #ececec; */
     border-radius: 50%;
-    fill: #1565c0 !important;
+    fill: blue !important;
     height: 100px;
     line-height: 100px;
     position: relative;
@@ -120,7 +123,7 @@ nav ul a.active {
     @media screen and (prefers-reduced-motion: reduce) {
       /* box-shadow: inset 128px 128px 5px #ececec; */
       border-radius: 50%;
-      fill: #1565c0 !important;
+      fill: blue !important;
       height: 100px;
       line-height: 100px;
       position: relative;
@@ -133,7 +136,7 @@ nav ul a.active {
 .feature svg {
   /* box-shadow: inset 128px 128px 5px #ececec; */
   border-radius: 50%;
-  fill: #1565c0 !important;
+  fill: blue !important;
   height: 100px;
   line-height: 100px;
   position: relative;
@@ -143,7 +146,7 @@ nav ul a.active {
   @media screen and (prefers-reduced-motion: reduce) {
     /* box-shadow: inset 128px 128px 5px #ececec; */
     border-radius: 50%;
-    fill: #1565c0 !important;
+    fill: blue !important;
     height: 100px;
     line-height: 100px;
     position: relative;
@@ -221,7 +224,7 @@ nav ul a.active {
 
 .feature:hover .feature-icon::before,
 .feature:focus .feature-icon::before {
-  background-color: #1565c0;
+  background-color: blue;
   filter: drop-shadow(0px 5px 5px #333);
 }
 
@@ -347,6 +350,36 @@ nav ul a.active {
     transform: translate(-50%, -50%);
     transition: none;
     width: 100px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale .icon::before,
+  .data-science .icon::before,
+  .internet-of-things .icon::before {
+    background-color: #ececec;
+    border-radius: 50%;
+    content: '';
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: none;
+    width: 100px;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      background-color: #ececec;
+      border-radius: 50%;
+      content: '';
+      height: 100px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: none;
+      width: 100px;
+    }
   }
 }
 
@@ -1315,6 +1348,18 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg,
+  .data-science svg,
+  .internet-of-things svg {
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+    transition: none;
+    width: 100px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .didattica-digitale svg,
 .data-science svg,
 .internet-of-things svg {
@@ -1547,6 +1592,14 @@ nav ul a.active {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .didattica-digitale svg path,
+  .data-science svg path .internet-of-things svg path,
+  #go-to-contact {
+    transition: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .didattica-digitale svg path,
 .data-science svg path .internet-of-things svg path,
 #go-to-contact {
@@ -1571,17 +1624,17 @@ nav ul a.active {
 
 .didattica-digitale:hover .icon::before,
 .didattica-digitale:focus .icon::before {
-  background-color: #ff9800;
+  background-color: orange;
 }
 
 .data-science:hover .icon::before,
 .data-science:focus .icon::before {
-  background-color: #4caf50;
+  background-color: green;
 }
 
 .internet-of-things:hover .icon::before,
 .internet-of-things:focus .icon::before {
-  background-color: #9c27b0;
+  background-color: purple;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

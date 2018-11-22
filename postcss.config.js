@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    require('postcss-modules-values-replace'),
     require('postcss-flexbugs-fixes'),
     require('postcss-brand-colors'),
     require('postcss-assets')({
