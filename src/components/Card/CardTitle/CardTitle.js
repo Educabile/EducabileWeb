@@ -1,26 +1,22 @@
 import React from 'react'
-import classNames from 'class-names'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 
-const CardTitle = props => {
-  const { children, className, reveal, closeReveal, style } = props
-
-  const titleCSS = classNames(
-    'card-title',
-    {
-      activator: reveal,
-    },
-    className
-  )
-
-  return (
-    <span className={titleCSS} style={style}>
-      {children}
-      {reveal && <i className="material-icons right">more_vert</i>}
-      {closeReveal && <i className="material-icons right">close</i>}
-    </span>
-  )
-}
+const CardTitle = ({ children, className, reveal, closeReveal, style }) => (
+  <span
+    className={cx(
+      'card-title',
+      {
+        activator: reveal,
+      },
+      className
+    )}
+    style={style}>
+    {children}
+    {reveal && <i className="material-icons right">more_vert</i>}
+    {closeReveal && <i className="material-icons right">close</i>}
+  </span>
+)
 
 CardTitle.propTypes = {
   children: PropTypes.node.isRequired,

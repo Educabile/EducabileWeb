@@ -1,0 +1,8 @@
+.Row,
+.Col {
+  display: flex;
+}
+
+.Row {
+  flex-wrap: wrap;
+}

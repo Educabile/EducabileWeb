@@ -1,8 +1,7 @@
 import React from 'react'
-import { Row } from 'react-materialize'
+import { Row, Col } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiSchool, mdiLifebuoy, mdiServerNetwork, mdiBank } from '@mdi/js'
-import Col from '../../components/Col/Col'
 import Container from '../../components/Container/Container'
 import Parallax from '../../components/Parallax/Parallax'
 import {

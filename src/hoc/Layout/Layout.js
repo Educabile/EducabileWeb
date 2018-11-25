@@ -114,41 +114,41 @@ const Layout = ({ children, t }) => {
       <footer className="blue darken-3">
         <div className="row">
           <div className="col s12 xl4 center" style={{ paddingTop: 4 }}>
-            <Button
-              className="blue darken-3 white-text"
-              waves="light"
-              flat
-              node={Link}
-              to="/privacy-policy#"
-              style={{
-                display: 'inline-flex',
-                fontSize: 'small',
-                textTransform: 'capitalize',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: 145,
-              }}>
-              <Icon path={mdiEye} size={0.7} color="white" />
-              {t('footer:privacyPolicy')}
-            </Button>
+            <Link to="/privacy-policy">
+              <Button
+                className="blue darken-3 white-text"
+                waves="light"
+                flat
+                style={{
+                  display: 'inline-flex',
+                  fontSize: 'small',
+                  textTransform: 'capitalize',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: 145,
+                }}>
+                <Icon path={mdiEye} size={0.7} color="white" />
+                {t('footer:privacyPolicy')}
+              </Button>
+            </Link>
             {'|'}
-            <Button
-              className="blue darken-3 white-text"
-              waves="light"
-              flat
-              node={Link}
-              to="/note-legali"
-              style={{
-                display: 'inline-flex',
-                fontSize: 'small',
-                textTransform: 'capitalize',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: 145,
-              }}>
-              <Icon path={mdiClipboardText} size={0.7} color="white" />
-              {t('footer:noteLegali')}
-            </Button>
+            <Link to="/note-legali">
+              <Button
+                className="blue darken-3 white-text"
+                waves="light"
+                flat
+                style={{
+                  display: 'inline-flex',
+                  fontSize: 'small',
+                  textTransform: 'capitalize',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: 145,
+                }}>
+                <Icon path={mdiClipboardText} size={0.7} color="white" />
+                {t('footer:noteLegali')}
+              </Button>
+            </Link>
           </div>
 
           <div className="col s12 xl4 center light" style={{ paddingTop: 12 }}>

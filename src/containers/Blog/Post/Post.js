@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Button, Preloader } from 'react-materialize'
+import { Button } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiArrowLeft } from '@mdi/js'
-import Parallax from '../../../components/Parallax/Parallax'
 import Container from '../../../components/Container/Container'
+import Parallax from '../../../components/Parallax/Parallax'
 import wp from '../../../axios-wordpress'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-
+import Spinner from '../../../components/Spinner/Spinner'
 class Post extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
@@ -18,27 +18,23 @@ class Post extends Component {
   }
 
   componentDidMount() {
-    wp.get(`posts?_embed&slug=${this.props.match.params.postSlug}`).then(res => {
+    const {
+      match: {
+        params: { postSlug },
+      },
+    } = this.props
+
+    wp.get(`posts?_embed&slug=${postSlug}`).then(res => {
+      const { data } = res
       this.setState({
-        post: res.data[0],
+        post: data[0],
       })
     })
   }
 
   render() {
     const { t } = this.props
-    let post = (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 'calc(100vh - 70px)',
-        }}>
-        <Preloader />
-      </div>
-    )
-
+    let post = <Spinner />
     if (this.state.post) {
       post = (
         <>

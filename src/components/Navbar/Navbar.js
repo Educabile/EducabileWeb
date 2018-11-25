@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classNames from 'class-names'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 import Scrollspy from 'react-scrollspy'
 import { Icon } from '@mdi/react'
@@ -21,17 +21,17 @@ class Navbar extends Component {
       style,
     } = this.props
 
-    const navCSS = classNames({
+    const navCSS = cx({
       'nav-extended': extendedWith,
     })
 
-    const navWrapperCSS = classNames('nav-wrapper', className)
+    const navWrapperCSS = cx('nav-wrapper', className)
 
-    const logoCSS = classNames('brand-logo', 'show-on-medium-and-down', 'hide-on-med-and-up', {
+    const logoCSS = cx('brand-logo', 'show-on-medium-and-down', 'hide-on-med-and-up', {
       center: centerLogo,
     })
 
-    const navMobileCSS = classNames('hide-on-med-and-down', [alignLinks])
+    const navMobileCSS = cx('hide-on-med-and-down', [alignLinks])
 
     const links = children.map((link, index) => <li key={index}>{link}</li>)
 
@@ -74,7 +74,7 @@ class Navbar extends Component {
     }
 
     return (
-      <React.Fragment>
+      <>
         {navbar}
 
         <ul
@@ -89,7 +89,7 @@ class Navbar extends Component {
             {links}
           </Scrollspy>
         </ul>
-      </React.Fragment>
+      </>
     )
   }
 }

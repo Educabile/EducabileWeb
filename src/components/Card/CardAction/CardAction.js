@@ -1,18 +1,12 @@
 import React from 'react'
-import classNames from 'class-names'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 
-const CardAction = props => {
-  const { children, className, style } = props
-
-  const actionCSS = classNames('card-action', className)
-
-  return (
-    <div className={actionCSS} style={style}>
-      {children}
-    </div>
-  )
-}
+const CardAction = ({ children, className, style }) => (
+  <div className={cx('card-action', className)} style={style}>
+    {children}
+  </div>
+)
 
 CardAction.propTypes = {
   children: PropTypes.node,

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Card from '../../../components/Card/Card'
 import Dropdown from '../../../components/Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
-import Col from '../../../components/Col/Col'
-import { Button, Row, Preloader } from 'react-materialize'
+import { Button, Row, Col } from 'react-materialize'
 import Icon from '@mdi/react'
 import {
   mdiFacebookBox,
@@ -16,7 +15,7 @@ import idgen from '../../../idgen'
 import wp from '../../../axios-wordpress'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-
+import Spinner from '../../../components/Spinner/Spinner'
 class Posts extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
@@ -84,32 +83,32 @@ class Posts extends Component {
 
         case 'didattica-digitale':
           actions.push(
-            <Button
-              key={`card-${index}-action-${idgen()}`}
-              className="orangeGradient chip white-text left hoverable"
-              style={{
-                transition: 'all .5s ease-out',
-              }}
-              to="/blog/tagged/didattica-digitale"
-              node={Link}>
-              {t('didatticaDigitale')}
-            </Button>
+            <Link key={`card-${index}-action-${idgen()}`} to="/blog/tagged/didattica-digitale">
+              <Button
+                className="orangeGradient chip white-text left hoverable"
+                style={{
+                  transition: 'all .5s ease-out',
+                  textShadow: ' 0px 2px 4px rgba(0,0,0, .5)',
+                }}>
+                {t('didatticaDigitale')}
+              </Button>
+            </Link>
           )
           break
 
         case 'data-science':
           actions.push(
-            <Button
-              key={`card-${index}-action-${idgen()}`}
-              className="greenGradient chip white-text left hoverable"
-              large
-              style={{
-                transition: 'all .5s ease-out',
-              }}
-              to="/blog/tagged/data-technology"
-              node={Link}>
-              {t('dataScience')}
-            </Button>
+            <Link key={`card-${index}-action-${idgen()}`} to="/blog/tagged/data-technology">
+              <Button
+                className="greenGradient chip white-text left hoverable"
+                large
+                style={{
+                  transition: 'all .5s ease-out',
+                  textShadow: ' 0px 2px 4px rgba(0,0,0, .5)',
+                }}>
+                {t('dataScience')}
+              </Button>
+            </Link>
           )
           break
 
@@ -121,6 +120,7 @@ class Posts extends Component {
     return actions
   }
 
+  // TODO: Move this funcion in libs
   openPopup(url) {
     var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX
     var dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY
@@ -268,7 +268,7 @@ class Posts extends Component {
   }
 
   render() {
-    return <Row>{this.state.posts || <Preloader />}</Row>
+    return <Row>{this.state.posts || <Spinner />}</Row>
   }
 }
 

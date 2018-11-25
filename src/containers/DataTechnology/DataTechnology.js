@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Section } from 'react-materialize'
-import Col from '../../components/Col/Col'
+import { Row, Section, Col } from 'react-materialize'
 import Parallax from '../../components/Parallax/Parallax'
 import Icon from '@mdi/react'
 import {
@@ -39,7 +38,9 @@ const DataTechnology = ({ t }) => (
 
     <Row>
       <Col s={12} xl={6}>
-        <Parallax imageSrc={SupportoAiProgetti}>
+        <Parallax
+          imageSrc={SupportoAiProgetti}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Icon path={mdiChartLineStacked} size={5} color="white" />
         </Parallax>
       </Col>

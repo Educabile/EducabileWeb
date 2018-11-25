@@ -10893,6 +10893,13 @@ react-i18next@^8.3.8:
     hoist-non-react-statics "3.0.1"
     html-parse-stringify2 "2.0.1"
 
+react-infinite-scroller@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-infinite-scroller/-/react-infinite-scroller-1.2.2.tgz#1d13b8167476dfe64c401983293dabc6a8a8ecf3"
+  integrity sha512-YshEvalWsC/vTWwA2t5rc+ku8JSXTIe/gzNuyA7rkdJZfs+7LfOz/HpOI3g/VqPCZIxikXBJDlSWltVZN4KyVQ==
+  dependencies:
+    prop-types "^15.5.8"
+
 react-is@^16.3.2, react-is@^16.6.0:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.1.tgz#f77b1c3d901be300abe8d58645b7a59e794e5982"
@@ -10913,10 +10920,10 @@ react-lifecycles-compat@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-materialize@^2.4.5:
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/react-materialize/-/react-materialize-2.4.8.tgz#0cc1171c690f530164781940d06a241c0f384610"
-  integrity sha512-qPAz1Nahn7VGAtaaH/owjSYFTQi8Up5+YtsKhhgLG+ApimkK/sTAtrxv6g+RsC6hWv2b3e2LFfZzLcb98i0hvg==
+react-materialize@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-materialize/-/react-materialize-2.5.0.tgz#51a7d2317d1ce46aad3739c7e96a8b6d18f076bc"
+  integrity sha512-hAl9v5uJkQOBjd+PNZ9PcIsMjlLYHqZzB4QIXKmyCuMnjw4/cFIOmD7x9Ff978L4kj35LaEfiObPL9RDk4rCUg==
   dependencies:
     classnames "^2.2.5"
     react "^16.2.0"

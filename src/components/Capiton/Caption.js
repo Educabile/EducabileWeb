@@ -1,20 +1,21 @@
+// TODO: Refactor this component if this PR is accepted: https://github.com/react-materialize/react-materialize/pull/701
 import React from 'react'
-import classNames from 'class-names'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
+import Style from './Caption.module.css'
 
-const Caption = props => {
-  const { children, className, align, style } = props
-
-  const captionCSS = classNames(
-    'caption',
-    {
-      [`${align}-align`]: align,
-    },
-    className
-  )
-
+const Caption = ({ className, placement, children, ...props }) => {
   return (
-    <div className={captionCSS} style={style}>
+    <div
+      className={cx(
+        'caption',
+        Style.caption,
+        {
+          [`${placement}-align`]: placement,
+        },
+        className
+      )}
+      {...props}>
       {children}
     </div>
   )
@@ -23,8 +24,11 @@ const Caption = props => {
 Caption.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  align: PropTypes.oneOf(['left', 'center', 'right']),
-  style: PropTypes.object,
+  placement: PropTypes.oneOf(['left', 'center', 'right']),
+}
+
+Caption.propDefault = {
+  placement: 'left',
 }
 
 export default Caption

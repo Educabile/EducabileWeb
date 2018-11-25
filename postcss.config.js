@@ -35,10 +35,11 @@ module.exports = {
       autoprefixer: {
         flexbox: 'no-2009',
       },
-      stage: 3,
+      stage: 0,
       features: {
         'nesting-rules': true,
       },
+      importFrom: ['src/style/selectors.css'],
     }),
   ],
 }

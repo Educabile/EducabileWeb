@@ -1,0 +1,97 @@
+@value colors: '../../style/colors.css';
+@value orange, green from colors;
+
+.ServiceCard {
+  & .ServiceIcon {
+    background-color: #ececec;
+    clip-path: circle(50px at 50.1% 50.9%);
+    position: relative;
+    z-index: 1;
+    @media screen and (prefers-reduced-motion: reduce) {
+      & svg {
+        border-radius: 50%;
+        height: 100px;
+        line-height: 100px;
+        position: relative !important;
+        transition: none;
+        width: 100px;
+      }
+    }
+
+    & svg {
+      border-radius: 50%;
+      height: 100px;
+      line-height: 100px;
+      position: relative !important;
+      transition: transform 0.25s ease-out;
+      width: 100px;
+    }
+    @media screen and (prefers-reduced-motion: reduce) {
+      &::before {
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: none;
+        z-index: -1;
+      }
+    }
+
+    &::before {
+      bottom: 0;
+      content: '';
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.25s ease-out;
+      z-index: -1;
+    }
+
+    &.DidatticaDigitale {
+      & svg {
+        fill: orange;
+      }
+    }
+
+    &.DataScience {
+      & svg {
+        fill: green;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    & .ServiceIcon {
+      &::before {
+        opacity: 1;
+      }
+
+      &.DidatticaDigitale,
+      &.DataScience {
+        & svg {
+          fill: #ececec;
+          filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.5));
+          transform: scale(1.15);
+        }
+      }
+
+      &.DidatticaDigitale {
+        &::before {
+          background-image: linear-gradient(to top, orange, ease-in-out, color(orange tint(15%)));
+        }
+      }
+
+      &.DataScience {
+        &::before {
+          background-image: linear-gradient(to top, green, ease-in-out, color(green tint(15%)));
+        }
+      }
+    }
+  }
+}

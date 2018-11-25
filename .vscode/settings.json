@@ -4,7 +4,7 @@
         "**/containers/**/*.js": "javascriptreact",
         "index.js": "javascriptreact",
         "App.js": "javascriptreact",
-        "**/*.css": "postcss"
+        "**/*.css": "scss"
   },
   "eslint.options": {
     "configFile": ".eslintrc.json"
