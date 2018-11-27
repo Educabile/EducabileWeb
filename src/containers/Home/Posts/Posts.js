@@ -26,16 +26,16 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    wp.get('posts?_embed&order=desc&order_by=date&per_page=3')
-      .then(response => {
-        this.renderPosts(response.data)
+    wp.get('posts?_embed&order=asc&order_by=date&per_page=3').then(res => {
+      this.setState({
+        posts: res.data,
       })
-      .catch(() => {})
+    })
   }
 
   renderImage(post) {
     if (post._embedded['wp:featuredmedia']) {
-      return post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url
+      return post._embedded['wp:featuredmedia'][0].source_url
     } else {
       return null
     }
@@ -155,9 +155,16 @@ class Posts extends Component {
     }, 250)
   }
 
-  renderPosts(posts) {
-    this.setState({
-      posts: posts.map((post, index) => {
+  renderPosts() {
+    const { posts } = this.state
+
+    if (!posts) {
+      return <Spinner />
+    }
+
+    return (
+      posts &&
+      posts.map((post, index) => {
         let actions = this.renderActions(post)
         return (
           <Col s={12} xl={4} key={post.slug}>
@@ -263,12 +270,12 @@ class Posts extends Component {
             </Card>
           </Col>
         )
-      }),
-    })
+      })
+    )
   }
 
   render() {
-    return <Row>{this.state.posts || <Spinner />}</Row>
+    return <Row>{this.renderPosts()}</Row>
   }
 }
 

@@ -16,44 +16,76 @@ import {
   piattaformeAmbientiWebP,
 } from '../../assets/img'
 import { withNamespaces } from 'react-i18next'
+import Style from './FeaturesSlider.module.css'
+import Picture from '../../components/Picture/Picture'
 
 const FirstSlide = (
-  <picture>
-    <source srcSet={slide0WebP} type="image/webp" />
-    <source srcSet={slide0Jpg} type="image/jpg" />
-    <img src={slide0Jpg} alt="" />
-  </picture>
+  <Picture
+    sources={[
+      {
+        srcSet: slide0WebP,
+        type: 'image/webp',
+      },
+      {
+        srcSet: slide0Jpg,
+        type: 'image/jpg',
+      },
+    ]}
+  />
 )
 
 const SecondSlide = (
-  <picture>
-    <source srcSet={ctaWebP} type="image/webp" />
-    <source srcSet={ctaJpg} type="image/jpg" />
-    <img src={ctaJpg} alt="" />
-  </picture>
+  <Picture
+    sources={[
+      {
+        srcSet: ctaWebP,
+        type: 'image/webp',
+      },
+      {
+        srcSet: ctaJpg,
+        type: 'image/jpg',
+      },
+    ]}
+  />
 )
 
 const ThirdSlide = (
-  <picture>
-    <source srcSet={consulenzaDtWebP} type="image/webp" />
-    <source srcSet={consulezaDtJpg} type="image/jpg" />
-    <img src={consulezaDtJpg} alt="" />
-  </picture>
+  <Picture
+    sources={[
+      {
+        srcSet: consulenzaDtWebP,
+        type: 'image/webp',
+      },
+      {
+        srcSet: consulezaDtJpg,
+        type: 'image/jpg',
+      },
+    ]}
+  />
 )
 
 const FourthSlide = (
-  <picture>
-    <source srcSet={piattaformeAmbientiWebP} type="image/webp" />
-    <source srcSet={piattaformeAmbientiJpg} type="image/jpg" />
-    <img src={piattaformeAmbientiJpg} alt="" />
-  </picture>
+  <Picture
+    className="ciaone"
+    style={{ color: 'red' }}
+    sources={[
+      {
+        srcSet: piattaformeAmbientiWebP,
+        type: 'image/webp',
+      },
+      {
+        srcSet: piattaformeAmbientiJpg,
+        type: 'image/jpg',
+      },
+    ]}
+  />
 )
 
 // TODO: Check if we are going to fetch slides from a BE; In such case we need a way to translate them server side
 const FeaturesSlider = ({ options, t }) => (
   <Slider className="white" options={options}>
     <Slide image={FirstSlide}>
-      <Caption placement="left">
+      <Caption placement="left" className={Style.Caption}>
         <h4>Piattaforme Innovative</h4>
         <h5 className="light grey-text text-lighten-3">
           Sviluppo di piattaforme e infrastrutture in ambienti di Data Science
@@ -65,7 +97,7 @@ const FeaturesSlider = ({ options, t }) => (
       </Caption>
     </Slide>
     <Slide image={SecondSlide}>
-      <Caption placement="left">
+      <Caption placement="left" className={Style.Caption}>
         <h4>Formazione</h4>
         <h5 className="light grey-text text-lighten-3">
           Corsi di tipo laboratoriale con l&apos;ausilio di specifiche figure terze (mentori)
@@ -77,7 +109,7 @@ const FeaturesSlider = ({ options, t }) => (
       </Caption>
     </Slide>
     <Slide image={ThirdSlide}>
-      <Caption placement="left">
+      <Caption placement="left" className={Style.Caption}>
         <h4>Servizi di Consulenza Strategica</h4>
         <h5 className="light grey-text text-lighten-3">
           Progetti di ricerca e di consulenza tecnico scientifica
@@ -89,13 +121,13 @@ const FeaturesSlider = ({ options, t }) => (
       </Caption>
     </Slide>
     <Slide image={FourthSlide}>
-      <Caption placement="left">
+      <Caption placement="left" className={Style.Caption}>
         <h4>Piattaforme ed ambienti per la didattica</h4>
         <h5 className="light grey-text text-lighten-3">
           sperimentare dotazioni d&apos;aula alternative privilegiandone la semplicit&aacute;
           d&apos;utilizzo
         </h5>
-        <Button className="orangeGradient hoverable " large>
+        <Button className="orangeGradient hoverable move-icon-forward" large>
           {t('common:leggiDiPiu')}
           <Icon path={mdiArrowRight} size={1} />
         </Button>

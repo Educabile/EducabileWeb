@@ -11,10 +11,11 @@ import {
   ctaJpg as CTA,
 } from '../../assets/img'
 import { withNamespaces } from 'react-i18next'
+import PropTypes from 'prop-types'
 
 const DidatticaDigitale = ({ t }) => {
   return (
-    <>
+    <div style={{ padding: '47px 0px 0px 0px' }}>
       <Row>
         <Col s={12} xl={6}>
           <Container>
@@ -62,7 +63,6 @@ const DidatticaDigitale = ({ t }) => {
         <Col s={12} xl={6}>
           <Parallax imageSrc={InfrastruttureDiRete}>
             <Icon path={mdiServerNetwork} size={5} color="white" />
-            test
           </Parallax>
         </Col>
 
@@ -72,8 +72,12 @@ const DidatticaDigitale = ({ t }) => {
           <p className="flow-text grey-text">{t('infrastrutturaDiRete.content')}</p>
         </Col>
       </Row>
-    </>
+    </div>
   )
+}
+
+DidatticaDigitale.propTypes = {
+  t: PropTypes.func.isRequired,
 }
 
 export default withNamespaces('didattica-digitale')(DidatticaDigitale)

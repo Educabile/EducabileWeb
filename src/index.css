@@ -27,7 +27,6 @@
 html {
   font-size: 15px;
   letter-spacing: 0.05em;
-  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
 
@@ -40,6 +39,66 @@ html {
     padding-left: 3px;
     padding-right: 8px;
     padding-top: 4px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
   }
 }
 
@@ -204,28 +263,6 @@ button.move-icon-forward {
   transform: translateX(75%);
 }
 
-#go-to-contact::before {
-  background: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));
-  bottom: 0;
-  content: '';
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition-duration: 0.5s;
-  transition-property: transform;
-  transition-timing-function: ease-out;
-  z-index: -1;
-}
-
-#go-to-contact:hover::before,
-#go-to-contact:focus::before {
-  transform: scaleX(1);
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-}
-
 @media screen and (prefers-reduced-motion: reduce) {
   #go-to-contact {
     transition: none;
@@ -283,12 +320,15 @@ button.move-icon-forward {
 }
 
 #in-evidenza {
+  align-items: center;
   background-attachment: fixed;
   /* stylelint-disable-next-line */
   background-image: resolve(cta.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  min-height: calc(100vh - 104px);
 }
 
 #sedi {

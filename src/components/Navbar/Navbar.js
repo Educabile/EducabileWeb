@@ -1,71 +1,50 @@
-import React, { Component } from 'react'
-import cx from 'class-names'
+import React, { Component, Fragment, Children } from 'react'
 import PropTypes from 'prop-types'
-import Scrollspy from 'react-scrollspy'
-import { Icon } from '@mdi/react'
-import { mdiMenu } from '@mdi/js'
+import cx from 'classnames'
+import { Icon } from 'react-materialize'
 class Navbar extends Component {
   componentDidMount() {
-    window.M.Sidenav.init(this._sidenav, {})
+    const { options } = this.props
+
+    if (typeof M !== 'undefined') {
+      this.instance = window.M.Sidenav.init(this._sidenav, options)
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.instance) {
+      this.instance.destroy()
+    }
   }
 
   render() {
-    const {
-      children,
-      logo,
-      centerLogo,
-      alignLinks,
-      className,
-      extendedWith,
-      fixed,
-      style,
-    } = this.props
+    const { children, brand, className, extendWith, fixed, alignLinks, centerLogo } = this.props
 
-    const navCSS = cx({
-      'nav-extended': extendedWith,
-    })
-
-    const navWrapperCSS = cx('nav-wrapper', className)
-
-    const logoCSS = cx('brand-logo', 'show-on-medium-and-down', 'hide-on-med-and-up', {
+    const brandClasses = cx({
+      'brand-logo': true,
       center: centerLogo,
     })
 
+    const navCSS = cx({ 'nav-extended': extendWith }, className)
+
     const navMobileCSS = cx('hide-on-med-and-down', [alignLinks])
 
-    const links = children.map((link, index) => <li key={index}>{link}</li>)
+    const links = Children.map(children, (link, index) => <li key={index}>{link}</li>)
 
     let navbar = (
-      <nav className={navCSS} style={style}>
-        <div className={navWrapperCSS}>
-          {logo && (
-            <a href="#!" className={logoCSS}>
-              {logo}
-            </a>
-          )}
-          <a
-            href="#!"
-            data-target="mobile-nav"
-            className="sidenav-trigger show-on-medium-and-down hide-on-med-and-up"
-            style={{ top: '15%' }}>
-            <Icon path={mdiMenu} size="2.5rem" color="white" />
+      <nav className={navCSS}>
+        <div className="nav-wrapper">
+          {brand &&
+            React.cloneElement(brand, {
+              className: cx(brand.props.className, brandClasses),
+            })}
+
+          <a href="#!" data-target="mobile-nav" className="sidenav-trigger">
+            <Icon>menu</Icon>
           </a>
-          <ul className={navMobileCSS}>
-            <Scrollspy
-              items={['azienda', 'destinatari', 'in-evidenza', 'contatti']}
-              currentClassName="active"
-              offset={-64}>
-              {links}
-            </Scrollspy>
-          </ul>
+          <ul className={navMobileCSS}>{links}</ul>
         </div>
-        {extendedWith && (
-          <div className="nav-content">
-            {extendedWith.map((elem, index) => (
-              <div key={index}>{elem}</div>
-            ))}
-          </div>
-        )}
+        {extendWith && <div className="nav-content">{extendWith}</div>}
       </nav>
     )
 
@@ -74,39 +53,78 @@ class Navbar extends Component {
     }
 
     return (
-      <>
+      <Fragment>
         {navbar}
 
         <ul
           id="mobile-nav"
-          className="sidenav"
+          className={cx('sidenav', [alignLinks])}
           ref={ul => {
             this._sidenav = ul
           }}>
-          <Scrollspy
-            items={['azienda', 'destinatari', 'in-evidenza', 'contatti']}
-            currentClassName="active">
-            {links}
-          </Scrollspy>
+          {links}
         </ul>
-      </>
+      </Fragment>
     )
   }
 }
 
 Navbar.propTypes = {
-  logo: PropTypes.string,
-  alignLinks: PropTypes.oneOf(['left', 'right']),
-  centerLogo: PropTypes.bool,
-  fixed: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  extendedWith: PropTypes.arrayOf(PropTypes.node),
+  brand: PropTypes.node,
+  children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
+  extendWith: PropTypes.node,
+  /**
+   * left makes the navbar links left aligned, right makes them right aligned
+   */
+  alignLinks: PropTypes.oneOf(['left', 'right']),
+  /**
+   * The logo will center itself on medium and down screens.
+   * Specifying centerLogo as a prop the logo will always be centered
+   */
+  centerLogo: PropTypes.bool,
+  /**
+   * Makes the navbar fixed
+   */
+  fixed: PropTypes.bool,
+  /**
+   * Options hash for the sidenav.
+   * More info: https://materializecss.com/sidenav.html#options
+   */
+  options: PropTypes.shape({
+    // Side of screen on which Sidenav appears.
+    edge: PropTypes.oneOf(['left', 'right']),
+    // Allow swipe gestures to open / close Sidenav.
+    draggable: PropTypes.bool,
+    // Length in ms of enter transition.
+    inDuration: PropTypes.number,
+    // Length in ms of exit transition.
+    outDuration: PropTypes.number,
+    // Function called when sidenav starts entering.
+    onOpenStart: PropTypes.func,
+    // Function called when sidenav finishes entering.
+    onOpenEnd: PropTypes.func,
+    // Function called when sidenav starts exiting.
+    onCloseStart: PropTypes.func,
+    // Function called when sidenav finishes exiting.
+    onCloseEnd: PropTypes.func,
+    // Prevent page from scrolling while sidenav is open.
+    preventScrolling: PropTypes.bool,
+  }),
 }
 
 Navbar.defaultProps = {
-  alignLinks: 'right',
+  options: {
+    edge: 'left',
+    draggable: true,
+    inDuration: 250,
+    outDuration: 200,
+    onOpenStart: null,
+    onOpenEnd: null,
+    onCloseStart: null,
+    onCloseEnd: null,
+    preventScrolling: true,
+  },
 }
 
 export default Navbar

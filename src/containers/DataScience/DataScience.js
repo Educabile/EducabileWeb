@@ -1,14 +1,8 @@
 import React from 'react'
-import { Row, Section, Col } from 'react-materialize'
+import { Row, Col } from 'react-materialize'
 import Parallax from '../../components/Parallax/Parallax'
 import Icon from '@mdi/react'
-import {
-  mdiAccount,
-  mdiHeartPulse,
-  mdiBriefcase,
-  mdiAccountGroup,
-  mdiChartLineStacked,
-} from '@mdi/js'
+import { mdiHeartPulse, mdiBriefcase, mdiAccountGroup, mdiChartLineStacked } from '@mdi/js'
 import {
   supportoAiProgettiJpg as SupportoAiProgetti,
   piattaformeAmbientiJpg as PiattaformeAmbienti,
@@ -17,25 +11,8 @@ import {
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 
-const DataTechnology = ({ t }) => (
-  <>
-    <Row>
-      <Col s={12} xl={3}>
-        <Icon path={mdiAccount} />
-      </Col>
-
-      <Col s={12} xl={3}>
-        <Section>w</Section>
-      </Col>
-
-      <Col s={12} xl={3}>
-        <Section>w</Section>
-      </Col>
-      <Col s={12} xl={3}>
-        <Section>w</Section>
-      </Col>
-    </Row>
-
+const DataScience = ({ t }) => (
+  <div style={{ padding: '47px 0px 0px 0px' }}>
     <Row>
       <Col s={12} xl={6}>
         <Parallax
@@ -93,11 +70,11 @@ const DataTechnology = ({ t }) => (
         </Parallax>
       </Col>
     </Row>
-  </>
+  </div>
 )
 
-DataTechnology.propTypes = {
+DataScience.propTypes = {
   t: PropTypes.func.isRequired,
 }
 
-export default withNamespaces('data-science')(DataTechnology)
+export default withNamespaces('data-science')(DataScience)

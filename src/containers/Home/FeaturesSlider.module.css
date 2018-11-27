@@ -1,4 +1,18 @@
-.caption {
+:global(.slider .slides) {
+  clip-path: polygon(0px 0px, 1739px 0px, 1738px 330px, 0px 400px);
+
+  @media (max-width: 768px) {
+    clip-path: polygon(0px 0px, 1739px 0px, 1737px 282px, 0px 400px);
+  }
+}
+
+:global(.slider .indicators) {
+  @media (min-width: 769px) {
+    bottom: 30px;
+  }
+}
+
+.Caption {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;

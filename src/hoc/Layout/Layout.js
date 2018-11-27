@@ -11,28 +11,43 @@ import {
   mdiLinkedin,
   mdiYoutube,
   mdiCheckboxBlank,
+  mdiArrowUp,
 } from '@mdi/js'
-import { HashLink as Link } from 'react-router-hash-link'
+import { NavHashLink as Link } from 'react-router-hash-link'
 import PropTypes from 'prop-types'
 import { withNamespaces } from 'react-i18next'
 import { logoEducabilePng, logoEducabileWebP } from '../../assets/img'
-
+import ScrollToTop from 'react-scroll-up'
 const Layout = ({ children, t }) => {
-  const offset = 60
+  const offset = 56
 
   return (
     <>
       <header>
-        <Navbar logo="Educabile" className="z-depth-3" fixed>
+        <Navbar
+          brand={
+            <Link
+              to="/#root"
+              className="show-on-medium-and-down hide-on-med-and-up"
+              scroll={() => {
+                window.scrollTo({
+                  top: document.body.getBoundingClientRect().top - offset,
+                  behavior: 'smooth',
+                })
+              }}>
+              Educabile
+            </Link>
+          }
+          className="z-depth-3"
+          fixed
+          alignLinks="right"
+          centerLogo>
           <Link
             className="sidenav-close"
-            to="/#"
-            scroll={el => {
+            to="/#azienda"
+            scroll={() => {
               window.scrollTo({
-                top:
-                  el.getBoundingClientRect().top -
-                  document.body.getBoundingClientRect().top -
-                  offset,
+                top: document.body.getBoundingClientRect().top - offset,
                 behavior: 'smooth',
               })
             }}>
@@ -97,7 +112,7 @@ const Layout = ({ children, t }) => {
         </Navbar>
       </header>
       <main>{children}</main>
-      <Link to="/#">
+      <Link to="/#root">
         <picture>
           <source srcSet={logoEducabileWebP} type="image/webp" />
           <source srcSet={logoEducabilePng} type="image/png" />
@@ -110,7 +125,23 @@ const Layout = ({ children, t }) => {
           />
         </picture>
       </Link>
-
+      <ScrollToTop showUnder={800}>
+        <Button
+          floating
+          large
+          className="blueGradient hoverable"
+          waves="light"
+          style={{
+            bottom: 64,
+            right: 20,
+            position: 'fixed',
+            display: 'inline-flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Icon path={mdiArrowUp} size={1.125} color="white" />
+        </Button>
+      </ScrollToTop>
       <footer className="blue darken-3">
         <div className="row">
           <div className="col s12 xl4 center" style={{ paddingTop: 4 }}>

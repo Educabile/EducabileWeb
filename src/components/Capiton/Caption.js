@@ -2,20 +2,10 @@
 import React from 'react'
 import cx from 'class-names'
 import PropTypes from 'prop-types'
-import Style from './Caption.module.css'
 
 const Caption = ({ className, placement, children, ...props }) => {
   return (
-    <div
-      className={cx(
-        'caption',
-        Style.caption,
-        {
-          [`${placement}-align`]: placement,
-        },
-        className
-      )}
-      {...props}>
+    <div className={cx('caption', `${placement}-align`, className)} {...props}>
       {children}
     </div>
   )
@@ -24,11 +14,15 @@ const Caption = ({ className, placement, children, ...props }) => {
 Caption.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  /**
+   * Placement of the caption
+   * @default 'center'
+   */
   placement: PropTypes.oneOf(['left', 'center', 'right']),
 }
 
-Caption.propDefault = {
-  placement: 'left',
+Caption.defaultProps = {
+  placement: 'center',
 }
 
 export default Caption

@@ -43,9 +43,7 @@ class Post extends Component {
               height: 380,
               backgroundColor: 'rgba(0,0,0, .125)',
             }}
-            imageSrc={
-              this.state.post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url
-            }
+            imageSrc={this.state.post._embedded['wp:featuredmedia'][0].source_url}
           />
           <Container
             className="section white z-depth-2"

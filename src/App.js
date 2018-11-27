@@ -6,19 +6,16 @@ import Home from './containers/Home/Home'
 import Blog from './containers/Blog/Blog'
 import PrivacyPolicy from './containers/PrivacyPolicy/PrivacyPolicy'
 import NoteLegali from './containers/NoteLegali/NoteLegali'
-import DidatticaDigitale from './containers/DidatticaDigitale/DidatticaDigitale'
-import DataTechnology from './containers/DataTechnology/DataTechnology'
 import Post from './containers/Blog/Post/Post'
 import Layout from './hoc/Layout/Layout'
-
+import Servizi from './containers/Servizi/Servizi'
 class App extends Component {
   render() {
     return (
       <Layout>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/didattica-digitale" exact component={DidatticaDigitale} />
-          <Route path="/data-technology" exact component={DataTechnology} />
+          <Route path="/servizi/" component={Servizi} />
           <Route path="/note-legali" exact component={NoteLegali} />
           <Route path="/privacy-policy" exact component={PrivacyPolicy} />
           <Route exact path="/blog/" component={Blog} />
