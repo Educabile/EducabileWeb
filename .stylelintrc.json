@@ -3,7 +3,6 @@
   "extends": "stylelint-config-prettier",
   "plugins": [
     "stylelint-high-performance-animation",
-    "stylelint-value-no-unknown-custom-properties",
     "stylelint-images",
     "stylelint-a11y",
     "stylelint-csstree-validator",
@@ -30,7 +29,6 @@
         "ignoreProperties": ["color", "background-color", "box-shadow"]
       }
     ],
-    "csstools/value-no-unknown-custom-properties": true,
     "images/broken": true,
     "images/prefer-data-uri": 256,
     "a11y/media-prefers-reduced-motion": true,

@@ -1,10 +1,24 @@
+.Section {
+  & p {
+    &::first-letter {
+      color: var(--blue);
+      float: left;
+      font-size: 55px;
+      line-height: 45px;
+      padding-left: 3px;
+      padding-right: 8px;
+      padding-top: 4px;
+    }
+  }
+}
+
 .Btn {
   & button {
     align-items: center;
     display: inline-flex;
 
     &::before {
-      background: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));
+      background: var(--blue-gradient);
       bottom: 0;
       content: '';
       left: 0;

@@ -5,7 +5,7 @@ import DidatticaDigitale from './DidatticaDigitale/DidatticaDigitale'
 import DataScience from './DataScience/DataScience'
 import Style from './Servizi.module.css'
 import PropTypes from 'prop-types'
-import { scrollTo } from '../../libs/utils'
+import { scrollTo } from 'libs/utils'
 import { withNamespaces } from 'react-i18next'
 
 const Servizi = ({ t, location: { pathname } }) => (

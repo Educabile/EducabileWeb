@@ -15,13 +15,14 @@ import {
 } from '@mdi/js'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import { scrollTo } from '../../libs/utils'
+import { scrollTo } from 'libs/utils'
 
 import FeaturesSlider from './FeaturesSlider'
 import FeatureCard from './FeatureCard'
 import Destinatari from './Destinatari/Destinatari'
 import PartnerSlider from './PartnerSlider/PartnerSlider'
 import ServiceCard from './ServiceCard'
+import AreeDiIntervento from './AreeDiIntervento/AreeDiIntervento'
 import Servizi from './Servizi/Servizi'
 import Azienda from './Azienda/Azienda'
 import InEvidenza from './InEvidenza/InEvidenza'
@@ -81,9 +82,12 @@ const Home = ({ t }) => {
 
       <PartnerSlider title={t('partner.title')} />
 
-      <Servizi
+      <AreeDiIntervento
         title={t('areeDiIntervento.title')}
         content={t('areeDiIntervento.content')}
+      />
+
+      <Servizi
         button={
           <Link to="/didattica-digitale">
             <Button large waves="light" className="move-icon-forward hoverable blueGradient">

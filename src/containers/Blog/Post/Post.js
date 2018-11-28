@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import { Button } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiArrowLeft } from '@mdi/js'
-import Container from '../../../components/Container/Container'
-import Parallax from '../../../components/Parallax/Parallax'
+import Container from 'components/Container/Container'
+import Parallax from 'components/Parallax/Parallax'
 import wp from '../../../axios-wordpress'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import Spinner from '../../../components/Spinner/Spinner'
+import Spinner from 'components/Spinner/Spinner'
 import TimeAgo from 'react-timeago'
 import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-import { scrollTo } from '../../../libs/utils'
+import { scrollTo } from 'libs/utils'
 class Post extends Component {
   state = {
     post: null,
@@ -57,9 +57,15 @@ class Post extends Component {
             style={{
               height: 380,
               backgroundColor: 'rgba(0,0,0, .125)',
+              clipPath: 'polygon(0px 0px, 1739px 0px, 1738px 254px, 0px 380px)',
             }}
-            imageSrc={_embedded['wp:featuredmedia'][0].source_url}
-          />
+            imageSrc={_embedded['wp:featuredmedia'][0].source_url}>
+            <h1
+              className="center-align white-text hide-on-large-only"
+              style={{ textShadow: 'rgba(0, 0, 0, 0.72) 0px 2px 4px' }}>
+              {title}
+            </h1>
+          </Parallax>
           <Container
             className="section white z-depth-2"
             style={{
@@ -85,7 +91,7 @@ class Post extends Component {
             </Button>
 
             <Container>
-              <h1 className="left-align">{title}</h1>
+              <h1 className="left-align hide-on-med-and-down">{title}</h1>
               <TimeAgo date={date} formatter={buildFormatter(italianString)} />
 
               <span

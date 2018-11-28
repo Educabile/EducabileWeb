@@ -1,6 +1,6 @@
 import React from 'react'
-import Slide from '../../components/Slide/Slide'
-import Caption from '../../components/Capiton/Caption'
+import Slide from 'components/Slide/Slide'
+import Caption from 'components/Capiton/Caption'
 import { Button, Slider } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiArrowRight } from '@mdi/js'
@@ -14,10 +14,10 @@ import {
   consulenzaDtWebP,
   piattaformeAmbientiJpg,
   piattaformeAmbientiWebP,
-} from '../../assets/img'
+} from 'assets/img'
 import { withNamespaces } from 'react-i18next'
 import Style from './FeaturesSlider.module.css'
-import Picture from '../../components/Picture/Picture'
+import Picture from 'components/Picture/Picture'
 
 const FirstSlide = (
   <Picture

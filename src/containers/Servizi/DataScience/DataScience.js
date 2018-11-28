@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-materialize'
-import Parallax from '../../../components/Parallax/Parallax'
+import Parallax from 'components/Parallax/Parallax'
 import Icon from '@mdi/react'
 import { mdiHeartPulse, mdiBriefcase, mdiAccountGroup, mdiChartLineStacked } from '@mdi/js'
 import {
   supportoAiProgettiJpg as SupportoAiProgetti,
   piattaformeAmbientiJpg as PiattaformeAmbienti,
   infrastruttureDiReteJpg as InfrastruttureDiRete,
-} from '../../../assets/img'
+} from 'assets/img'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import { scrollTo } from '../../../libs/utils'
+import { scrollTo } from 'libs/utils'
 
 class DataScience extends Component {
   componentDidMount() {

@@ -39,7 +39,7 @@ module.exports = {
       features: {
         'nesting-rules': true,
       },
-      importFrom: ['src/style/selectors.css'],
+      importFrom: ['src/style/selectors.css', 'src/style/colors.css'],
     }),
   ],
 }

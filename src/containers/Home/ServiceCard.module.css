@@ -1,6 +1,3 @@
-@value colors: '../../style/colors.css';
-@value orange, green from colors;
-
 .ServiceCard {
   & .ServiceIcon {
     background-color: #ececec;
@@ -54,13 +51,13 @@
 
     &.DidatticaDigitale {
       & svg {
-        fill: orange;
+        fill: var(--orange);
       }
     }
 
     &.DataScience {
       & svg {
-        fill: green;
+        fill: var(--green);
       }
     }
   }
@@ -83,13 +80,13 @@
 
       &.DidatticaDigitale {
         &::before {
-          background-image: linear-gradient(to top, orange, ease-in-out, color(orange tint(15%)));
+          background-image: var(--orange-gradient);
         }
       }
 
       &.DataScience {
         &::before {
-          background-image: linear-gradient(to top, green, ease-in-out, color(green tint(15%)));
+          background-image: var(--green-gradient);
         }
       }
     }

@@ -1,6 +1,3 @@
-@value colors: '../../../style/colors.css';
-@value blue from colors;
-
 .Row,
 .Col {
   display: flex;
@@ -16,7 +13,7 @@
     display: inline-flex;
 
     &::before {
-      background: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));
+      background: var(--blue-gradient);
       bottom: 0;
       content: '';
       left: 0;

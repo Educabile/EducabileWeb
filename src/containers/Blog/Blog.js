@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import InfiniteScroll from 'react-infinite-scroller'
 import { Link } from 'react-router-dom'
 import wp from '../../axios-wordpress'
-import Spinner from '../../components/Spinner/Spinner'
+import Spinner from 'components/Spinner/Spinner'
 import { Row, Col, Button } from 'react-materialize'
-import Select from '../../components/Select/Select'
+import Select from 'components/Select/Select'
 import Icon from '@mdi/react'
 import {
   mdiFacebookBox,
@@ -21,10 +21,10 @@ import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import qs from 'query-string'
 import Slide from 'react-reveal/Slide'
-import Card from '../../components/Card/Card'
+import Card from 'components/Card/Card'
 import { scrollTo } from '../../libs/utils'
 import idgen from '../../idgen'
-import Dropdown from '../../components/Dropdown/Dropdown'
+import Dropdown from 'components/Dropdown/Dropdown'
 
 class Blog extends Component {
   state = {

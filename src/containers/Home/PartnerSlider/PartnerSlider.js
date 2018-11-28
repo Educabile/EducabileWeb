@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Section, Divider } from 'react-materialize'
-import Container from '../../../components/Container/Container'
-import Carousel from '../../../components/Carousel/Carousel'
+import { Divider } from 'react-materialize'
+import Carousel from 'components/Carousel/Carousel'
 import Style from './PartnerSlider.module.css'
-import Picture from '../../../components/Picture/Picture'
+import Picture from 'components/Picture/Picture'
 import {
   banatUniversityPng,
   banatUniversityWebP,
@@ -14,13 +13,13 @@ import {
   qequipeWebP,
   ictConsultingPng,
   ictConsultingWebP,
-} from '../../../assets/img/partners-logos'
-const PartnerSlider = ({ title }) => (
-  <Section id="partner" className="white">
-    {title ? <h2 className="center">{title} </h2> : null}
-    <Container>
-      <Divider />
+} from 'assets/img/partners-logos'
+import Base from 'components/Base/Base'
 
+const PartnerSlider = ({ title }) => (
+  <Base id="partner" title={title} showTitleOnLarge={true}>
+    <>
+      <Divider />
       <Carousel
         options={{
           fullWidth: false,
@@ -83,10 +82,9 @@ const PartnerSlider = ({ title }) => (
           alt="ICT Consulting"
         />
       </Carousel>
-
       <Divider />
-    </Container>
-  </Section>
+    </>
+  </Base>
 )
 
 PartnerSlider.propTypes = {

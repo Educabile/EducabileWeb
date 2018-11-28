@@ -2,7 +2,7 @@
 @value blue, orange, green from colors;
 
 ::selection {
-  background-color: blue;
+  background-color: var(--blue);
   color: white;
 }
 
@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #2d64c1;
+  background-color: var(--blue);
   border-radius: 6px;
 }
 
@@ -28,18 +28,6 @@ html {
   font-size: 15px;
   letter-spacing: 0.05em;
   text-rendering: optimizeLegibility;
-}
-
-.dropcap {
-  &::first-letter {
-    color: blue;
-    float: left;
-    font-size: 55px;
-    line-height: 45px;
-    padding-left: 3px;
-    padding-right: 8px;
-    padding-top: 4px;
-  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -77,15 +65,15 @@ html {
 }
 
 .blueGradient {
-  background-image: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));
+  background-image: var(--blue-gradient);
 }
 
 .orangeGradient {
-  background: linear-gradient(to right, orange, ease-out, color(orange tint(20%)));
+  background: var(--orange-gradient);
 }
 
 .greenGradient {
-  background: linear-gradient(to right, green, ease-out, color(green tint(20%)));
+  background: var(--green-gradient);
 }
 
 body {
@@ -120,23 +108,6 @@ nav ul a.active {
 .move-icon-forward:hover svg,
 .move-icon-forward:focus svg {
   transform: translateX(75%);
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  #go-to-contact {
-    transition: none;
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  #go-to-contact svg {
-    transform: translateX(35%);
-    transition: none;
-  }
 }
 
 .card.large {

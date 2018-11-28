@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from 'components/Navbar/Navbar'
 import { Button } from 'react-materialize'
 import Icon, { Stack } from '@mdi/react'
 import {
@@ -17,8 +17,8 @@ import ScrollToTop from 'react-scroll-up'
 import { NavHashLink as Link } from 'react-router-hash-link'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import { logoEducabilePng, logoEducabileWebP } from '../assets/img'
-import { scrollTo } from '../libs/utils'
+import { logoEducabilePng, logoEducabileWebP } from 'assets/img'
+import { scrollTo } from 'libs/utils'
 
 const offset = 56
 
@@ -89,7 +89,7 @@ const Layout = ({ children, t }) => (
         />
       </picture>
     </Link>
-    <ScrollToTop showUnder={800}>
+    <ScrollToTop showUnder={800} style={{ zIndex: '2' }}>
       <Button
         floating
         large

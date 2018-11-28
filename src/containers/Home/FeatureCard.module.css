@@ -1,7 +1,6 @@
-@value colors: '../../style/colors.css';
-@value blue from colors;
-
 .FeatureCard {
+  min-height: 510px;
+
   & .FeatureIcon {
     background-color: #ececec;
     clip-path: circle(50px at 50.1% 50.9%);
@@ -10,7 +9,7 @@
     @media screen and (prefers-reduced-motion: reduce) {
       & svg {
         border-radius: 50%;
-        fill: blue;
+        fill: var(--blue);
         height: 100px;
         line-height: 100px;
         position: relative;
@@ -21,7 +20,7 @@
 
     & svg {
       border-radius: 50%;
-      fill: blue;
+      fill: var(--blue);
       height: 100px;
       line-height: 100px;
       position: relative;
@@ -30,7 +29,7 @@
     }
     @media screen and (prefers-reduced-motion: reduce) {
       &::before {
-        background-image: linear-gradient(to top, blue, ease-in-out, color(blue tint(15%)));
+        background-image: var(--blue-gradient);
         bottom: 0;
         content: '';
         left: 0;
@@ -44,7 +43,7 @@
     }
 
     &::before {
-      background-image: linear-gradient(to top, blue, ease-in-out, color(blue tint(15%)));
+      background-image: var(--blue-gradient);
       bottom: 0;
       content: '';
       left: 0;

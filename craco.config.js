@@ -1,4 +1,5 @@
-const { whenProd, POSTCSS_MODES } = require('@craco/craco')
+const path = require('path')
+const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
 
 module.exports = function() {
   return {
@@ -29,7 +30,18 @@ module.exports = function() {
             },
           },
         ],
+        'babel-plugin-transform-react-class-to-function',
       ],
     })),
+    webpack: {
+      alias: {
+        components: path.join(paths.appSrc, 'components'),
+        containers: path.join(paths.appSrc, 'containers'),
+        hoc: path.join(paths.appSrc, 'hoc'),
+        style: path.join(paths.appSrc, 'style'),
+        libs: path.join(paths.appSrc, 'libs'),
+        assets: path.join(paths.appSrc, 'assets'),
+      },
+    },
   }
 }

@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { Row, Col } from 'react-materialize'
 import Icon, { Stack } from '@mdi/react'
 import { mdiSchool, mdiLifebuoy, mdiServerNetwork, mdiBank, mdiCircle } from '@mdi/js'
-import Container from '../../../components/Container/Container'
-import Parallax from '../../../components/Parallax/Parallax'
+import Container from 'components/Container/Container'
+import Parallax from 'components/Parallax/Parallax'
 import {
   supportoAiProgettiJpg as SupportoAiProgetti,
   piattaformeAmbientiJpg as PiattaformeAmbienti,
   infrastruttureDiReteJpg as InfrastruttureDiRete,
   ctaJpg as CTA,
-} from '../../../assets/img'
+} from 'assets/img'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import Zoom from 'react-reveal/Zoom'
-import { scrollTo } from '../../../libs/utils'
+import { scrollTo } from 'libs/utils'
 
 class DidatticaDigitale extends Component {
   componentDidMount() {
