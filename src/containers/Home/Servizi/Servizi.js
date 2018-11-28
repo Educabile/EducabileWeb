@@ -6,20 +6,26 @@ import cx from 'classnames'
 
 import Base from 'components/Base/Base'
 
-const Servizi = ({ children, button }) => (
+const Servizi = ({ id, children, className, button }) => (
   <Base
-    id="servizi"
-    className="grey lighten-4"
+    id={id}
+    className={cx('grey lighten-4', className)}
     button={cloneElement(button, { className: cx(button.props.className, Styles.Btn) })}>
     <Row>{children}</Row>
   </Base>
 )
 
 Servizi.propTypes = {
+  id: PropTypes.string,
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   title: PropTypes.string,
   content: PropTypes.string,
   button: PropTypes.node,
+}
+
+Servizi.defaultProps = {
+  id: 'servizi',
 }
 
 export default Servizi

@@ -1,5 +1,7 @@
 const path = require('path')
 const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
+// TODO: It's not working as of now! :(
+var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
 module.exports = function() {
   return {
@@ -34,6 +36,9 @@ module.exports = function() {
       ],
     })),
     webpack: {
+      resolve: {
+        plugins: [new DirectoryNamedWebpackPlugin()],
+      },
       alias: {
         components: path.join(paths.appSrc, 'components'),
         containers: path.join(paths.appSrc, 'containers'),

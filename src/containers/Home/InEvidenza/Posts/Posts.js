@@ -10,6 +10,7 @@ import {
   mdiLinkedinBox,
   mdiGooglePlusBox,
   mdiShareVariant,
+  mdiChevronRight,
 } from '@mdi/js'
 import idgen from '../../../../idgen'
 import wp from '../../../../axios-wordpress'
@@ -20,6 +21,8 @@ import Fade from 'react-reveal/Fade'
 import TimeAgo from 'react-timeago'
 import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+import cx from 'classnames'
+
 class Posts extends Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
@@ -65,14 +68,21 @@ class Posts extends Component {
       }
     }
 
-    return {
-      className: `${css} hoverable`,
-      waves: 'light',
-      large: true,
-      icon: 'keyboard_arrow_right',
-      to: `/blog/post/${post.slug}`,
-      node: Link,
-    }
+    return (
+      <Link to={`/blog/post/${post.slug}`}>
+        <Button
+          className={cx('halfway-fab', 'hoverable', css)}
+          waves="light"
+          large
+          floating
+          style={{
+            display: 'inline-flex',
+            justifyContent: 'center',
+          }}>
+          <Icon path={mdiChevronRight} size="1.5rem" color="white" />
+        </Button>
+      </Link>
+    )
   }
 
   renderActions(post, index) {

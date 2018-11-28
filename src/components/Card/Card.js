@@ -36,9 +36,7 @@ const Card = ({
   let card = (
     <>
       <CardContent>
-        <CardTitle className={title.className}>
-          {typeof title === 'object' ? title.title : title}
-        </CardTitle>
+        <CardTitle>{title}</CardTitle>
         {children}
       </CardContent>
       <CardAction>{actions}</CardAction>
@@ -46,22 +44,15 @@ const Card = ({
   )
 
   if (image) {
+    const isFabLarge = fab && (fab.props.large || fab.props.children.props.large)
+
     card = (
       <>
         <CardImage image={image} fab={fab}>
-          {fab && !fab.large && (
-            <CardTitle className={title.className}>
-              {typeof title === 'object' ? title.title : title}
-            </CardTitle>
-          )}
+          {!isFabLarge ? <CardTitle className={title.className}>{title}</CardTitle> : null}
         </CardImage>
         <CardContent>
-          {fab && fab.large && (
-            <CardTitle className={title.className}>
-              {typeof title === 'object' ? title.title : title}
-            </CardTitle>
-          )}
-          {children}
+          {isFabLarge ? <CardTitle>{title}</CardTitle> : null} {children}
         </CardContent>
         <CardAction>{actions}</CardAction>
       </>
@@ -89,9 +80,7 @@ const Card = ({
         </CardContent>
         <CardAction>{actions}</CardAction>
         <div className="card-reveal">
-          <CardTitle className={title.className} closeReveal>
-            {typeof title === 'object' ? title.title : title}
-          </CardTitle>
+          <CardTitle closeReveal>{title}</CardTitle>
           {children}
         </div>
       </>
@@ -107,17 +96,12 @@ const Card = ({
 
 Card.propTypes = {
   children: PropTypes.node,
+  textClassName: PropTypes.string,
   className: PropTypes.string,
-  title: PropTypes.oneOfType([
-    PropTypes.string.isRequired,
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      className: PropTypes.string,
-    }),
-  ]),
+  title: PropTypes.string,
   image: PropTypes.string,
   horizontal: PropTypes.bool,
-  actions: PropTypes.arrayOf(PropTypes.object),
+  actions: PropTypes.node,
   style: PropTypes.object,
   stickyActions: PropTypes.bool,
   fab: PropTypes.object,

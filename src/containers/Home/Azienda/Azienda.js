@@ -4,22 +4,28 @@ import cx from 'classnames'
 import Styles from './Azienda.module.css'
 import Base from 'components/Base/Base'
 
-const Azienda = ({ children, title, content, button }) => (
+const Azienda = ({ id, children, title, content, className, button }) => (
   <Base
-    id="azienda"
+    id={id}
     title={title}
     content={content}
-    className={Styles.Section}
+    className={cx(className, Styles.Section)}
     button={cloneElement(button, { className: cx(button.props.className, Styles.Btn) })}>
     {children}
   </Base>
 )
 
 Azienda.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node,
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   button: PropTypes.node,
+}
+
+Azienda.defaultProps = {
+  id: 'azienda',
 }
 
 export default Azienda

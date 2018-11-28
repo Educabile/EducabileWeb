@@ -16,8 +16,8 @@ import {
 } from 'assets/img/partners-logos'
 import Base from 'components/Base/Base'
 
-const PartnerSlider = ({ title }) => (
-  <Base id="partner" title={title} showTitleOnLarge={true}>
+const PartnerSlider = ({ id, className, title, button }) => (
+  <Base id={id} className={className} title={title} showTitleOnLarge button={button}>
     <>
       <Divider />
       <Carousel
@@ -88,7 +88,14 @@ const PartnerSlider = ({ title }) => (
 )
 
 PartnerSlider.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
   title: PropTypes.string.isRequired,
+  button: PropTypes.node,
+}
+
+PartnerSlider.defaultProps = {
+  id: 'partners',
 }
 
 export default PartnerSlider

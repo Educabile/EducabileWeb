@@ -6,7 +6,7 @@ import Container from '../Container/Container'
 const Base = ({ id, children, title, showTitleOnLarge, content, button, className }) => (
   <Section id={id} className={className}>
     <Container className="center">
-      {title ? <h2 className={!showTitleOnLarge && 'hide-on-large-only'}>{title}</h2> : null}
+      {title ? <h2 className={showTitleOnLarge ? null : 'hide-on-large-only'}>{title}</h2> : null}
       {content ? <p className="flow-text grey-text left-align">{content}</p> : null}
       {children ? <Row>{children}</Row> : null}
       {button}

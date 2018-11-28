@@ -17,11 +17,11 @@ import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import { scrollTo } from 'libs/utils'
 
-import FeaturesSlider from './FeaturesSlider'
-import FeatureCard from './FeatureCard'
+import FeaturesSlider from 'components/FeatureSlider/FeaturesSlider'
+import FeatureCard from 'components/FeatureCard/FeatureCard'
 import Destinatari from './Destinatari/Destinatari'
 import PartnerSlider from './PartnerSlider/PartnerSlider'
-import ServiceCard from './ServiceCard'
+import ServiceCard from 'components/ServiceCard/ServiceCard'
 import AreeDiIntervento from './AreeDiIntervento/AreeDiIntervento'
 import Servizi from './Servizi/Servizi'
 import Azienda from './Azienda/Azienda'
@@ -37,7 +37,7 @@ const Home = ({ t }) => {
         content={t('azienda.content')}
         button={
           <Link
-            to="/#destinatari"
+            to="/azienda"
             scroll={el => {
               scrollTo(el, 60)
             }}>

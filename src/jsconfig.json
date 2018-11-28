@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "components": ["./components"],
+      "containers": ["./containers"],
+      "hoc": ["./hoc"],
+      "style": ["./style"],
+      "libs": ["./libs"],
+      "assets": ["./assets"]
+    }
+  },
+  "exclude": ["node_modules", "build", "public", ".vscode"]
+}

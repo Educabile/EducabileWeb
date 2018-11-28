@@ -5,10 +5,10 @@ import Styles from './Destinatari.module.css'
 import Base from 'components/Base/Base'
 import cx from 'classnames'
 
-const Destinatari = ({ children, title, button }) => (
+const Destinatari = ({ id, children, title, button, className }) => (
   <Base
-    id="destinatari"
-    className="grey lighten-4"
+    id={id}
+    className={cx('grey lighten-4', className)}
     title={title}
     button={cloneElement(button, { className: cx(button.props.className, Styles.ContactBtn) })}>
     {Children.map(children, (child, index) => (
@@ -20,9 +20,15 @@ const Destinatari = ({ children, title, button }) => (
 )
 
 Destinatari.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   button: PropTypes.node,
+}
+
+Destinatari.defaultProps = {
+  id: 'destinatari',
 }
 
 export default Destinatari

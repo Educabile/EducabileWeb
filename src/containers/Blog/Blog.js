@@ -13,6 +13,7 @@ import {
   mdiGooglePlusBox,
   mdiShareVariant,
   mdiArrowLeft,
+  mdiChevronRight,
 } from '@mdi/js'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
@@ -22,9 +23,10 @@ import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import qs from 'query-string'
 import Slide from 'react-reveal/Slide'
 import Card from 'components/Card/Card'
-import { scrollTo } from '../../libs/utils'
+import { scrollTo } from 'libs/utils'
 import idgen from '../../idgen'
 import Dropdown from 'components/Dropdown/Dropdown'
+import cx from 'classnames'
 
 class Blog extends Component {
   state = {
@@ -109,14 +111,21 @@ class Blog extends Component {
       }
     }
 
-    return {
-      className: `${css} hoverable`,
-      waves: 'light',
-      large: true,
-      icon: 'keyboard_arrow_right',
-      to: `/blog/post/${post.slug}`,
-      node: Link,
-    }
+    return (
+      <Link to={`/blog/post/${post.slug}`}>
+        <Button
+          className={cx('halfway-fab', 'hoverable', css)}
+          waves="light"
+          large
+          floating
+          style={{
+            display: 'inline-flex',
+            justifyContent: 'center',
+          }}>
+          <Icon path={mdiChevronRight} size="1.5rem" color="white" />
+        </Button>
+      </Link>
+    )
   }
 
   renderActions(post, index) {
