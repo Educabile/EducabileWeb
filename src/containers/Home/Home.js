@@ -82,7 +82,7 @@ const Home = ({ t }) => {
       <PartnerSlider title={t('partner.title')} />
 
       <Servizi
-        title={t('areeDiIntevento.title')}
+        title={t('areeDiIntervento.title')}
         content={t('areeDiIntervento.content')}
         button={
           <Link to="/didattica-digitale">
