@@ -1,13 +1,8 @@
 import React from 'react'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import Spinner from '../../components/Spinner/Spinner'
 
-const NoteLegali = ({ t, tReady }) => {
-  if (!tReady) {
-    return <Spinner />
-  }
-
+const NoteLegali = ({ t }) => {
   return (
     <div className="container">
       <h1 className="center">{t('title')}</h1>
@@ -32,7 +27,6 @@ const NoteLegali = ({ t, tReady }) => {
 
 NoteLegali.propTypes = {
   t: PropTypes.func.isRequired,
-  tReady: PropTypes.bool.isRequired,
 }
 
 export default withNamespaces('note-legali')(NoteLegali)

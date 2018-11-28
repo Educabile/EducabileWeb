@@ -55,126 +55,6 @@ html {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .btn,
-  .btn-small,
-  .btn-large {
-    transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
 .btn,
 .btn-small,
 .btn-large {
@@ -211,13 +91,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    'Helvetica Neue', sans-serif;
-  margin: 0;
   min-height: 100vh;
-  min-height: 100vh;
-  padding: 0;
-  /* background-color: #f5f5f5; */
 }
 
 main {
@@ -227,21 +101,6 @@ main {
 
 nav ul a.active {
   background: rgba(0, 0, 0, 0.2);
-}
-
-button.move-icon-forward {
-  align-items: center;
-  display: inline-flex;
-}
-
-#azienda > div > a {
-  display: inline-flex;
-}
-
-.didattica-digitale,
-.data-science,
-.internet-of-things {
-  padding: 50px !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -280,29 +139,8 @@ button.move-icon-forward {
   }
 }
 
-#go-to-contact svg {
-  transform: translateX(35%);
-  transition: transform 0.25s ease-out;
-}
-
-#go-to-contact:hover,
-#go-to-contact:focus {
-  color: white !important;
-}
-
-#go-to-contact:hover svg,
-#go-to-contact:focus svg {
-  fill: white;
-}
-
-#blog-btn {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-}
-
-#blog-btn svg {
-  transform: translateX(35%);
+.card.large {
+  height: 550px;
 }
 
 .rounded {
@@ -319,35 +157,9 @@ button.move-icon-forward {
   border-bottom-right-radius: 25px !important;
 }
 
-#in-evidenza {
-  align-items: center;
-  background-attachment: fixed;
-  /* stylelint-disable-next-line */
-  background-image: resolve(cta.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  min-height: calc(100vh - 104px);
-}
-
 #sedi {
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
-}
-
-#form {
-  border-bottom-right-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
-#form button {
-  align-items: center;
-  display: inline-flex;
-}
-
-#form button svg {
-  transform: translateX(-35%);
 }
 
 #footer-logo {
@@ -394,27 +206,27 @@ footer a:focus svg {
 
 footer a:hover:nth-child(1) svg g:nth-child(2) path,
 footer a:focus:nth-child(1) svg g:nth-child(2) path {
-  fill: #3b5998 !important;
+  fill: facebook-color !important;
 }
 
 footer a:hover:nth-child(2) svg g:nth-child(2) path,
 footer a:focus:nth-child(2) svg g:nth-child(2) path {
-  fill: #1da1f2 !important;
+  fill: twitter-color !important;
 }
 
 footer a:hover:nth-child(3) svg g:nth-child(2) path,
 footer a:focus:nth-child(3) svg g:nth-child(2) path {
-  fill: #dd4b39 !important;
+  fill: google-plus-color !important;
 }
 
 footer a:hover:nth-child(4) svg g:nth-child(2) path,
 footer a:focus:nth-child(4) svg g:nth-child(2) path {
-  fill: #0077b5 !important;
+  fill: linkedin-color !important;
 }
 
 footer a:hover:nth-child(5) svg g:nth-child(2) path,
 footer a:focus:nth-child(5) svg g:nth-child(2) path {
-  fill: red !important;
+  fill: youtube-color !important;
 }
 
 .hiddendiv {

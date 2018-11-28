@@ -68,10 +68,6 @@
       "yarn pretty:css",
       "yarn lint:css:fix",
       "git add"
-    ],
-    "src/**/*.{jpg,jpeg,png}": [
-      "yarn assets",
-      "git add"
     ]
   },
   "devDependencies": {

@@ -1,26 +1,33 @@
 import React from 'react'
 import { Tab, Tabs } from 'react-materialize'
 import cx from 'classnames'
-import DidatticaDigitale from '../DidatticaDigitale/DidatticaDigitale'
-import DataScience from '../DataScience/DataScience'
+import DidatticaDigitale from './DidatticaDigitale/DidatticaDigitale'
+import DataScience from './DataScience/DataScience'
 import Style from './Servizi.module.css'
+import PropTypes from 'prop-types'
+import { scrollTo } from '../../libs/utils'
+import { withNamespaces } from 'react-i18next'
 
-const Servizi = () => (
+const Servizi = ({ t, location: { pathname } }) => (
+  // FIXME: This is just not going to work. We have problem with both i18n and Parallax.
+  // We might want to drop this concept
   <Tabs
     className={cx('tabs-fixed-width tab-demo z-depth-1', Style.Tabs)}
     onChange={() => {
-      window.scrollTo({
-        top: document.body.getBoundingClientRect().top,
-        behavior: 'smooth',
-      })
+      scrollTo(null, 56)
     }}>
-    <Tab title="Didattica Digitale" active={window.location.href.includes('didattica-digitale')}>
+    <Tab title={t('didatticaDigitale')} active={pathname.includes('didattica-digitale')}>
       <DidatticaDigitale />
     </Tab>
-    <Tab title="Data Science" active={window.location.href.includes('data-science')}>
+    <Tab title={t('dataScience')} active={pathname.includes('data-science')}>
       <DataScience />
     </Tab>
   </Tabs>
 )
 
-export default Servizi
+Servizi.propTypes = {
+  t: PropTypes.func.isRequired,
+  location: PropTypes.object,
+}
+
+export default withNamespaces()(Servizi)

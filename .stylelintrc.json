@@ -79,7 +79,7 @@
       }
     ],
     "csstree/validator": {
-      "ignore": ["background", "background-image"]
+      "ignore": ["background", "background-image", "fill"]
     },
     "plugin/declaration-block-no-ignored-properties": true,
     "plugin/stylelint-selector-no-empty": true,

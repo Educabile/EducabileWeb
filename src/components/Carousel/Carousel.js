@@ -40,7 +40,8 @@ class Carousel extends Component {
         <a
           className={cx('carousel-item', {
             'valign-wrapper': centerImages,
-          })}>
+          })}
+          href="#!">
           <img src={child} alt="" />
         </a>
       )

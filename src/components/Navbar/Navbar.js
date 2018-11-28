@@ -1,7 +1,9 @@
-import React, { Component, Fragment, Children } from 'react'
+import React, { Component, Children } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Icon } from 'react-materialize'
+import { Icon } from '@mdi/react'
+import { mdiMenu } from '@mdi/js'
+
 class Navbar extends Component {
   componentDidMount() {
     const { options } = this.props
@@ -39,8 +41,16 @@ class Navbar extends Component {
               className: cx(brand.props.className, brandClasses),
             })}
 
-          <a href="#!" data-target="mobile-nav" className="sidenav-trigger">
-            <Icon>menu</Icon>
+          <a
+            href="#!"
+            data-target="mobile-nav"
+            className="sidenav-trigger show-on-medium-and-down hide-on-med-and-up">
+            <Icon
+              path={mdiMenu}
+              size="2.5rem"
+              color="white"
+              style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)' }}
+            />
           </a>
           <ul className={navMobileCSS}>{links}</ul>
         </div>
@@ -53,7 +63,7 @@ class Navbar extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         {navbar}
 
         <ul
@@ -64,7 +74,7 @@ class Navbar extends Component {
           }}>
           {links}
         </ul>
-      </Fragment>
+      </>
     )
   }
 }

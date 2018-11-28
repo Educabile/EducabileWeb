@@ -17,8 +17,7 @@ import {
 } from '../../../assets/img/partners-logos'
 const PartnerSlider = ({ title }) => (
   <Section id="partner" className="white">
-    {title && <h2 className="center">{title} </h2>}
-
+    {title ? <h2 className="center">{title} </h2> : null}
     <Container>
       <Divider />
 
@@ -42,6 +41,7 @@ const PartnerSlider = ({ title }) => (
               type: 'image/png',
             },
           ]}
+          alt="Banat’s University of Agricultural Sciences and Veterinary Medicine “King Michael I of Romania”"
         />
         <Picture
           sources={[
@@ -54,6 +54,7 @@ const PartnerSlider = ({ title }) => (
               type: 'image/png',
             },
           ]}
+          alt="Geofotogrammetrica Srl "
         />
         <Picture
           sources={[
@@ -66,6 +67,7 @@ const PartnerSlider = ({ title }) => (
               type: 'image/png',
             },
           ]}
+          alt="Q-EQUIPE"
         />
         <Picture
           sources={[
@@ -78,6 +80,7 @@ const PartnerSlider = ({ title }) => (
               type: 'image/png',
             },
           ]}
+          alt="ICT Consulting"
         />
       </Carousel>
 

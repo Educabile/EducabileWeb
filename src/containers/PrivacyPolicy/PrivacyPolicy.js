@@ -1,13 +1,8 @@
 import React from 'react'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import Spinner from '../../components/Spinner/Spinner'
 
-const PrivacyPolicy = ({ t, tReady }) => {
-  if (!tReady) {
-    return <Spinner />
-  }
-
+const PrivacyPolicy = ({ t }) => {
   return (
     <div className="container">
       <h1 className="center">{t('title')}</h1>
@@ -50,7 +45,6 @@ const PrivacyPolicy = ({ t, tReady }) => {
 
 PrivacyPolicy.propTypes = {
   t: PropTypes.func.isRequired,
-  tReady: PropTypes.bool.isRequired,
 }
 
 export default withNamespaces('privacy-policy')(PrivacyPolicy)

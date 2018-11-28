@@ -8,11 +8,11 @@ import wp from '../../../axios-wordpress'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import Spinner from '../../../components/Spinner/Spinner'
+import TimeAgo from 'react-timeago'
+import italianString from 'react-timeago/lib/language-strings/it'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+import { scrollTo } from '../../../libs/utils'
 class Post extends Component {
-  static propTypes = {
-    t: PropTypes.func.isRequired,
-  }
-
   state = {
     post: null,
   }
@@ -33,9 +33,24 @@ class Post extends Component {
   }
 
   render() {
-    const { t } = this.props
+    const {
+      t,
+      history: { goBack },
+    } = this.props
+
+    scrollTo(null, 56)
+
     let post = <Spinner />
+
     if (this.state.post) {
+      const {
+        post: {
+          _embedded,
+          date,
+          title: { rendered: title },
+          content: { rendered: content },
+        },
+      } = this.state
       post = (
         <>
           <Parallax
@@ -43,7 +58,7 @@ class Post extends Component {
               height: 380,
               backgroundColor: 'rgba(0,0,0, .125)',
             }}
-            imageSrc={this.state.post._embedded['wp:featuredmedia'][0].source_url}
+            imageSrc={_embedded['wp:featuredmedia'][0].source_url}
           />
           <Container
             className="section white z-depth-2"
@@ -57,7 +72,7 @@ class Post extends Component {
               large
               waves="light"
               onClick={() => {
-                this.props.history.goBack()
+                goBack()
               }}
               style={{ display: 'inline-flex', alignItems: 'center' }}>
               <Icon
@@ -66,15 +81,17 @@ class Post extends Component {
                 color="#1565C0"
                 style={{ transform: 'translateX(-35%)' }}
               />
-              {t('common:tornaIndietro')}
+              {t('tornaIndietro')}
             </Button>
 
             <Container>
-              <h1 className="center">{this.state.post.title.rendered}</h1>
+              <h1 className="left-align">{title}</h1>
+              <TimeAgo date={date} formatter={buildFormatter(italianString)} />
+
               <span
                 className="flow-text grey-text "
                 dangerouslySetInnerHTML={{
-                  __html: this.state.post.content.rendered,
+                  __html: content,
                 }}
               />
             </Container>
@@ -90,6 +107,7 @@ class Post extends Component {
 Post.propTypes = {
   history: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
+  t: PropTypes.func.isRequired,
 }
 
 export default withNamespaces()(Post)
