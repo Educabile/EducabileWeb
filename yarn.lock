@@ -10842,10 +10842,10 @@ react-materialize@^2.5.0:
     react "^16.2.0"
     react-dom "^16.2.0"
 
-react-responsive-picture@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-picture/-/react-responsive-picture-3.0.0.tgz#324c8144d3ff6ed3e54799f5164a2c0574f52d33"
-  integrity sha512-24xiHi5zCOmX+j7hNkWu207GxCcIRTrp81wd8Kw+WBADgN/1krvEttl07jkOc5MZY9JnU9ziRpcNzsuWJQLIWw==
+react-responsive-picture@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-responsive-picture/-/react-responsive-picture-3.1.0.tgz#a265dc66e555e7bb69f08a29d9e7497a49cb10d9"
+  integrity sha512-6D6uxRiUrq7lnRw6QwqJpfJcHdsbeywDLdCLyX0sX19/arxoNqQzZ0tvWDShQhclUlMscF2CTDHgRzsqtYJUDA==
   dependencies:
     can-use-dom "0.1.0"
     cxs "6.2.0"

@@ -17,7 +17,7 @@ import {
 } from 'assets/img'
 import { withNamespaces } from 'react-i18next'
 import Style from './FeaturesSlider.module.css'
-import Picture from 'components/Picture/Picture'
+import { Picture } from 'react-responsive-picture'
 
 const FirstSlide = (
   <Picture
