@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
 import InfiniteScroll from 'react-infinite-scroller'
-import { Link } from 'react-router-dom'
 import wp from '../../axios-wordpress'
 import Spinner from 'components/Spinner/Spinner'
 import { Row, Col, Button } from 'react-materialize'
 import Select from 'components/Select/Select'
 import Icon from '@mdi/react'
-import { mdiArrowLeft, mdiChevronRight } from '@mdi/js'
+import { mdiArrowLeft } from '@mdi/js'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import qs from 'query-string'
 import Slide from 'react-reveal/Slide'
 import PostCard from 'components/PostCard/PostCard'
 import { scrollTo } from 'libs/utils'
-import idgen from '../../idgen'
-import cx from 'class-names'
+import { Helmet } from 'react-helmet'
 
 class Blog extends Component {
   state = {
@@ -71,96 +69,6 @@ class Blog extends Component {
     )
   }
 
-  renderImage(post) {
-    if (post._embedded['wp:featuredmedia']) {
-      return post._embedded['wp:featuredmedia'][0].source_url
-    } else {
-      return null
-    }
-  }
-
-  renderFab(post) {
-    let css = null
-
-    if (post._embedded['wp:term'][1].length > 0) {
-      switch (post._embedded['wp:term'][1][0].slug) {
-        case 'data-science':
-          css = 'greenGradient'
-          break
-
-        case 'didattica-digitale':
-          css = 'orangeGradient'
-          break
-
-        case 'undefined':
-        case 'null':
-        default:
-          break
-      }
-    }
-
-    return (
-      <Link to={`/blog/post/${post.slug}`}>
-        <Button
-          className={cx('halfway-fab', 'hoverable', css)}
-          waves="light"
-          large
-          floating
-          style={{
-            display: 'inline-flex',
-            justifyContent: 'center',
-          }}>
-          <Icon path={mdiChevronRight} size="1.5rem" color="white" />
-        </Button>
-      </Link>
-    )
-  }
-
-  renderActions(post, index) {
-    const { t } = this.props
-    let actions = []
-
-    if (post._embedded['wp:term'][1].length > 0) {
-      switch (post._embedded['wp:term'][1][0].slug) {
-        case 'didattica-digitale':
-          actions.push(
-            <Link key={`card-${index}-action-${idgen()}`} to="/blog?tags=4&order=desc">
-              <Button
-                className="orangeGradient chip white-text left hoverable"
-                style={{
-                  transition: 'all .5s ease-out',
-                  textShadow: ' 0px 2px 4px rgba(0,0,0, .5)',
-                }}>
-                {t('didatticaDigitale')}
-              </Button>
-            </Link>
-          )
-          break
-
-        case 'data-science':
-          actions.push(
-            <Link key={`card-${index}-action-${idgen()}`} to="blog?tags=3&order=desc">
-              <Button
-                className="greenGradient chip white-text left hoverable"
-                large
-                style={{
-                  transition: 'all .5s ease-out',
-                  textShadow: ' 0px 2px 4px rgba(0,0,0, .5)',
-                }}>
-                {t('dataScience')}
-              </Button>
-            </Link>
-          )
-          break
-
-        default:
-          break
-      }
-    }
-
-    return actions
-  }
-
   render() {
     const { posts, hasMorePosts, order, tags } = this.state
     const {
@@ -174,6 +82,11 @@ class Blog extends Component {
 
     return (
       <>
+        <Helmet>
+          <title>Educabile - Le news</title>
+          <meta name="description" content="Questo e' il blog di Educabile Srl" />
+          <meta name="keyword" content="educabile, privacy, policy, cookie" />
+        </Helmet>
         <Row>
           <Col>
             <Button

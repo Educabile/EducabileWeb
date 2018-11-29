@@ -15,6 +15,7 @@ import {
 } from '@mdi/js'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
 import { scrollTo } from 'libs/utils'
 
 import FeaturesSlider from 'components/FeatureSlider/FeaturesSlider'
@@ -27,9 +28,21 @@ import Servizi from './Servizi/Servizi'
 import Azienda from './Azienda/Azienda'
 import InEvidenza from './InEvidenza/InEvidenza'
 import Contatti from './Contatti/Contatti'
+
 const Home = ({ t }) => {
   return (
     <>
+      <Helmet>
+        <meta
+          name="description"
+          content="Educabile Srl si propone referente affidabile nel gestire scenari complessi ad alto contenuto tecnologico ed offre servizi mirati ad Aziende, Professionisti ed Istituzioni Scolastiche."
+        />
+        <meta
+          name="keyword"
+          content="educazione, azienda, didattica, professionisti, digitale, innovazione, startup"
+        />
+      </Helmet>
+
       <FeaturesSlider />
 
       <Azienda
