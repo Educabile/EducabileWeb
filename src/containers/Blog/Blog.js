@@ -6,26 +6,14 @@ import Spinner from 'components/Spinner/Spinner'
 import { Row, Col, Button } from 'react-materialize'
 import Select from 'components/Select/Select'
 import Icon from '@mdi/react'
-import {
-  mdiFacebookBox,
-  mdiTwitterBox,
-  mdiLinkedinBox,
-  mdiGooglePlusBox,
-  mdiShareVariant,
-  mdiArrowLeft,
-  mdiChevronRight,
-} from '@mdi/js'
+import { mdiArrowLeft, mdiChevronRight } from '@mdi/js'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import TimeAgo from 'react-timeago'
-import italianString from 'react-timeago/lib/language-strings/it'
-import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import qs from 'query-string'
 import Slide from 'react-reveal/Slide'
-import Card from 'components/Card/Card'
+import PostCard from 'components/PostCard/PostCard'
 import { scrollTo } from 'libs/utils'
 import idgen from '../../idgen'
-import Dropdown from 'components/Dropdown/Dropdown'
 import cx from 'class-names'
 
 class Blog extends Component {
@@ -239,84 +227,7 @@ class Blog extends Component {
               return (
                 <Col s={12} xl={4} key={index}>
                   <Slide bottom>
-                    <Card
-                      className="rounded z-depth-2 hoverable"
-                      title={post.title.rendered}
-                      image={this.renderImage(post)}
-                      fab={null || this.renderFab(post)}
-                      large
-                      actions={[
-                        ...this.renderActions(post),
-                        <Dropdown
-                          key={`card-${index}-action-${idgen()}`}
-                          options={{ constrainWidth: false, alignment: 'right' }}
-                          trigger={
-                            <Button className="white right" flat style={{ display: 'inline-flex' }}>
-                              <Icon path={mdiShareVariant} size={1} color="#1565C0" />
-                            </Button>
-                          }>
-                          <span
-                            onClick={() => {
-                              this.openPopup(
-                                `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
-                                  `https://www.educabile.it/blog/post/${post.slug}`
-                                )}`
-                              )
-                            }}
-                            className="blue-text text-darken-3">
-                            <Icon className="left" path={mdiFacebookBox} size={1} color="#3b5998" />
-                            Facebook
-                          </span>
-                          <span
-                            className="blue-text text-darken-3"
-                            onClick={() => {
-                              this.openPopup(
-                                `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
-                                  `https://www.educabile.it/blog/post/${post.slug}`
-                                )}`
-                              )
-                            }}>
-                            <Icon className="left" path={mdiTwitterBox} size={1} color="#1da1f2" />
-                            Twitter
-                          </span>
-                          <span
-                            className="blue-text text-darken-3"
-                            onClick={() => {
-                              this.openPopup(
-                                `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
-                                  `https://www.educabile.it/blog/post/${post.slug}`
-                                )}`
-                              )
-                            }}>
-                            <Icon
-                              className="left"
-                              path={mdiGooglePlusBox}
-                              size={1}
-                              color="#dd4b39"
-                            />
-                            Google Plus
-                          </span>
-                          <span
-                            className="blue-text text-darken-3"
-                            onClick={() => {
-                              this.openPopup(
-                                `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
-                                  `https://www.educabile.it/blog/post/${post.slug}`
-                                )}`
-                              )
-                            }}>
-                            <Icon className="left" path={mdiLinkedinBox} size={1} color="#0077b5" />
-                            Linkedin
-                          </span>
-                        </Dropdown>,
-                      ]}>
-                      <TimeAgo date={post.date} formatter={buildFormatter(italianString)} />
-                      <div
-                        style={{ maxHeight: '6em' }}
-                        className="flow-text grey-text"
-                        dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-                      />
-                    </Card>
+                    <PostCard post={post} />
                   </Slide>
                 </Col>
               )

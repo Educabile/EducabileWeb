@@ -2,7 +2,6 @@ const path = require('path')
 const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
 // TODO: It's not working as of now! :(
 var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
-const PreloadWebpackPlugin = require('preload-webpack-plugin')
 
 module.exports = function() {
   return {
