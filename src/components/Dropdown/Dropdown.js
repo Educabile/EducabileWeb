@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import idgen from '../../idgen'
-import cx from 'classnames'
+import cx from 'class-names'
 
 class Dropdown extends Component {
   idx = 'dropdown_' + idgen()

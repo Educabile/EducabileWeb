@@ -1,6 +1,6 @@
 // TODO: Remove this component if this PR is accepted: https://github.com/react-materialize/react-materialize/pull/700
 import React, { Component } from 'react'
-import cx from 'classnames'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 
 class Carousel extends Component {

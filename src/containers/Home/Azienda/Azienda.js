@@ -1,6 +1,6 @@
 import React, { cloneElement } from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
+import cx from 'class-names'
 import Styles from './Azienda.module.css'
 import Base from 'components/Base/Base'
 

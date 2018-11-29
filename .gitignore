@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/materialize-src
 
 # production
 /build

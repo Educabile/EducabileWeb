@@ -21,7 +21,7 @@ import Fade from 'react-reveal/Fade'
 import TimeAgo from 'react-timeago'
 import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-import cx from 'classnames'
+import cx from 'class-names'
 
 class Posts extends Component {
   static propTypes = {

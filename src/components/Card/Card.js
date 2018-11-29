@@ -5,6 +5,7 @@ import CardContent from './CardContent/CardContent'
 import CardTitle from './CardTitle/CardTitle'
 import CardAction from './CardAction/CardAction'
 import CardImage from './CardImage/CardImage'
+import CardTabs from './CardTabs/CardTabs'
 
 const Card = ({
   children,
@@ -15,6 +16,7 @@ const Card = ({
   horizontal,
   actions,
   reveal,
+  tabs,
   stickyActions,
   small,
   medium,
@@ -55,6 +57,17 @@ const Card = ({
           {isFabLarge ? <CardTitle>{title}</CardTitle> : null} {children}
         </CardContent>
         <CardAction>{actions}</CardAction>
+      </>
+    )
+  }
+
+  if (tabs) {
+    card = (
+      <>
+        <CardContent>
+          <CardTitle>{title}</CardTitle>
+        </CardContent>
+        <CardTabs>{tabs}</CardTabs>
       </>
     )
   }
@@ -109,6 +122,7 @@ Card.propTypes = {
   small: PropTypes.bool,
   medium: PropTypes.bool,
   large: PropTypes.bool,
+  tabs: PropTypes.node,
 }
 
 export default Card

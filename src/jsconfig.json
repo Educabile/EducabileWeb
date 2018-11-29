@@ -9,7 +9,8 @@
       "hoc": ["./hoc"],
       "style": ["./style"],
       "libs": ["./libs"],
-      "assets": ["./assets"]
+      "assets": ["./assets"],
+      "vendor": ["'./vendor"]
     }
   },
   "exclude": ["node_modules", "build", "public", ".vscode"]

@@ -1,7 +1,7 @@
 import React, { cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import LazyLoad from 'react-lazy-load'
-import cx from 'classnames'
+import cx from 'class-names'
 
 import Posts from './Posts/Posts'
 import Styles from './InEvidenza.module.css'

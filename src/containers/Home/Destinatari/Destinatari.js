@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Col } from 'react-materialize'
 import Styles from './Destinatari.module.css'
 import Base from 'components/Base/Base'
-import cx from 'classnames'
+import cx from 'class-names'
 
 const Destinatari = ({ id, children, title, button, className }) => (
   <Base

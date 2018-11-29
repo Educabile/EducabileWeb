@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tab, Tabs } from 'react-materialize'
-import cx from 'classnames'
+import cx from 'class-names'
 import DidatticaDigitale from './DidatticaDigitale/DidatticaDigitale'
 import DataScience from './DataScience/DataScience'
 import Style from './Servizi.module.css'

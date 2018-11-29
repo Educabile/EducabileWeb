@@ -4,12 +4,19 @@
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.3);
   /* stylelint-disable-next-line */
-  background-image: resolve(blog.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   min-height: calc(100vh - 104px);
+}
+
+:global(.webp) .Section {
+  background-image: resolve(blog.webp);
+}
+
+:global(.no-webp) .Section {
+  background-image: resolve(blog.jpg);
 }
 
 .Btn {

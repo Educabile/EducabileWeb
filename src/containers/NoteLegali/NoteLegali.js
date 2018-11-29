@@ -1,8 +1,10 @@
 import React from 'react'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
+import { scrollTo } from 'libs/utils'
 
 const NoteLegali = ({ t }) => {
+  scrollTo(null)
   return (
     <div className="container">
       <h1 className="center">{t('title')}</h1>

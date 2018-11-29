@@ -2,7 +2,7 @@ import React, { cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import { Row } from 'react-materialize'
 import Styles from './Servizi.module.css'
-import cx from 'classnames'
+import cx from 'class-names'
 
 import Base from 'components/Base/Base'
 

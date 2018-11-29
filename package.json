@@ -20,22 +20,14 @@
     "react-infinite-scroller": "^1.2.2",
     "react-lazy-load": "^3.0.13",
     "react-materialize": "^2.5.0",
-    "react-media": "^1.8.0",
-    "react-redux": "^5.0.7",
     "react-responsive-picture": "^3.0.0",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.0",
-    "react-router-transition": "^1.2.1",
     "react-scripts": "2.1.1",
-    "react-scroll": "^1.7.10",
     "react-scroll-up": "^1.3.3",
-    "react-scroll-up-button": "^1.6.4",
     "react-scrollspy": "^3.3.5",
-    "react-timeago": "^4.1.9",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0",
-    "stylelint-value-no-unknown-custom-properties": "^2.0.0"
+    "react-timeago": "^4.1.9"
   },
   "scripts": {
     "start": "craco start",
@@ -111,13 +103,11 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-csstree-validator": "^1.3.0",
     "stylelint-declaration-block-no-ignored-properties": "^1.1.0",
-    "stylelint-group-selectors": "^1.0.7",
     "stylelint-high-performance-animation": "^1.1.1",
     "stylelint-images": "^2.0.0",
     "stylelint-no-indistinguishable-colors": "^1.2.1",
     "stylelint-order": "^1.0.0",
-    "stylelint-selector-no-empty": "^1.0.2",
-    "webpcss": "^1.2.2"
+    "stylelint-selector-no-empty": "^1.0.2"
   },
   "browserslist": [
     "last 2 versions",

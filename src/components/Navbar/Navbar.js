@@ -1,6 +1,6 @@
 import React, { Component, Children } from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
+import cx from 'class-names'
 import { Icon } from '@mdi/react'
 import { mdiMenu } from '@mdi/js'
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import cx from 'classnames'
+import cx from 'class-names'
 import idgen from '../../idgen'
 
 class Select extends Component {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Route, withRouter, Redirect, Switch } from 'react-router-dom'
-// TODO: Find out why it is so slow! Eventually remove the library
-// import { AnimatedSwitch as Switch } from 'react-router-transition'
 import Home from 'containers/Home/Home'
 import Blog from 'containers/Blog/Blog'
 import PrivacyPolicy from 'containers/PrivacyPolicy/PrivacyPolicy'

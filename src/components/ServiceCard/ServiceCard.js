@@ -1,5 +1,5 @@
 import React from 'react'
-import cx from 'classnames'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 import { Col } from 'react-materialize'
 import Icon from '@mdi/react'

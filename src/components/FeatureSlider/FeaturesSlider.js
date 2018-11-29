@@ -31,6 +31,7 @@ const FirstSlide = (
         type: 'image/jpg',
       },
     ]}
+    alt=""
   />
 )
 
@@ -46,6 +47,7 @@ const SecondSlide = (
         type: 'image/jpg',
       },
     ]}
+    alt=""
   />
 )
 
@@ -61,6 +63,7 @@ const ThirdSlide = (
         type: 'image/jpg',
       },
     ]}
+    alt=""
   />
 )
 
@@ -78,6 +81,7 @@ const FourthSlide = (
         type: 'image/jpg',
       },
     ]}
+    alt=""
   />
 )
 

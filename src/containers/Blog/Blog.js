@@ -26,7 +26,7 @@ import Card from 'components/Card/Card'
 import { scrollTo } from 'libs/utils'
 import idgen from '../../idgen'
 import Dropdown from 'components/Dropdown/Dropdown'
-import cx from 'classnames'
+import cx from 'class-names'
 
 class Blog extends Component {
   state = {
