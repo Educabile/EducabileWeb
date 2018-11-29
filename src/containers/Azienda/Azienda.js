@@ -5,10 +5,19 @@ import Parallax from 'components/Parallax/Parallax'
 import Base from 'components/Base/Base'
 import Icon from '@mdi/react'
 import { mdiBullseyeArrow, mdiBookOpenPageVariant } from '@mdi/js'
+import { Helmet } from 'react-helmet'
 
 const Azienda = ({ t }) => {
   return (
     <>
+      <Helmet>
+        <title>Educabile - Azienda</title>
+        <meta
+          name="description"
+          content="Educabile Srl si propone referente affidabile nel gestire scenari complessi ad alto contenuto tecnologico"
+        />
+        <meta name="keyword" content="educabile, referente, affidabile, tecnologico, tecnologia" />
+      </Helmet>
       <Parallax
         style={{
           height: 440,

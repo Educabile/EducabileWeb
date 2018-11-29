@@ -12,6 +12,7 @@ import TimeAgo from 'react-timeago'
 import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import { scrollTo } from 'libs/utils'
+import { Helmet } from 'react-helmet'
 class Post extends Component {
   state = {
     post: null,
@@ -53,6 +54,9 @@ class Post extends Component {
       } = this.state
       post = (
         <>
+          <Helmet>
+            <title>Educabile - {title}</title>
+          </Helmet>
           <Parallax
             style={{
               height: 380,
