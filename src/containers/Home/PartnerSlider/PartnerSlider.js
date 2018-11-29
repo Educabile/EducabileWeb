@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Divider } from 'react-materialize'
 import Carousel from 'components/Carousel/Carousel'
 import Style from './PartnerSlider.module.css'
-import Picture from 'components/Picture/Picture'
+import { Picture } from 'react-responsive-picture'
 import {
   banatUniversityPng,
   banatUniversityWebP,
