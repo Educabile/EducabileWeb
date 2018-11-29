@@ -1,0 +1,40 @@
+.Section {
+  & p {
+    &::first-letter {
+      color: var(--blue);
+      float: left;
+      font-size: 55px;
+      line-height: 45px;
+      padding-left: 3px;
+      padding-right: 8px;
+      padding-top: 4px;
+    }
+  }
+}
+
+.Btn {
+  & button {
+    align-items: center;
+    display: inline-flex;
+
+    &::before {
+      background: var(--blue-gradient);
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-duration: 0.5s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+      z-index: -1;
+    }
+
+    & svg {
+      transform: translateX(50%);
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.FeatureCard {
+  min-height: 510px;
+
+  & .FeatureIcon {
+    background-color: #ececec;
+    clip-path: circle(50px at 50.1% 50.9%);
+    position: relative;
+    z-index: 1;
+    @media screen and (prefers-reduced-motion: reduce) {
+      & svg {
+        border-radius: 50%;
+        fill: var(--blue);
+        height: 100px;
+        line-height: 100px;
+        position: relative;
+        transition: none;
+        width: 100px;
+      }
+    }
+
+    & svg {
+      border-radius: 50%;
+      fill: var(--blue);
+      height: 100px;
+      line-height: 100px;
+      position: relative;
+      transition: transform 0.25s ease-out;
+      width: 100px;
+    }
+    @media screen and (prefers-reduced-motion: reduce) {
+      &::before {
+        background-image: var(--blue-gradient);
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: none;
+        z-index: -1;
+      }
+    }
+
+    &::before {
+      background-image: var(--blue-gradient);
+      bottom: 0;
+      content: '';
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.25s ease-out;
+      z-index: -1;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    & .FeatureIcon {
+      & svg {
+        fill: #ececec;
+        filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.25));
+        transform: scale(1.15);
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

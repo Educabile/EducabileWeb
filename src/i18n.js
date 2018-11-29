@@ -31,6 +31,9 @@ i18n
     whitelist: ['it'],
     ns: ['common'],
     defaultNS: 'common',
+    react: {
+      wait: true,
+    },
   })
 
 export default i18n

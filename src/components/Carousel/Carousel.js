@@ -1,27 +1,26 @@
-import React from 'react'
-import cx from 'classnames'
+// TODO: Remove this component if this PR is accepted: https://github.com/react-materialize/react-materialize/pull/700
+import React, { Component } from 'react'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 
-class Carousel extends React.Component {
+class Carousel extends Component {
   componentDidMount() {
-    const { options = {} } = this.props
+    const { options } = this.props
 
     if (typeof M !== 'undefined') {
       this.instance = window.M.Carousel.init(this._carousel, options)
+      this.startAutoplay()
+      this._carousel.addEventListener('mouseenter', this.stopAutoplay)
+      this._carousel.addEventListener('mouseleave', this.startAutoplay)
     }
-
-    this.startAutoplay()
-    this._carousel.addEventListener('mouseenter', this.stopAutoplay)
-    this._carousel.addEventListener('mouseleave', this.startAutoplay)
   }
 
   componentWillUnmount() {
-    if (typeof M !== 'undefined') {
+    if (this.instance) {
       this.instance.destroy()
+      this._carousel.removeEventListener('mouseenter', this.stopAutoplay)
+      this._carousel.removeEventListener('mouseleave', this.startAutoplay)
     }
-
-    this._carousel.removeEventListener('mouseenter', this.stopAutoplay)
-    this._carousel.removeEventListener('mouseleave', this.startAutoplay)
   }
 
   startAutoplay = () => {
@@ -35,65 +34,60 @@ class Carousel extends React.Component {
     this.intervalId = null
   }
 
-  renderImages = (images, centerImages) => {
-    if (typeof images === 'string') {
+  renderImages(child, centerImages) {
+    if (typeof child === 'string') {
       return (
         <a
           className={cx('carousel-item', {
             'valign-wrapper': centerImages,
-          })}>
-          {images}
+          })}
+          href="#!">
+          <img src={child} alt="" />
         </a>
       )
     }
-    return React.cloneElement(images, {
-      className: cx(images.props.className, 'carousel-item', {
+
+    return React.cloneElement(child, {
+      className: cx('carousel-item', child.props.className, {
         'valign-wrapper': centerImages,
       }),
     })
   }
 
-  renderFixedItem = () => {
-    const { fixedItem } = this.props
-    return fixedItem && <div className="carousel-fixed-item center">{fixedItem}</div>
-  }
+  renderFixedItem = fixedItem => <div className="carousel-fixed-item center">{fixedItem}</div>
 
   render() {
-    const { children, className, carouselId, images, centerImages, options = {} } = this.props
+    const {
+      children,
+      className,
+      carouselId,
+      fixedItem,
+      images,
+      centerImages,
+      options: { fullWidth },
+    } = this.props
 
-    if (children) {
-      return (
+    const elemsToRender = children || images || []
+
+    return (
+      elemsToRender && (
         <div
           id={carouselId}
           ref={el => {
             this._carousel = el
           }}
-          className={cx('carousel', { 'carousel-slider': options.fullWidth }, className)}>
-          {this.renderFixedItem()}
-          {React.Children.map(children, images => this.renderImages(images, centerImages))}
+          className={cx('carousel', { 'carousel-slider': fullWidth }, className)}>
+          {fixedItem && this.renderFixedItem(fixedItem)}
+          {React.Children.map(elemsToRender, images => this.renderImages(images, centerImages))}
         </div>
       )
-    } else if (images) {
-      return (
-        <div
-          id={carouselId}
-          ref={el => {
-            this._carousel = el
-          }}
-          className={cx('carousel', { 'carousel-slider': options.fullWidth }, className)}>
-          {this.renderFixedItem()}
-          {React.Children.map(images, images => this.renderImages(images, centerImages))}
-        </div>
-      )
-    } else {
-      return null
-    }
+    )
   }
 }
 
 Carousel.propTypes = {
   /*
-   * Children to render as slider elements
+   * Children to render as carousel elements
    */
   children: PropTypes.any,
   /*
@@ -109,7 +103,7 @@ Carousel.propTypes = {
    */
   fixedItem: PropTypes.node,
   /*
-   * Additional classNames for carousel wrapper
+   * Additional cx for carousel wrapper
    */
   className: PropTypes.string,
   /*
@@ -158,6 +152,20 @@ Carousel.propTypes = {
      */
     onCycleTo: PropTypes.func,
   }),
+}
+
+Carousel.defaultProps = {
+  options: {
+    duration: 200,
+    dist: -100,
+    shift: 0,
+    padding: 0,
+    numVisible: 5,
+    fullWidth: false,
+    indicators: false,
+    noWrap: false,
+    onCycleTo: null,
+  },
 }
 
 export default Carousel

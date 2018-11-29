@@ -1,0 +1,46 @@
+.Row,
+.Col {
+  display: flex;
+}
+
+.Row {
+  flex-wrap: wrap;
+}
+
+.ContactBtn {
+  & button {
+    align-items: center;
+    display: inline-flex;
+
+    &::before {
+      background: var(--blue-gradient);
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-duration: 0.5s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+      z-index: -1;
+    }
+
+    &:hover,
+    &:focus {
+      color: white !important;
+      fill: currentColor;
+
+      &::before {
+        transform: scaleX(1);
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+      }
+    }
+
+    & svg {
+      transform: translateX(50%);
+    }
+  }
+}

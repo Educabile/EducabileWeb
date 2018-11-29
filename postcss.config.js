@@ -30,15 +30,15 @@ module.exports = {
     require('postcss-convert-values'),
     require('postcss-merge-rules'),
     require('postcss-will-change-transition'),
-    require('webpcss').default({}),
     require('postcss-preset-env')({
       autoprefixer: {
         flexbox: 'no-2009',
       },
-      stage: 3,
+      stage: 0,
       features: {
         'nesting-rules': true,
       },
+      importFrom: ['src/style/selectors.css', 'src/style/colors.css'],
     }),
   ],
 }

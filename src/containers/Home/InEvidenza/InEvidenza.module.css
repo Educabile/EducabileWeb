@@ -1,0 +1,47 @@
+.Section {
+  align-items: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* stylelint-disable-next-line */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: calc(100vh - 104px);
+}
+
+:global(.webp) .Section {
+  background-image: resolve(blog.webp);
+}
+
+:global(.no-webp) .Section {
+  background-image: resolve(blog.jpg);
+}
+
+.Btn {
+  & button {
+    align-items: center;
+    display: inline-flex;
+
+    &::before {
+      background: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition-duration: 0.5s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+      z-index: -1;
+    }
+
+    & svg {
+      transform: translateX(50%);
+    }
+  }
+}

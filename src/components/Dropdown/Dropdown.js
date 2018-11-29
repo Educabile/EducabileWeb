@@ -1,15 +1,11 @@
+// TODO: Remove this component if this PR is accepted: https://github.com/react-materialize/react-materialize/pull/650
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import idgen from '../../idgen'
-import cx from 'classnames'
+import cx from 'class-names'
 
 class Dropdown extends Component {
-  constructor(props) {
-    super(props)
-    this.idx = 'dropdown_' + idgen()
-    this.renderTrigger = this.renderTrigger.bind(this)
-    this.renderItems = this.renderItems.bind(this)
-  }
+  idx = 'dropdown_' + idgen()
 
   componentDidMount() {
     const options = this.props.options || {}
@@ -35,16 +31,16 @@ class Dropdown extends Component {
     delete props.options
 
     return (
-      <React.Fragment>
+      <>
         {this.renderTrigger()}
         <ul {...props} className={cx('dropdown-content', className)} id={this.idx}>
           {this.renderItems()}
         </ul>
-      </React.Fragment>
+      </>
     )
   }
 
-  renderTrigger() {
+  renderTrigger = () => {
     const { trigger } = this.props
 
     return React.cloneElement(trigger, {
@@ -54,7 +50,7 @@ class Dropdown extends Component {
     })
   }
 
-  renderItems() {
+  renderItems = () => {
     const { children } = this.props
 
     return React.Children.map(children, element => {

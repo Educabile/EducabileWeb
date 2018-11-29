@@ -1,19 +1,32 @@
+// TODO: Remove this component if this PR is accepted: https://github.com/react-materialize/react-materialize/pull/701
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Slide = props => {
-  const { children, image } = props
-  return (
-    <React.Fragment>
-      <img src={image} alt="" />
-      {children}
-    </React.Fragment>
-  )
+const Slide = ({ image, children }) => {
+  if (typeof image === 'string') {
+    return (
+      <li>
+        <img src={image} alt="" />
+        {children}
+      </li>
+    )
+  } else {
+    return (
+      <li>
+        {image}
+        {children}
+      </li>
+    )
+  }
 }
 
 Slide.propTypes = {
-  image: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.node,
+  /**
+   * The path of the background image
+   */
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 }
 
 export default Slide

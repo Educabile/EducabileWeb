@@ -1,130 +1,128 @@
-import React, { Component } from 'react'
-import classNames from 'class-names'
+import React from 'react'
+import cx from 'class-names'
 import PropTypes from 'prop-types'
 import CardContent from './CardContent/CardContent'
 import CardTitle from './CardTitle/CardTitle'
 import CardAction from './CardAction/CardAction'
 import CardImage from './CardImage/CardImage'
+import CardTabs from './CardTabs/CardTabs'
 
-class Card extends Component {
-  render() {
-    const {
-      children,
-      className,
-      title,
-      image,
-      fab,
+const Card = ({
+  children,
+  className,
+  title,
+  image,
+  fab,
+  horizontal,
+  actions,
+  reveal,
+  tabs,
+  stickyActions,
+  small,
+  medium,
+  large,
+  style,
+}) => {
+  const cardCSS = cx(
+    'card',
+    {
       horizontal,
-      actions,
-      reveal,
-      stickyActions,
+      'sticky-action': stickyActions,
       small,
       medium,
       large,
-      style,
-    } = this.props
+    },
+    className
+  )
 
-    const cardCSS = classNames(
-      'card',
-      { horizontal, 'sticky-action': stickyActions, small, medium, large },
-      className
-    )
+  let card = (
+    <>
+      <CardContent>
+        <CardTitle>{title}</CardTitle>
+        {children}
+      </CardContent>
+      <CardAction>{actions}</CardAction>
+    </>
+  )
 
-    let boh = (
-      <React.Fragment>
+  if (image) {
+    const isFabLarge = fab && (fab.props.large || fab.props.children.props.large)
+
+    card = (
+      <>
+        <CardImage image={image} fab={fab}>
+          {!isFabLarge ? <CardTitle className={title.className}>{title}</CardTitle> : null}
+        </CardImage>
         <CardContent>
-          <CardTitle className={title.className}>
-            {typeof title === 'object' ? title.title : title}
-          </CardTitle>
-          {children}
+          {isFabLarge ? <CardTitle>{title}</CardTitle> : null} {children}
         </CardContent>
         <CardAction>{actions}</CardAction>
-      </React.Fragment>
-    )
-
-    if (image) {
-      boh = (
-        <React.Fragment>
-          <CardImage image={image} fab={fab}>
-            {fab && !fab.large && (
-              <CardTitle className={title.className}>
-                {typeof title === 'object' ? title.title : title}
-              </CardTitle>
-            )}
-          </CardImage>
-          <CardContent>
-            {fab && fab.large && (
-              <CardTitle className={title.className}>
-                {typeof title === 'object' ? title.title : title}
-              </CardTitle>
-            )}
-            {children}
-          </CardContent>
-          <CardAction>{actions}</CardAction>
-        </React.Fragment>
-      )
-    }
-
-    if (horizontal) {
-      boh = (
-        <React.Fragment>
-          <CardImage image={image} fab={fab} />
-          <div className="card-stacked">
-            <CardContent>{children}</CardContent>
-            <CardAction>{actions}</CardAction>
-          </div>
-        </React.Fragment>
-      )
-    }
-
-    if (reveal) {
-      boh = (
-        <React.Fragment>
-          <CardImage image={image} reveal />
-          <CardContent>
-            <CardTitle reveal>{title}</CardTitle>
-          </CardContent>
-          <CardAction>{actions}</CardAction>
-          <div className="card-reveal">
-            <CardTitle className={title.className} closeReveal>
-              {typeof title === 'object' ? title.title : title}
-            </CardTitle>
-            {children}
-          </div>
-        </React.Fragment>
-      )
-    }
-
-    return (
-      <div className={cardCSS} style={style}>
-        {boh}
-      </div>
+      </>
     )
   }
+
+  if (tabs) {
+    card = (
+      <>
+        <CardContent>
+          <CardTitle>{title}</CardTitle>
+        </CardContent>
+        <CardTabs>{tabs}</CardTabs>
+      </>
+    )
+  }
+
+  if (horizontal) {
+    card = (
+      <>
+        <CardImage image={image} fab={fab} />
+        <div className="card-stacked">
+          <CardContent>{children}</CardContent>
+          <CardAction>{actions}</CardAction>
+        </div>
+      </>
+    )
+  }
+
+  if (reveal) {
+    card = (
+      <>
+        <CardImage image={image} reveal />
+        <CardContent>
+          <CardTitle reveal>{title}</CardTitle>
+        </CardContent>
+        <CardAction>{actions}</CardAction>
+        <div className="card-reveal">
+          <CardTitle closeReveal>{title}</CardTitle>
+          {children}
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <div className={cardCSS} style={style}>
+      {card}
+    </div>
+  )
 }
 
 Card.propTypes = {
   children: PropTypes.node,
+  textClassName: PropTypes.string,
   className: PropTypes.string,
-  title: PropTypes.oneOfType([
-    PropTypes.string.isRequired,
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      className: PropTypes.string,
-    }),
-  ]),
+  title: PropTypes.string,
   image: PropTypes.string,
   horizontal: PropTypes.bool,
-  actions: PropTypes.arrayOf(PropTypes.object),
+  actions: PropTypes.node,
   style: PropTypes.object,
   stickyActions: PropTypes.bool,
-  fab: PropTypes.bool,
+  fab: PropTypes.object,
   reveal: PropTypes.bool,
   small: PropTypes.bool,
   medium: PropTypes.bool,
   large: PropTypes.bool,
+  tabs: PropTypes.node,
 }
-
-Card.defaultProps = {}
 
 export default Card
