@@ -14,7 +14,6 @@ const CardImage = ({ children, className, image, fab, reveal, style }) => (
         },
         className
       )}
-      image={image}
       style={style}>
       <img className={reveal && 'activator'} src={image} alt="" />
       {children}

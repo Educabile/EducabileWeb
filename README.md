@@ -1,6 +1,6 @@
 # Educabile Website
 
-[![GitHub contributors](https://img.shields.io/github/contributors/Educabile/EducabileWeb.svg)](https://GitHub.com/CloudPower97/Human-Computer-Interaction-Chartreuse-Project/graphs/contributors/)
+[![GitHub contributors](https://img.shields.io/github/contributors/Educabile/EducabileWeb.svg)](https://GitHub.com/Educabile/EducabileWeb/graphs/contributors/)
 [![made-with-react](https://img.shields.io/badge/Made%20with-React-1f425f.svg)](https://reactjs.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
@@ -19,9 +19,7 @@
 
 ## Overview
 
-<span style="display:flex; align-items: center;justify-content: center;">
-  <img src="https://react-materialize.github.io/img/react-materialize-logo.svg" alt="React Materialize" width="128">
-</span>
+<img src="https://react-materialize.github.io/img/react-materialize-logo.svg" alt="React Materialize" width="128">
 
 This website is being built with [`React.js`](https://github.com/facebook/react) and [`React-Materialize`](https://github.com/react-materialize/react-materialize).
 
@@ -29,11 +27,9 @@ This website is being built with [`React.js`](https://github.com/facebook/react)
 
 ## Linters
 
-<div style="display:flex; align-items: center;justify-content: space-around;">
-  <img src="https://prettier.io/icon.png" alt="Prettier" width="128">
-  <img src="https://avatars-04.gitter.im/group/iv/3/57542cecc43b8c6019777d76" alt="ESLint" width="128">
-  <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/467124/images/2872758/stylelint-icon-black.svg" alt="stylelint" width="128">
-</div>
+<img src="https://prettier.io/icon.png" alt="Prettier" width="128">
+<img src="https://avatars-04.gitter.im/group/iv/3/57542cecc43b8c6019777d76" alt="ESLint" width="128">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/467124/images/2872758/stylelint-icon-black.svg" alt="stylelint" width="128">
 
 To enforce a consistent style across the entire project we are using [`Prettier`](https://prettier.io/).
 
@@ -66,9 +62,7 @@ All of the above assure us that our code base is always consistent with the rule
 
 ## IDE
 
-<span style="display:flex; align-items: center;justify-content: center;">
-  <img src="https://www.macupdate.com/images/icons256/54025.png" alt="Visual Studio Code" width="128">
-</span>
+<img src="https://www.macupdate.com/images/icons256/54025.png" alt="Visual Studio Code" width="128">
 
 We highly encourage you to use [`Visual Studio Code`](https://code.visualstudio.com/) as your `IDE`.
 
@@ -82,9 +76,7 @@ Please refer to [`Settings Sync`](https://github.com/shanalikhan/code-settings-s
 
 ## Installation and setup
 
-<span style="display:flex; align-items: center;justify-content: center;">
-  <img src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/963/square_256/yarn.png" alt="Yarn" width="128">
-</span>
+<img src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/963/square_256/yarn.png" alt="Yarn" width="128">
 
 Note: You first have to download and install [`yarn`](https://yarnpkg.com/lang/en/)
 
@@ -104,9 +96,7 @@ Run this commands to download and install the required packages
 
 ## Environment variables
 
-<span style="display:flex; align-items: center;justify-content: center;">
-  <img src="https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.png" alt="Dot Env" width="128">
-</span>
+<img src="https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.png" alt="Dot Env" width="128">
 
 This app requires you to create `.env`, `.env.production` and `.env.staging` files in the root directory of the project for it to properly works.
 
@@ -123,11 +113,12 @@ and copy the configuration values from `.env` file.
 
 ## Testing
 
-<span style="display:flex; align-items: center;justify-content: center;">
-<img align=""src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/940/square_256/jestlogo.png" alt="Jest" width="128"/>
-</span>
+<img src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/940/square_256/jestlogo.png" alt="Jest" width="128"/>
+<img src="https://avatars2.githubusercontent.com/u/22632046?s=400&v=4" alt="Storybook" width="128">
 
-We use `Jest` for unit testing
+We are using [`Jest`](https://github.com/facebook/jest) and [`Enzyme`](https://github.com/airbnb/enzyme) to test our components.
+
+We also adopt [`Storybook`](https://github.com/storybooks/storybook) as our _UI Development Environment_.
 
 ---
 

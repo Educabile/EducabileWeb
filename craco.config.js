@@ -45,5 +45,18 @@ module.exports = function() {
         vendor: path.join(paths.appSrc, 'vendor'),
       },
     },
+    jest: {
+      configure: {
+        moduleNameMapper: {
+          '^components(.*)$': '<rootDir>/src/components$1',
+          '^containers(.*)$': '<rootDir>/src/containers$1',
+          '^hoc(.*)$': '<rootDir>/src/hoc$1',
+          '^style(.*)$': '<rootDir>/src/style$1',
+          '^libs(.*)$': '<rootDir>/src/libs$1',
+          '^assets(.*)$': '<rootDir>/src/assets$1',
+          '^vendor(.*)$': '<rootDir>/src/vendor$1',
+        },
+      },
+    },
   }
 }

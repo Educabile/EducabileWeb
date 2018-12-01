@@ -44,7 +44,8 @@
     "assets": "run-s assets:resize assets:webp",
     "assets:resize": "env-cmd .env node src/libs/images/resizeAll.js",
     "assets:webp": "node src/libs/images/toWebP.js",
-    "eject": "react-scripts eject"
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "husky": {
     "hooks": {
@@ -65,11 +66,22 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
     "@babel/plugin-transform-react-constant-elements": "^7.0.0",
     "@babel/plugin-transform-react-inline-elements": "^7.0.0",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-angular": "^7.1.2",
     "@craco/craco": "3.1.1",
+    "@storybook/addon-a11y": "^4.0.9",
+    "@storybook/addon-actions": "^4.0.9",
+    "@storybook/addon-info": "^4.0.9",
+    "@storybook/addon-knobs": "^4.0.9",
+    "@storybook/addon-links": "^4.0.9",
+    "@storybook/addon-options": "^4.0.8",
+    "@storybook/addon-viewport": "^4.0.9",
+    "@storybook/addons": "^4.0.9",
+    "@storybook/react": "^4.0.9",
+    "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-imports": "^1.5.1",
     "babel-plugin-transform-react-class-to-function": "^1.2.0",
@@ -77,6 +89,8 @@
     "conventional-changelog-cli": "^2.0.11",
     "directory-named-webpack-plugin": "^4.0.0",
     "env-cmd": "^8.0.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "eslint-plugin-jest": "^22.0.0",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
@@ -99,6 +113,7 @@
     "prettier": "^1.15.2",
     "release-it": "^7.6.3",
     "sharp": "^0.21.0",
+    "storybook-react-router": "^1.0.1",
     "stylelint": "^9.8.0",
     "stylelint-a11y": "^1.1.9",
     "stylelint-config-prettier": "^4.0.0",

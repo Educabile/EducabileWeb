@@ -80,7 +80,6 @@ const PostCard = ({ post, t }) => {
                   transition: 'all .5s ease-out',
                   textShadow: ' 0px 2px 4px rgba(0,0,0, .5)',
                 }}>
-                Didattica
                 {t('didatticaDigitale')}
               </Button>
             </Link>
@@ -97,7 +96,6 @@ const PostCard = ({ post, t }) => {
                   transition: 'all .5s ease-out',
                   textShadow: ' 0px 2px 4px rgba(0,0,0, .5)',
                 }}>
-                Data
                 {t('dataScience')}
               </Button>
             </Link>
