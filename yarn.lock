@@ -12312,6 +12312,7 @@ react-responsive-picture@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-responsive-picture/-/react-responsive-picture-3.0.0.tgz#324c8144d3ff6ed3e54799f5164a2c0574f52d33"
   integrity sha512-24xiHi5zCOmX+j7hNkWu207GxCcIRTrp81wd8Kw+WBADgN/1krvEttl07jkOc5MZY9JnU9ziRpcNzsuWJQLIWw==
+
   dependencies:
     can-use-dom "0.1.0"
     cxs "6.2.0"
