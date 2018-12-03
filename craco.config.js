@@ -47,6 +47,7 @@ module.exports = function() {
     },
     jest: {
       configure: {
+        snapshotSerializers: ['enzyme-to-json/serializer'],
         moduleNameMapper: {
           '^components(.*)$': '<rootDir>/src/components$1',
           '^containers(.*)$': '<rootDir>/src/containers$1',
@@ -56,6 +57,7 @@ module.exports = function() {
           '^assets(.*)$': '<rootDir>/src/assets$1',
           '^vendor(.*)$': '<rootDir>/src/vendor$1',
         },
+        moduleDirectories: ['node_modules', 'src'],
       },
     },
   }
