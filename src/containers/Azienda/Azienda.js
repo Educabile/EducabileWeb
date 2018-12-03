@@ -25,7 +25,7 @@ const Azienda = ({ t }) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          clipPath: 'polygon(0px 0px, 1739px 0px, 1738px 330px, 0px 400px)',
+          clipPath: 'polygon(0px 0px, 100% 0px, 100% 330px, 0px 400px)',
         }}
         imageSrc="https://images.pexels.com/photos/136419/pexels-photo-136419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
         <h1 className="white-text" style={{ textShadow: 'rgba(0, 0, 0, 0.72) 0px 2px 4px' }}>
@@ -45,7 +45,6 @@ const Azienda = ({ t }) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          clipPath: 'polygon(0px 0px, 1739px 0px, 1738px 330px, 0px 400px)',
         }}
         imageSrc="https://images.pexels.com/photos/136419/pexels-photo-136419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
         <q

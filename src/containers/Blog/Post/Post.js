@@ -59,9 +59,12 @@ class Post extends Component {
           </Helmet>
           <Parallax
             style={{
-              height: 380,
+              height: 440,
               backgroundColor: 'rgba(0,0,0, .125)',
-              clipPath: 'polygon(0px 0px, 1739px 0px, 1738px 254px, 0px 380px)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              clipPath: 'polygon(0px 0px, 100% 0px, 100% 330px, 0px 400px)',
             }}
             imageSrc={_embedded['wp:featuredmedia'][0].source_url}>
             <h1
