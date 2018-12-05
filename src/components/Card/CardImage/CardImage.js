@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'class-names'
 import PropTypes from 'prop-types'
+import Picture from '@cloudpower97/react-progressive-picture'
 
 const CardImage = ({ children, className, image, fab, reveal, style }) => (
   <>
@@ -15,7 +16,7 @@ const CardImage = ({ children, className, image, fab, reveal, style }) => (
         className
       )}
       style={style}>
-      <img className={reveal && 'activator'} src={image} alt="" />
+      <Picture className={reveal && 'activator'} src={image} alt="" />
       {children}
     </div>
     {fab && (

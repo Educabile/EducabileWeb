@@ -860,6 +860,13 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@cloudpower97/react-progressive-picture@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@cloudpower97/react-progressive-picture/-/react-progressive-picture-1.1.0.tgz#1b83bd5b48ab0187825eb2a968a7f9926b0254ef"
+  integrity sha512-jFLtuIWuQumWIa/Z9Bsfa3DszvtzeAu95gIDCj+UgE92HkyZsSVJW773U7NlJWurY48e2FSTsDA/4XGHxZZTHg==
+  dependencies:
+    "@babel/polyfill" "^7.0.0"
+
 "@cloudpower97/react-spy@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@cloudpower97/react-spy/-/react-spy-1.2.0.tgz#bbe3c3dee9aa31db748b91a7f80716a328677fd8"
@@ -3847,11 +3854,6 @@ camelcase@^5.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
   integrity sha512-faqwZqnWxbxn+F1d399ygeamQNy3lPp/H9H6rNrqYh4FSVCtcY+3cub1MxA8o9mDd55mM8Aghuu/kuyYA6VTsA==
 
-can-use-dom@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
-  integrity sha1-IsxKNKCrxDlQ9CxkEQJKP2NmtFo=
-
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -5065,11 +5067,6 @@ currently-unhandled@^0.4.1:
   integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
   dependencies:
     array-find-index "^1.0.1"
-
-cxs@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/cxs/-/cxs-6.2.0.tgz#f11ca3bdaef154b93bdadca5df70f2cb3e37ca24"
-  integrity sha512-RGatb1BUwVMBzV8DRo9Kapc55bdGfAxMcukVk+ZzE3Ts8xaTve0GVz730kBDxjhEBU2LK+RPuAcjZb00Q3O24w==
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -10808,11 +10805,6 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-picturefill@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.3.tgz#a5c38eeb02d74def38e1790ff61e166166b4f224"
-  integrity sha512-JDdx+3i4fs2pkqwWZJgGEM2vFWsq+01YsQFT9CKPGuv2Q0xSdrQZoxi9XwyNARTgxiOdgoAwWQRluLRe/JQX2g==
-
 pidtree@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/pidtree/-/pidtree-0.3.0.tgz#f6fada10fccc9f99bf50e90d0b23d72c9ebc2e6b"
@@ -11927,7 +11919,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@15.6.2, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
@@ -12329,16 +12321,6 @@ react-modal@^3.6.1:
     prop-types "^15.5.10"
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
-
-react-responsive-picture@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-picture/-/react-responsive-picture-3.1.0.tgz#a265dc66e555e7bb69f08a29d9e7497a49cb10d9"
-  integrity sha512-6D6uxRiUrq7lnRw6QwqJpfJcHdsbeywDLdCLyX0sX19/arxoNqQzZ0tvWDShQhclUlMscF2CTDHgRzsqtYJUDA==
-  dependencies:
-    can-use-dom "0.1.0"
-    cxs "6.2.0"
-    picturefill "3.0.3"
-    prop-types "15.6.2"
 
 react-reveal@^1.2.2:
   version "1.2.2"
