@@ -1,5 +1,6 @@
 const path = require('path')
 const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 // TODO: It's not working as of now! :(
 var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
@@ -44,6 +45,7 @@ module.exports = function() {
         assets: path.join(paths.appSrc, 'assets'),
         vendor: path.join(paths.appSrc, 'vendor'),
       },
+      plugins: [new BundleAnalyzerPlugin()],
     },
     jest: {
       configure: {
