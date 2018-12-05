@@ -867,10 +867,10 @@
   dependencies:
     "@babel/polyfill" "^7.0.0"
 
-"@cloudpower97/react-spy@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@cloudpower97/react-spy/-/react-spy-1.2.0.tgz#bbe3c3dee9aa31db748b91a7f80716a328677fd8"
-  integrity sha512-8gjK7c140McLDsUCepVgdMD/unVMbN15HCFB4Vt/rvHEQA/Fwa4nhfVr5ePrk+QMnZgjfg0SeiQkv7+sUEk7tA==
+"@cloudpower97/react-spy@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@cloudpower97/react-spy/-/react-spy-1.2.1.tgz#b75f66194be4d424dd62fb3bd9b4c7241c680f71"
+  integrity sha512-9G4YfCvI8BPzOl/clDGdedYcXD7bKRDWALbQLLNFpfHE/3UuYEE0uTrTvvfU+JGNpunzIOzH1laqncXCjUVdjA==
   dependencies:
     "@babel/polyfill" "^7.0.0"
 
@@ -11432,6 +11432,26 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+phantomjs-prebuilt@^2.1.14:
+  version "2.1.16"
+  resolved "https://registry.yarnpkg.com/phantomjs-prebuilt/-/phantomjs-prebuilt-2.1.16.tgz#efd212a4a3966d3647684ea8ba788549be2aefef"
+  integrity sha1-79ISpKOWbTZHaE6ouniFSb4q7+8=
+  dependencies:
+    es6-promise "^4.0.3"
+    extract-zip "^1.6.5"
+    fs-extra "^1.0.0"
+    hasha "^2.2.0"
+    kew "^0.7.0"
+    progress "^1.1.8"
+    request "^2.81.0"
+    request-progress "^2.0.1"
+    which "^1.2.10"
+
+phin@^2.9.1:
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/phin/-/phin-2.9.3.tgz#f9b6ac10a035636fb65dfc576aaaa17b8743125c"
+  integrity sha512-CzFr90qM24ju5f88quFC/6qohjC144rehe5n6DH900lgXmUe86+xCKc10ev56gRKC4/BkHUoG4uSiQgBiIXwDA==
 
 pidtree@^0.3.0:
   version "0.3.0"
