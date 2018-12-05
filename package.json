@@ -128,6 +128,7 @@
     "stylelint-order": "^1.0.0",
     "stylelint-selector-no-empty": "^1.0.2",
     "webpack-bundle-analyzer": "^3.0.3"
+    "webapp-webpack-plugin": "^2.4.0"
   },
   "browserslist": [
     "last 2 versions",
