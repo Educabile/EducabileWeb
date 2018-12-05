@@ -1,5 +1,8 @@
 const path = require('path')
 const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebappWebpackPlugin = require('webapp-webpack-plugin')
+
 // TODO: It's not working as of now! :(
 var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
@@ -32,6 +35,21 @@ module.exports = function() {
       ],
     })),
     webpack: {
+      plugins: [
+        new HtmlWebpackPlugin(),
+        new WebappWebpackPlugin({
+          logo: './public/favicon.png',
+          // This is going to create a custom manifest.json
+          // Refer to this documentation for more information : https://github.com/itgalaxy/favicons#usage
+          favicons: {
+            appName: 'Educabile Srl - an Innovative Startup Company',
+            appShortName: 'Educabile Srl',
+            theme_color: '#0d47a1',
+            lang: 'it-IT',
+            start_url: './',
+          },
+        }),
+      ],
       resolve: {
         plugins: [new DirectoryNamedWebpackPlugin()],
       },
