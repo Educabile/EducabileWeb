@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Divider } from 'react-materialize'
 import Carousel from 'components/Carousel/Carousel'
 import Style from './PartnerSlider.module.css'
-import { Picture } from 'react-responsive-picture'
+import Picture from '@cloudpower97/react-progressive-picture'
+
 import {
   banatUniversityPng,
   banatUniversityWebP,
@@ -14,6 +15,7 @@ import {
   ictConsultingPng,
   ictConsultingWebP,
 } from 'assets/img/partners-logos'
+
 import Base from 'components/Base/Base'
 
 const PartnerSlider = ({ id, className, title, button }) => (

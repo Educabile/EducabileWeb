@@ -18,7 +18,7 @@ import { NavHashLink as Link } from 'react-router-hash-link'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import { logoEducabilePng, logoEducabileWebP } from 'assets/img'
-import { Picture } from 'react-responsive-picture'
+import Picture from '@cloudpower97/react-progressive-picture'
 import { scrollTo } from 'libs/utils'
 
 const offset = 56
@@ -92,6 +92,9 @@ const Layout = ({ children, t }) => (
         id="footer-logo"
         className="hide-on-med-and-down"
         alt="Logo Educabile Srl"
+        blur={0}
+        width={225}
+        height={141}
       />
     </Link>
     <ScrollToTop showUnder={800} style={{ zIndex: '2' }}>

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cloudpower97/react-progressive-picture": "^1.1.0",
     "@cloudpower97/react-spy": "^1.2.0",
     "@mdi/js": "^2.8.94",
     "@mdi/react": "^1.0.1",
@@ -22,7 +23,6 @@
     "react-infinite-scroller": "^1.2.2",
     "react-lazy-load": "^3.0.13",
     "react-materialize": "^2.5.0",
-    "react-responsive-picture": "^3.1.0",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.0",
