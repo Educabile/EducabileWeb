@@ -50,6 +50,7 @@ module.exports = function() {
             start_url: './',
           },
         }),
+        new BundleAnalyzerPlugin(),
       ],
       resolve: {
         plugins: [new DirectoryNamedWebpackPlugin()],
@@ -63,7 +64,6 @@ module.exports = function() {
         assets: path.join(paths.appSrc, 'assets'),
         vendor: path.join(paths.appSrc, 'vendor'),
       },
-      plugins: [new BundleAnalyzerPlugin()],
     },
     jest: {
       configure: {
