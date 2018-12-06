@@ -3,6 +3,13 @@ const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const imageminJpegRecompress = require('imagemin-jpeg-recompress')
+const imageminPngquant = require('imagemin-pngquant')
+const imageminZopfli = require('imagemin-zopfli')
+const imageminGiflossy = require('imagemin-giflossy')
+const imageminWebp = require('imagemin-webp')
 
 // TODO: It's not working as of now! :(
 var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
@@ -40,6 +47,34 @@ module.exports = function() {
     })),
     webpack: {
       plugins: [
+        new ImageminPlugin({
+          disable: process.env.NODE_ENV !== 'production', // Disable during development
+          plugins: [
+            imageminPngquant({
+              speed: 1,
+              quality: 98, //lossy settings
+            }),
+            imageminZopfli({
+              more: true,
+            }),
+            imageminMozjpeg({ progressive: true, quality: 80 }),
+            imageminJpegRecompress({
+              loops: 6,
+              min: 40,
+              max: 85,
+              quality: 'low',
+            }),
+            imageminGiflossy({
+              optimizationLevel: 3,
+              optimize: 3, //keep-empty: Preserve empty transparent frames
+              lossy: 2,
+            }),
+            imageminWebp({ quality: 50 }),
+          ],
+          svgo: {
+            removeViewBox: false,
+          },
+        }),
         new HtmlWebpackPlugin(),
         new WebappWebpackPlugin({
           logo: './public/favicon.png',
