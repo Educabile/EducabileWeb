@@ -10,6 +10,9 @@ var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 module.exports = function() {
   return {
     style: {
+      modules: {
+        localIdentName: '[sha1:hash:hex:4]',
+      },
       postcss: {
         mode: POSTCSS_MODES.file,
       },

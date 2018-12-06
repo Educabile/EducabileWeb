@@ -21,14 +21,7 @@ module.exports = {
       },
       foundries: ['google'],
     }),
-    require('postcss-calc'),
     require('postcss-pseudo-content-insert'),
-    require('postcss-unique-selectors'),
-    require('postcss-ordered-values'),
-    require('postcss-normalize-url'),
-    require('postcss-normalize-charset'),
-    require('postcss-convert-values'),
-    require('postcss-merge-rules'),
     require('postcss-will-change-transition'),
     require('postcss-preset-env')({
       autoprefixer: {
@@ -39,6 +32,9 @@ module.exports = {
         'nesting-rules': true,
       },
       importFrom: ['src/style/selectors.css', 'src/style/colors.css'],
+    }),
+    require('cssnano')({
+      preset: 'default',
     }),
   ],
 }
