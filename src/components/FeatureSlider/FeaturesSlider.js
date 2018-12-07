@@ -8,12 +8,16 @@ import PropTypes from 'prop-types'
 import {
   slide0Jpg,
   slide0WebP,
+  slide0Svg,
   ctaJpg,
   ctaWebP,
+  ctaSvg,
   consulezaDtJpg,
   consulenzaDtWebP,
+  consulenzaDtSvg,
   piattaformeAmbientiJpg,
   piattaformeAmbientiWebP,
+  piattaformeAmbientiSvg,
 } from 'assets/img'
 import { withNamespaces } from 'react-i18next'
 import Style from './FeaturesSlider.module.css'
@@ -31,7 +35,7 @@ const FirstSlide = (
         type: 'image/jpg',
       },
     ]}
-    alt=""
+    placeholder={slide0Svg}
   />
 )
 
@@ -47,7 +51,7 @@ const SecondSlide = (
         type: 'image/jpg',
       },
     ]}
-    alt=""
+    placeholder={ctaSvg}
   />
 )
 
@@ -63,14 +67,12 @@ const ThirdSlide = (
         type: 'image/jpg',
       },
     ]}
-    alt=""
+    placeholder={consulenzaDtSvg}
   />
 )
 
 const FourthSlide = (
   <Picture
-    className="ciaone"
-    style={{ color: 'red' }}
     sources={[
       {
         srcSet: piattaformeAmbientiWebP,
@@ -81,7 +83,7 @@ const FourthSlide = (
         type: 'image/jpg',
       },
     ]}
-    alt=""
+    placeholder={piattaformeAmbientiSvg}
   />
 )
 
