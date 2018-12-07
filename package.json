@@ -119,6 +119,7 @@
     "react-test-renderer": "^16.6.3",
     "release-it": "^7.6.3",
     "sharp": "^0.21.0",
+    "sqip": "^0.3.3",
     "storybook-react-router": "^1.0.1",
     "stylelint": "^9.8.0",
     "stylelint-a11y": "^1.1.9",
