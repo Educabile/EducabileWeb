@@ -14,6 +14,8 @@ const imageminWebp = require('imagemin-webp')
 // TODO: It's not working as of now! :(
 var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
 
+const { NODE_ENV } = process.env
+
 module.exports = function() {
   return {
     style: {
@@ -25,6 +27,7 @@ module.exports = function() {
       },
     },
     babel: whenProd(() => ({
+      comments: false,
       plugins: [
         '@babel/plugin-transform-react-constant-elements',
         '@babel/plugin-transform-react-inline-elements',
@@ -48,7 +51,7 @@ module.exports = function() {
     webpack: {
       plugins: [
         new ImageminPlugin({
-          disable: process.env.NODE_ENV !== 'production', // Disable during development
+          disable: NODE_ENV !== 'production', // Disable during development
           plugins: [
             imageminPngquant({
               speed: 1,
