@@ -35,13 +35,11 @@ class Blog extends Component {
 
     wp.get(`posts?_embed&page=${page}&order=${order}&order_by=date&tags=${tags}&per_page=12`).then(
       ({ data: newPosts, headers }) => {
-        this.setState(({ posts, page }) => {
-          return {
-            posts: posts.concat(...newPosts),
-            page: page + 1,
-            hasMorePosts: posts.length + newPosts.length !== parseInt(headers['x-wp-total']),
-          }
-        })
+        this.setState(({ posts, page }) => ({
+          posts: posts.concat(...newPosts),
+          page: page + 1,
+          hasMorePosts: posts.length + newPosts.length !== parseInt(headers['x-wp-total']),
+        }))
       }
     )
   }
@@ -136,15 +134,13 @@ class Blog extends Component {
           loader={<Spinner key="loader" />}
           initialLoad={false}>
           <Row>
-            {posts.map((post, index) => {
-              return (
-                <Col s={12} xl={4} key={index}>
-                  <Slide bottom>
-                    <PostCard post={post} />
-                  </Slide>
-                </Col>
-              )
-            })}
+            {posts.map((post, index) => (
+              <Col s={12} xl={4} key={index}>
+                <Slide bottom>
+                  <PostCard post={post} />
+                </Slide>
+              </Col>
+            ))}
           </Row>
         </InfiniteScroll>
       </>

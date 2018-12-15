@@ -110,6 +110,7 @@ const PostCard = ({ post, t }) => {
     return actions
   }
 
+  /* eslint-disable */
   const openPopup = url => {
     var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX
     var dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY
@@ -143,6 +144,7 @@ const PostCard = ({ post, t }) => {
       }
     }, 250)
   }
+  /* eslint-enable */
 
   return (
     <Card

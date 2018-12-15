@@ -21,6 +21,9 @@ import supportoAiProgettiWebP from './supporto-ai-progetti.webp'
 import supportoAiProgettiSvg from './supporto-ai-progetti.svg'
 import logoEducabilePng from './logo-educabile.png'
 import logoEducabileWebP from './logo-educabile.webp'
+import blogJpg from './blog.jpg'
+import blogWebP from './blog.webp'
+import blogSvg from './blog.svg'
 
 export {
   consulezaDtJpg,
@@ -46,4 +49,7 @@ export {
   supportoAiProgettiSvg,
   logoEducabilePng,
   logoEducabileWebP,
+  blogJpg,
+  blogWebP,
+  blogSvg,
 }

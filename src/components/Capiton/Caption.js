@@ -3,13 +3,11 @@ import React from 'react'
 import cx from 'class-names'
 import PropTypes from 'prop-types'
 
-const Caption = ({ className, placement, children, ...props }) => {
-  return (
-    <div className={cx('caption', `${placement}-align`, className)} {...props}>
-      {children}
-    </div>
-  )
-}
+const Caption = ({ className, placement, children, ...props }) => (
+  <div className={cx('caption', `${placement}-align`, className)} {...props}>
+    {children}
+  </div>
+)
 
 Caption.propTypes = {
   children: PropTypes.node,

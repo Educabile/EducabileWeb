@@ -27,17 +27,15 @@ storiesOf('Base container', module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
   .addDecorator(withViewport())
-  .add('default', () => {
-    return (
-      <Base
-        title={object('title', 'This is just a test')}
-        content={object(
-          'content',
-          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ducimus inventore earum explicabo numquam repellat exercitationem amet in, minus delectus.'
-        )}
-      />
-    )
-  })
+  .add('default', () => (
+    <Base
+      title={object('title', 'This is just a test')}
+      content={object(
+        'content',
+        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ducimus inventore earum explicabo numquam repellat exercitationem amet in, minus delectus.'
+      )}
+    />
+  ))
   .add('showing the title on large screen', () => (
     <Base
       title={object('title', 'This is just a test')}
