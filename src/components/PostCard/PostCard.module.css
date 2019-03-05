@@ -1,0 +1,6 @@
+.PostCard {
+  & p {
+    max-height: 7em;
+    overflow: auto;
+  }
+}

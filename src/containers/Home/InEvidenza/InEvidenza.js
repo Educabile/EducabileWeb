@@ -2,6 +2,7 @@ import React, { cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import LazyLoad from 'react-lazy-load'
 import cx from 'class-names'
+import { Section } from 'react-materialize'
 
 import Posts from './Posts/Posts'
 import Styles from './InEvidenza.module.css'
@@ -14,10 +15,12 @@ const InEvidenza = ({ id, children, className, title, button }) => (
     className={cx(className, Styles.Section)}
     title={title}
     button={<Fade bottom>{cloneElement(button, { className: Styles.Btn })}</Fade>}>
-    <LazyLoad offset={1000}>
-      <Posts />
-    </LazyLoad>
-    {children}
+    <Section>
+      <LazyLoad offset={1000}>
+        <Posts />
+      </LazyLoad>
+      {children}
+    </Section>
   </Base>
 )
 
