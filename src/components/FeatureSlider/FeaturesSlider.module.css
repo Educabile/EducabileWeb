@@ -2,7 +2,7 @@
   clip-path: polygon(0px 0px, 100% 0px, 100% 330px, 0px 400px);
 
   @media (max-width: 768px) {
-    clip-path: polygon(0px 0px, 100% 0px, 100% 282px, 0px 400px);
+    clip-path: polygon(0px 0px, 100% 0%, 99.8% 313px, 0px 400px);
   }
 }
 

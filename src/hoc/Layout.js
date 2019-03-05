@@ -89,7 +89,6 @@ const Layout = ({ children, t }) => (
           },
         ]}
         id="footer-logo"
-        className="hide-on-med-and-down"
         alt="Logo Educabile Srl"
         blur={0}
         width={225}
@@ -114,8 +113,8 @@ const Layout = ({ children, t }) => (
       </Button>
     </ScrollToTop>
     <footer className="blue darken-3">
-      <div className="row">
-        <div className="col s12 xl4 center" style={{ paddingTop: 4 }}>
+      <div className="row center-on-small-only">
+        <div className="col s12 xl4" style={{ paddingTop: 4 }}>
           <Link to="/privacy-policy">
             <Button
               className="blue darken-3 white-text"
@@ -153,11 +152,11 @@ const Layout = ({ children, t }) => (
           </Link>
         </div>
 
-        <div className="col s12 xl4 center light" style={{ paddingTop: 12 }}>
+        <div className="col s12 xl4 light" style={{ paddingTop: 12, whiteSpace: 'nowrap' }}>
           {t('footer:copyright')}
         </div>
 
-        <div className="col s12 xl4 center" style={{ paddingTop: 2 }}>
+        <div id="social" className="col s12 xl4" style={{ paddingTop: 2 }}>
           <a
             href="https://www.facebook.com/educabile/"
             rel="external noopener noreferrer"

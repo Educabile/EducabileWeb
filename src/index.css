@@ -55,6 +55,18 @@ html {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
+    &:hover,
+    &:focus {
+      background-color: inherit;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
 .btn,
 .btn-small,
 .btn-large {
@@ -148,6 +160,10 @@ nav ul a.active {
 #footer-logo {
   bottom: 43px;
   position: fixed;
+
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
 }
 
 footer {
@@ -228,4 +244,18 @@ footer a:focus:nth-child(5) svg g:nth-child(2) path {
   footer .row {
     margin-bottom: 0px;
   }
+}
+
+@media only screen and (max-width: 1200px) {
+  footer .row {
+    text-align: center;
+  }
+
+  #social {
+    text-align: center !important;
+  }
+}
+
+#social {
+  text-align: right;
 }
