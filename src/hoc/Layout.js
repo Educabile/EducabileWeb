@@ -7,7 +7,6 @@ import {
   mdiClipboardText,
   mdiFacebook,
   mdiTwitter,
-  mdiGooglePlus,
   mdiLinkedin,
   mdiYoutube,
   mdiCheckboxBlank,
@@ -175,15 +174,6 @@ const Layout = ({ children, t }) => (
             <Stack size={1.8}>
               <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
               <Icon path={mdiTwitter} color="#1565C0" size={1.2} />
-            </Stack>
-          </a>
-          <a
-            href="https://plus.google.com/116358556609411124672"
-            rel="external noopener noreferrer"
-            target="_blank">
-            <Stack size={1.8}>
-              <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
-              <Icon path={mdiGooglePlus} color="#1565C0" size={1.2} />
             </Stack>
           </a>
           <a
