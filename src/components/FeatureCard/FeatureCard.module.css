@@ -1,15 +1,42 @@
 .FeatureCard {
   max-height: 510px;
+  min-height: 510px;
   overflow: hidden;
 
   @media only screen and (min-width: 1201px) {
-    max-height: 650px;
-    min-height: 650px;
+    max-height: 550px;
+    min-height: 550px;
+
+    & p {
+      font-size: medium !important;
+    }
+  }
+
+  @media only screen and (min-width: 1371px) {
+    max-height: 490px;
+    min-height: 490px;
+
+    & p {
+      font-size: medium !important;
+    }
+  }
+
+  @media only screen and (min-width: 1550px) {
+    max-height: 470px;
+    min-height: 470px;
+
+    & p {
+      font-size: medium !important;
+    }
   }
 
   @media only screen and (min-width: 1618px) {
-    max-height: 510px;
-    min-height: 510px;
+    max-height: 470px;
+    min-height: 470px;
+
+    & p {
+      font-size: large !important;
+    }
   }
 
   & .FeatureIcon {
