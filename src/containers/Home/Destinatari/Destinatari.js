@@ -12,7 +12,7 @@ const Destinatari = ({ id, children, title, button, className }) => (
     title={title}
     button={cloneElement(button, { className: cx(button.props.className, Styles.ContactBtn) })}>
     {Children.map(children, (child, index) => (
-      <Col s={12} m={index === 0 ? 12 : 6} xl={4} className={Styles.Col}>
+      <Col s={12} m={index === 0 ? 12 : 6} l={index === 0 ? 12 : 6} xl={4} className={Styles.Col}>
         {child}
       </Col>
     ))}

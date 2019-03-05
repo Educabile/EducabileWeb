@@ -1,5 +1,16 @@
 .FeatureCard {
-  min-height: 510px;
+  max-height: 510px;
+  overflow: hidden;
+
+  @media only screen and (min-width: 1201px) {
+    max-height: 650px;
+    min-height: 650px;
+  }
+
+  @media only screen and (min-width: 1618px) {
+    max-height: 510px;
+    min-height: 510px;
+  }
 
   & .FeatureIcon {
     background-color: #ececec;
