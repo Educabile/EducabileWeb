@@ -14,6 +14,10 @@ import {
   qequipeWebP,
   ictConsultingPng,
   ictConsultingWebP,
+  eidesPng,
+  eidesWebp,
+  saverianoConsultingPng,
+  saverianoConsultingWebP,
 } from 'assets/img/partners-logos'
 
 import Base from 'components/Base/Base'
@@ -82,6 +86,32 @@ const PartnerSlider = ({ id, className, title, button }) => (
             },
           ]}
           alt="ICT Consulting"
+        />
+        <Picture
+          sources={[
+            {
+              srcSet: saverianoConsultingWebP,
+              type: 'image/webp',
+            },
+            {
+              srcSet: saverianoConsultingPng,
+              type: 'image/png',
+            },
+          ]}
+          alt="Saveriano Consulting"
+        />
+        <Picture
+          sources={[
+            {
+              srcSet: eidesWebp,
+              type: 'image/webp',
+            },
+            {
+              srcSet: eidesPng,
+              type: 'image/png',
+            },
+          ]}
+          alt="Eides"
         />
       </Carousel>
       <Divider />
