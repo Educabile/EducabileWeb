@@ -19,6 +19,7 @@ import Dropdown from 'components/Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
 import cx from 'class-names'
 import { withNamespaces } from 'react-i18next'
+import Styles from './PostCard.module.css'
 
 const PostCard = ({ post, t }) => {
   const renderImage = post => {
@@ -146,7 +147,7 @@ const PostCard = ({ post, t }) => {
 
   return (
     <Card
-      className="rounded z-depth-2 hoverable"
+      className={cx('rounded z-depth-2 hoverable', Styles.PostCard)}
       title={post.title.rendered}
       image={renderImage(post)}
       fab={null || renderFab(post)}

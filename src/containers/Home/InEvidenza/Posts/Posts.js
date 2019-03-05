@@ -33,7 +33,7 @@ class Posts extends Component {
           <div>
             {posts.map((post, index) => {
               return (
-                <Col s={12} xl={4} key={index}>
+                <Col s={12} l={12} xl={4} key={index}>
                   <PostCard post={post} />
                 </Col>
               )

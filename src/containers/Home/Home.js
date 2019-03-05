@@ -148,12 +148,12 @@ const Home = ({ t }) => {
             flexWrap: 'wrap',
             borderRadius: 30,
           }}>
-          <Col id="sedi" s={12} l={5} className="white">
+          <Col id="sedi" s={12} xl={5} className="white">
             <h4 className="blue-text text-darken-3">{t('contatti.sedeLegale')}</h4>
             <p
               className="left-align"
               style={{
-                fontSize: 'smaller',
+                fontSize: 'x-small',
                 fontWeight: 'bold',
               }}>
               Via E. Nicolardi, 109 - 80131 - Napoli (NA)
@@ -170,7 +170,7 @@ const Home = ({ t }) => {
             <p
               className="left-align"
               style={{
-                fontSize: 'smaller',
+                fontSize: 'x-small',
                 fontWeight: 'bold',
               }}>
               Via Coroglio, 57/d - Città della Scienza 80124 - Napoli (NA)
@@ -188,7 +188,7 @@ const Home = ({ t }) => {
             <p
               className="left-align"
               style={{
-                fontSize: 'smaller',
+                fontSize: 'x-small',
                 fontWeight: 'bold',
               }}>
               300645 Timisoara (RO) - 119 Aradului Street
@@ -200,7 +200,7 @@ const Home = ({ t }) => {
 
           <Col
             s={12}
-            l={7}
+            xl={7}
             className="grey lighten-4 valign-wrapper"
             style={{ borderTopRightRadius: 30, borderBottomRightRadius: 30 }}>
             <Section>
