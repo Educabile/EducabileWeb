@@ -152,7 +152,7 @@ const Layout = ({ children, t }) => (
           </Link>
         </div>
 
-        <div className="col s12 xl4 light" style={{ paddingTop: 12, whiteSpace: 'nowrap' }}>
+        <div className="col s12 xl4 light center" style={{ paddingTop: 12, whiteSpace: 'nowrap' }}>
           {t('footer:copyright')}
         </div>
 
