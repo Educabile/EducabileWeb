@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
-import { Button } from 'react-materialize'
+import { Button, Container, Parallax } from 'react-materialize'
 import Icon from '@mdi/react'
 import { mdiArrowLeft } from '@mdi/js'
-import Container from 'components/Container/Container'
-import Parallax from 'components/Parallax/Parallax'
-import wp from '../../../axios-wordpress'
+import wp from 'src/wordpress'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import Spinner from 'components/Spinner/Spinner'
 import TimeAgo from 'react-timeago'
 import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
-import { scrollTo } from 'libs/utils'
 import { Helmet } from 'react-helmet'
+import Picture from '@cloudpower97/react-progressive-picture'
 class Post extends Component {
   state = {
     post: null,
@@ -25,12 +23,15 @@ class Post extends Component {
       },
     } = this.props
 
-    wp.get(`posts?_embed&slug=${postSlug}`).then(res => {
-      const { data } = res
-      this.setState({
-        post: data[0],
+    wp.posts()
+      .embed()
+      .slug(postSlug)
+      .get()
+      .then(([post]) => {
+        this.setState({
+          post,
+        })
       })
-    })
   }
 
   render() {
@@ -38,8 +39,6 @@ class Post extends Component {
       t,
       history: { goBack },
     } = this.props
-
-    scrollTo(null, 56)
 
     let post = <Spinner />
 
@@ -66,7 +65,7 @@ class Post extends Component {
               alignItems: 'center',
               clipPath: 'polygon(0px 0px, 100% 0px, 100% 330px, 0px 400px)',
             }}
-            imageSrc={_embedded['wp:featuredmedia'][0].source_url}>
+            image={<Picture src={_embedded['wp:featuredmedia'][0].source_url} />}>
             <h1
               className="center-align white-text hide-on-large-only"
               style={{ textShadow: 'rgba(0, 0, 0, 0.72) 0px 2px 4px' }}>

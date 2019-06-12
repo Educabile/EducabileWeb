@@ -5,22 +5,27 @@ import LocalStorageBackend from 'i18next-localstorage-backend' // primary use ca
 import XHR from 'i18next-xhr-backend' // fallback xhr load
 import { reactI18nextModule } from 'react-i18next'
 
+const { NODE_ENV, PUBLIC_URL } = process.env
+
 i18n
   .use(detector)
   .use(backend)
   .use(reactI18nextModule) // passes i18n down to react-i18next
   .init({
     backend: {
-      backends: [LocalStorageBackend, XHR],
+      backends: NODE_ENV === 'development' ? [XHR] : [LocalStorageBackend, XHR],
       backendOptions: [
         {
-          prefix: 'i18next_res_',
+          prefix: 'educabile.it-dev',
           versions: {
-            it: 'v1.0',
+            it: 'v0.1-dev',
           },
         },
         {
-          loadPath: 'locales/{{lng}}/{{ns}}.json',
+          loadPath:
+            NODE_ENV === 'development'
+              ? 'locales/{{lng}}/{{ns}}.json'
+              : `${PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`,
         },
       ],
     },

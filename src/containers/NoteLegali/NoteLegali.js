@@ -1,45 +1,48 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import { scrollTo } from 'libs/utils'
-import { Helmet } from 'react-helmet'
+import { Parallax } from 'react-materialize'
+import Picture from '@cloudpower97/react-progressive-picture'
+import withWordpress from 'hoc/withWordpress'
+import Base from 'components/Base'
+import Spinner from 'components/Spinner/Spinner'
+import { Redirect } from 'react-router-dom'
 
-const NoteLegali = ({ t }) => {
-  scrollTo(null)
-  return (
-    <>
-      <Helmet>
-        <title>Educabile - Note Legali</title>
-        <meta
-          name="description"
-          content="In questa pagina si descrivono le modalita' di gestione del sito Educabile Srl"
-        />
-        <meta name="keyword" content="educabile, privacy, policy, cookie" />
-      </Helmet>
-      <div className="container">
-        <h1 className="center">{t('title')}</h1>
+const NoteLegali = ({ page, loading }) => {
+  const Content = () => {
+    if (page) {
+      const featuredImage = page._embedded['wp:featuredmedia']
 
-        <h2 className="light">{t('modalitaCondizioni.title')}</h2>
-        <p className="flow-text">{t('modalitaCondizioni.content')}</p>
+      return (
+        <>
+          {featuredImage && <Parallax image={<Picture src={featuredImage} />} />}
 
-        <h2 className="light">{t('normativaApplicabile.title')}</h2>
+          <Base
+            title={page.title.rendered}
+            content={
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: page.content.rendered,
+                }}
+              />
+            }
+          />
+        </>
+      )
+    } else {
+      if (loading) {
+        return <Spinner />
+      } else {
+        return <Redirect to="/" />
+      }
+    }
+  }
 
-        <p className="flow-text">{t('normativaApplicabile.content')} </p>
-
-        <h2 className="light">{t('titolaritaDiritti.title')}</h2>
-
-        <p className="flow-text">{t('titolaritaDiritti.content')}</p>
-
-        <h2 className="light">{t('regimeDiUtilizzazione.title')}</h2>
-
-        <p className="flow-text">{t('regimeDiUtilizzazione.content')}</p>
-      </div>
-    </>
-  )
+  return <Content />
 }
 
 NoteLegali.propTypes = {
-  t: PropTypes.func.isRequired,
+  page: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired,
 }
 
-export default withNamespaces('note-legali')(NoteLegali)
+export default withWordpress(NoteLegali, 'note-legali')

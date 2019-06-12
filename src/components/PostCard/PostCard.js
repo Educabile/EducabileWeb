@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'react-materialize'
+import { Button, Dropdown } from 'react-materialize'
 import Icon from '@mdi/react'
 import {
   mdiFacebookBox,
   mdiTwitterBox,
   mdiLinkedinBox,
-  mdiGooglePlusBox,
   mdiShareVariant,
   mdiChevronRight,
 } from '@mdi/js'
@@ -15,7 +14,6 @@ import italianString from 'react-timeago/lib/language-strings/it'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 import Card from 'components/Card/Card'
 import idgen from '../../idgen'
-import Dropdown from 'components/Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
 import cx from 'class-names'
 import { withNamespaces } from 'react-i18next'
@@ -185,18 +183,6 @@ const PostCard = ({ post, t }) => {
             }}>
             <Icon className="left" path={mdiTwitterBox} size={1} color="#1da1f2" />
             Twitter
-          </span>
-          <span
-            className="blue-text text-darken-3"
-            onClick={() => {
-              openPopup(
-                `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(
-                  `https://www.educabile.it/blog/post/${post.slug}`
-                )}`
-              )
-            }}>
-            <Icon className="left" path={mdiGooglePlusBox} size={1} color="#dd4b39" />
-            Google Plus
           </span>
           <span
             className="blue-text text-darken-3"

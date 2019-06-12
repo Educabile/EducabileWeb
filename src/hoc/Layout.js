@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Navbar from 'components/Navbar/Navbar'
-import { Button } from 'react-materialize'
+import { Button, Modal } from 'react-materialize'
 import Icon, { Stack } from '@mdi/react'
 import {
   mdiEye,
@@ -13,191 +13,231 @@ import {
   mdiArrowUp,
 } from '@mdi/js'
 import ScrollToTop from 'react-scroll-up'
-import { NavHashLink as Link } from 'react-router-hash-link'
+import { NavLink, Link } from 'react-router-dom'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
-import { logoEducabilePng, logoEducabileWebP } from 'assets/img'
+import { logoEducabileBorderPng, logoEducabileBorderWebP } from 'assets/img'
 import Picture from '@cloudpower97/react-progressive-picture'
-import { scrollTo } from 'libs/utils'
+import { scrollTo, setCookie, getCookie } from 'libs/utils'
+import wp from 'src/wordpress'
 
-const offset = 56
+class Layout extends Component {
+  state = { menuItems: [] }
 
-const Layout = ({ children, t }) => (
-  <>
-    <header>
-      <Navbar
-        brand={
-          <Link
-            to="/#root"
-            className="show-on-medium-and-down hide-on-med-and-up"
-            scroll={scrollTo}>
-            Educabile
-          </Link>
-        }
-        className="z-depth-3"
-        fixed
-        alignLinks="right"
-        centerLogo>
-        <Link className="sidenav-close" to="/#azienda" scroll={el => scrollTo(el, offset)}>
-          {t('azienda')}
-        </Link>
-        <Link
-          className="sidenav-close"
-          to="/#destinatari"
-          scroll={el => {
-            scrollTo(el, 56)
+  componentDidMount() {
+    wp.menus()
+      .id('header')
+      .then(res => {
+        this.setState({
+          menuItems: res.items,
+        })
+      })
+      .catch(err => console.log(err))
+
+    if (!getCookie('cookie-banner')) {
+      window.M.Modal.getInstance(document.getElementById('cookie-modal')).open()
+    }
+  }
+
+  render() {
+    return (
+      <>
+        <header>
+          <Navbar
+            brand={
+              <NavLink
+                to="/#root"
+                className="show-on-medium-and-down hide-on-med-and-up"
+                scroll={scrollTo}>
+                Educabile
+              </NavLink>
+            }
+            className="z-depth-3"
+            fixed
+            alignLinks="right"
+            centerLogo>
+            {this.state.menuItems.map(m => (
+              <NavLink
+                key={m.id}
+                className="sidenav-close"
+                to={`/${m.url.split('/').slice(-2)[0]}`}>
+                {m.title}
+              </NavLink>
+            ))}
+          </Navbar>
+        </header>
+        <main>{this.props.children}</main>
+        <NavLink to="/#root" scroll={scrollTo}>
+          <Picture
+            sources={[
+              {
+                srcSet: logoEducabileBorderWebP,
+                type: 'image/webp',
+              },
+              {
+                srcSet: logoEducabileBorderPng,
+                type: 'image/png',
+              },
+            ]}
+            id="footer-logo"
+            alt="Logo Educabile Srl"
+            blur={0}
+            width={225}
+            height={141}
+          />
+        </NavLink>
+        <ScrollToTop
+          showUnder={800}
+          style={{
+            zIndex: '2',
           }}>
-          {t('destinatari')}
-        </Link>
-        <Link
-          className="sidenav-close"
-          to="/#aree-di-intervento"
-          scroll={el => {
-            scrollTo(el, offset)
-          }}>
-          {t('areeDiIntervento')}
-        </Link>
-        <Link
-          className="sidenav-close"
-          to="/#in-evidenza"
-          scroll={el => {
-            scrollTo(el, offset)
-          }}>
-          {t('inEvidenza')}
-        </Link>
-        <Link
-          className="sidenav-close"
-          to="/#contatti"
-          scroll={el => {
-            scrollTo(el, offset)
-          }}>
-          {t('contatti')}
-        </Link>
-      </Navbar>
-    </header>
-    <main>{children}</main>
-    <Link to="/#root">
-      <Picture
-        sources={[
-          {
-            srcSet: logoEducabileWebP,
-            type: 'image/webp',
-          },
-          {
-            srcSet: logoEducabilePng,
-            type: 'image/png',
-          },
-        ]}
-        id="footer-logo"
-        alt="Logo Educabile Srl"
-        blur={0}
-        width={225}
-        height={141}
-      />
-    </Link>
-    <ScrollToTop showUnder={800} style={{ zIndex: '2' }}>
-      <Button
-        floating
-        large
-        className="blueGradient hoverable"
-        waves="light"
-        style={{
-          bottom: 64,
-          right: 20,
-          position: 'fixed',
-          display: 'inline-flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Icon path={mdiArrowUp} size={1.125} color="white" />
-      </Button>
-    </ScrollToTop>
-    <footer className="blue darken-3">
-      <div className="row center-on-small-only">
-        <div className="col s12 xl4" style={{ paddingTop: 4 }}>
-          <Link to="/privacy-policy">
-            <Button
-              className="blue darken-3 white-text"
-              waves="light"
-              flat
+          <Button
+            floating
+            large
+            className="blueGradient hoverable"
+            waves="light"
+            style={{
+              bottom: 64,
+              right: 20,
+              position: 'fixed',
+              display: 'inline-flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Icon path={mdiArrowUp} size={1.125} color="white" />
+          </Button>
+        </ScrollToTop>
+        <footer className="blue darken-3">
+          <div className="row center-on-small-only">
+            <div
+              className="col s12 xl4"
               style={{
-                display: 'inline-flex',
-                fontSize: 'small',
-                textTransform: 'capitalize',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: 145,
+                paddingTop: 4,
               }}>
-              <Icon path={mdiEye} size={0.7} color="white" />
-              {t('footer:privacyPolicy')}
-            </Button>
-          </Link>
-          {'|'}
-          <Link to="/note-legali">
-            <Button
-              className="blue darken-3 white-text"
-              waves="light"
-              flat
+              <Link to="/privacy-policy">
+                <Button
+                  className="blue darken-3 white-text"
+                  waves="light"
+                  flat
+                  style={{
+                    display: 'inline-flex',
+                    fontSize: 'small',
+                    textTransform: 'capitalize',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: 145,
+                  }}>
+                  <Icon path={mdiEye} size={0.7} color="white" />
+                  {this.props.t('footer:privacyPolicy')}
+                </Button>
+              </Link>
+              {'|'}
+              <Link to="/note-legali">
+                <Button
+                  className="blue darken-3 white-text"
+                  waves="light"
+                  flat
+                  style={{
+                    display: 'inline-flex',
+                    fontSize: 'small',
+                    textTransform: 'capitalize',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: 145,
+                  }}>
+                  <Icon path={mdiClipboardText} size={0.7} color="white" />
+                  {this.props.t('footer:noteLegali')}
+                </Button>
+              </Link>
+            </div>
+
+            <div
+              className="col s12 xl4 light center"
               style={{
-                display: 'inline-flex',
-                fontSize: 'small',
-                textTransform: 'capitalize',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: 145,
+                paddingTop: 12,
+                whiteSpace: 'nowrap',
               }}>
-              <Icon path={mdiClipboardText} size={0.7} color="white" />
-              {t('footer:noteLegali')}
-            </Button>
-          </Link>
-        </div>
+              Copyright &copy; {new Date().getFullYear()} Educabile Srl - an Innovative Startup
+              Company
+            </div>
 
-        <div className="col s12 xl4 light center" style={{ paddingTop: 12, whiteSpace: 'nowrap' }}>
-          {t('footer:copyright')}
-        </div>
-
-        <div id="social" className="col s12 xl4" style={{ paddingTop: 2 }}>
-          <a
-            href="https://www.facebook.com/educabile/"
-            rel="external noopener noreferrer"
-            target="_blank">
-            <Stack size={1.8}>
-              <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
-              <Icon path={mdiFacebook} color="#1565C0" size={1.2} />
-            </Stack>
-          </a>
-          <a
-            href="https://twitter.com/Educabile_Srl"
-            rel="external noopener noreferrer"
-            target="_blank">
-            <Stack size={1.8}>
-              <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
-              <Icon path={mdiTwitter} color="#1565C0" size={1.2} />
-            </Stack>
-          </a>
-          <a
-            href="https://it.linkedin.com/company/educabile"
-            rel="external noopener noreferrer"
-            target="_blank">
-            <Stack size={1.8}>
-              <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
-              <Icon path={mdiLinkedin} color="#1565C0" size={1.2} />
-            </Stack>
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCi7MiFTtF2fsIz7Yc-XL3fg"
-            rel="external noopener noreferrer"
-            target="_blank">
-            <Stack size={1.8}>
-              <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
-              <Icon path={mdiYoutube} color="#1565C0" size={1.2} />
-            </Stack>
-          </a>
-        </div>
-      </div>
-    </footer>
-  </>
-)
+            <div
+              id="social"
+              className="col s12 xl4"
+              style={{
+                paddingTop: 2,
+              }}>
+              <a
+                href="https://www.facebook.com/educabile/"
+                rel="external noopener noreferrer"
+                target="_blank">
+                <Stack size={1.8}>
+                  <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
+                  <Icon path={mdiFacebook} color="#1565C0" size={1.2} />
+                </Stack>
+              </a>
+              <a
+                href="https://twitter.com/Educabile_Srl"
+                rel="external noopener noreferrer"
+                target="_blank">
+                <Stack size={1.8}>
+                  <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
+                  <Icon path={mdiTwitter} color="#1565C0" size={1.2} />
+                </Stack>
+              </a>
+              <a
+                href="https://it.linkedin.com/company/educabile"
+                rel="external noopener noreferrer"
+                target="_blank">
+                <Stack size={1.8}>
+                  <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
+                  <Icon path={mdiLinkedin} color="#1565C0" size={1.2} />
+                </Stack>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCi7MiFTtF2fsIz7Yc-XL3fg"
+                rel="external noopener noreferrer"
+                target="_blank">
+                <Stack size={1.8}>
+                  <Icon path={mdiCheckboxBlank} color="white" size={1.8} />
+                  <Icon path={mdiYoutube} color="#1565C0" size={1.2} />
+                </Stack>
+              </a>
+            </div>
+          </div>
+        </footer>
+        <Modal
+          id="cookie-modal"
+          className="rounded"
+          header="Questo sito web utilizza cookie"
+          bottomSheet
+          actions={[
+            <NavLink to="/privacy-policy" key="cookie-banner-more">
+              <Button waves="light" modal="close" flat>
+                Leggi di piu&apos;
+              </Button>
+            </NavLink>,
+            <Button
+              key="cookie-banner-close"
+              waves="light"
+              modal="close"
+              flat
+              onClick={() => {
+                setCookie('cookie-banner', 'accept', 365)
+              }}>
+              Continua la navigazione
+            </Button>,
+          ]}>
+          <p className="flow-text" style={{ margin: 0 }}>
+            Questo sito utilizza cookie, anche di terze parti, necessari al funzionamento ed utili
+            alle finalità illustrate nella cookie policy. Chiudendo questo banner, cliccando su un
+            link o proseguendo la navigazione in altra maniera, acconsenti all’uso dei cookie.
+          </p>
+        </Modal>
+      </>
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node,

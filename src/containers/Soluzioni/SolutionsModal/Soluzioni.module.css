@@ -1,0 +1,17 @@
+.Watermark {
+  position: fixed;
+  top: 42%;
+  transform: rotate(-90deg);
+
+  @media only screen and (max-width: 1371px) {
+    left: -15%;
+  }
+
+  @media only screen and (min-width: 1371px) {
+    left: -85px;
+  }
+
+  @media only screen and (max-width: 993px) {
+    left: -115px;
+  }
+}

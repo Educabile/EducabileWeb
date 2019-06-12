@@ -14,8 +14,6 @@
     <meta property="og:type" content="website" />
     <meta property="fb:app_id" content="2265331890362238" />
     <meta property="og:locale" content="it-IT" />
-
-    <link rel="stylesheet" href="%PUBLIC_URL%/materialize.css" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -26,6 +24,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Educabile - Una Startup Innovativa</title>
+    <?php wp_head() ?>
   </head>
 
   <body>
@@ -41,7 +40,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="%PUBLIC_URL%/materialize.min.js"></script>
+    <script
+      crossorigin="anonymous"
+      src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7,IntersectionObserver,HTMLPictureElement,Promise&flags=gated&rum=true"
+    ></script>
+    <?php wp_footer() ?>
   </body>
 </html>

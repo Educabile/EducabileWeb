@@ -1,7 +1,12 @@
 {
+  "home": "Home",
   "azienda": "Azienda",
+  "servizi": "Servizi",
+  "soluzioni": "Soluzioni",
+  "ricercaSviluppo": "Ricerca & Sviluppo",
   "destinatari": "Destinatari",
   "areeDiIntervento": "Aree di Intervento",
   "inEvidenza": "In Evidenza",
-  "contatti": "Contatti"
+  "contatti": "Contatti",
+  "blog": "Blog"
 }

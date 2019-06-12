@@ -1,17 +1,19 @@
-// TODO: Remove this component if this PR is accepted: https://github.com/react-materialize/react-materialize/pull/700
 import React, { Component } from 'react'
 import cx from 'class-names'
 import PropTypes from 'prop-types'
 
 class Carousel extends Component {
   componentDidMount() {
-    const { options } = this.props
+    const { options, autoPlay } = this.props
 
     if (typeof M !== 'undefined') {
       this.instance = window.M.Carousel.init(this._carousel, options)
-      this.startAutoplay()
-      this._carousel.addEventListener('mouseenter', this.stopAutoplay)
-      this._carousel.addEventListener('mouseleave', this.startAutoplay)
+
+      if (autoPlay) {
+        this.startAutoplay()
+        this._carousel.addEventListener('mouseenter', this.stopAutoplay)
+        this._carousel.addEventListener('mouseleave', this.startAutoplay)
+      }
     }
   }
 
@@ -26,7 +28,7 @@ class Carousel extends Component {
   startAutoplay = () => {
     this.intervalId = setInterval(() => {
       this.instance.next()
-    }, 2250)
+    }, 3500)
   }
 
   stopAutoplay = () => {
@@ -65,6 +67,7 @@ class Carousel extends Component {
       images,
       centerImages,
       options: { fullWidth },
+      ...other
     } = this.props
 
     const elemsToRender = children || images || []
@@ -76,7 +79,8 @@ class Carousel extends Component {
           ref={el => {
             this._carousel = el
           }}
-          className={cx('carousel', { 'carousel-slider': fullWidth }, className)}>
+          className={cx('carousel', { 'carousel-slider': fullWidth }, className)}
+          {...other}>
           {fixedItem && this.renderFixedItem(fixedItem)}
           {React.Children.map(elemsToRender, images => this.renderImages(images, centerImages))}
         </div>
@@ -86,6 +90,7 @@ class Carousel extends Component {
 }
 
 Carousel.propTypes = {
+  autoPlay: PropTypes.bool.isRequired,
   /*
    * Children to render as carousel elements
    */
@@ -166,6 +171,7 @@ Carousel.defaultProps = {
     noWrap: false,
     onCycleTo: null,
   },
+  autoPlay: false,
 }
 
 export default Carousel

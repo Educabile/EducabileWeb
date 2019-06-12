@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-materialize'
-import wp from '../../../../axios-wordpress'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
 import Spinner from 'components/Spinner/Spinner'
 import Fade from 'react-reveal/Fade'
-
+import wp from 'src/wordpress'
 import PostCard from 'components/PostCard/PostCard'
 class Posts extends Component {
   state = {
@@ -13,11 +12,15 @@ class Posts extends Component {
   }
 
   componentDidMount() {
-    wp.get('posts?_embed&order=desc&order_by=date&per_page=3').then(res => {
-      this.setState({
-        posts: res.data,
+    wp.posts()
+      .embed()
+      .order('desc')
+      .orderby('date')
+      .perPage(3)
+      .get()
+      .then(posts => {
+        this.setState({ posts })
       })
-    })
   }
 
   renderPosts() {

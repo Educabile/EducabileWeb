@@ -35,10 +35,6 @@ html {
   .btn-small,
   .btn-large {
     transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
   }
 }
 
@@ -47,10 +43,6 @@ html {
   .btn-small,
   .btn-large {
     transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
   }
 }
 
@@ -59,10 +51,14 @@ html {
   .btn-small,
   .btn-large {
     transition: none;
-    &:hover,
-    &:focus {
-      background-color: inherit;
-    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-small,
+  .btn-large {
+    transition: none;
   }
 }
 
@@ -71,10 +67,6 @@ html {
 .btn-small,
 .btn-large {
   transition: none;
-  &:hover,
-  &:focus {
-    background-color: inherit;
-  }
 }
 }
 
@@ -82,10 +74,6 @@ html {
 .btn-small,
 .btn-large {
   transition: box-shadow 0.25s;
-  &:hover,
-  &:focus {
-    background-color: inherit;
-  }
 }
 
 .blueGradient {
@@ -100,15 +88,28 @@ html {
   background: var(--green-gradient);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
   flex: 1 0 auto;
   padding-bottom: 45px;
+
+  & ul {
+    margin-left: 40px;
+
+    & > li {
+      list-style-type: circle !important;
+    }
+  }
 }
 
 nav ul a.active {
@@ -139,7 +140,7 @@ nav ul a.active {
 }
 
 .rounded {
-  border-radius: 30px;
+  border-radius: 30px !important;
 }
 
 .rounded .card-image {
@@ -158,7 +159,7 @@ nav ul a.active {
 }
 
 #footer-logo {
-  bottom: 43px;
+  bottom: 39px;
   position: fixed;
 
   @media only screen and (max-width: 1200px) {
@@ -215,16 +216,11 @@ footer a:focus:nth-child(2) svg g:nth-child(2) path {
 
 footer a:hover:nth-child(3) svg g:nth-child(2) path,
 footer a:focus:nth-child(3) svg g:nth-child(2) path {
-  fill: google-plus-color !important;
+  fill: linkedin-color !important;
 }
 
 footer a:hover:nth-child(4) svg g:nth-child(2) path,
 footer a:focus:nth-child(4) svg g:nth-child(2) path {
-  fill: linkedin-color !important;
-}
-
-footer a:hover:nth-child(5) svg g:nth-child(2) path,
-footer a:focus:nth-child(5) svg g:nth-child(2) path {
   fill: youtube-color !important;
 }
 
@@ -258,4 +254,28 @@ footer a:focus:nth-child(5) svg g:nth-child(2) path {
 
 #social {
   text-align: right;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+/* stylelint-disable */
+.scheda-modal {
+  & .modal-content {
+    padding: 0;
+
+    & h4 {
+      display: none;
+    }
+  }
+
+  & .modal-footer {
+    display: none;
+  }
+}
+/* stylelint-enable*/
+
+.service-section:last-of-type {
+  padding-bottom: 0;
 }

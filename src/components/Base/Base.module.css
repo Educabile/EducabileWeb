@@ -1,0 +1,8 @@
+.Content {
+  font-size: x-large;
+
+  &::first-letter {
+    color: var(--blue);
+    font-weight: bold;
+  }
+}

@@ -1,17 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './i18n'
-import './index.css'
+import 'vendor/materialize.css'
+import 'vendor/materialize.min.js'
 import 'vendor/modernizr.min.js'
+import './index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker'
+import ScrollToTop from 'components/ScrollToTop'
 
-const { PUBLIC_URL } = process.env
+const { NODE_ENV } = process.env
 
 const app = (
-  <BrowserRouter basename={PUBLIC_URL}>
-    <App />
+  <BrowserRouter basename={NODE_ENV !== 'development' ? '/other/wordpress' : ''}>
+    <ScrollToTop>
+      <App />
+    </ScrollToTop>
   </BrowserRouter>
 )
 

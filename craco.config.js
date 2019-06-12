@@ -1,18 +1,16 @@
 const path = require('path')
 const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const imageminMozjpeg = require('imagemin-mozjpeg')
-const imageminJpegRecompress = require('imagemin-jpeg-recompress')
-const imageminPngquant = require('imagemin-pngquant')
-const imageminZopfli = require('imagemin-zopfli')
+const CompressionPlugin = require('compression-webpack-plugin')
+const HtmlCriticalPlugin = require('html-critical-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack')
 const imageminGiflossy = require('imagemin-giflossy')
-const imageminWebp = require('imagemin-webp')
-
-// TODO: It's not working as of now! :(
-var DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
+const imageminMozJpeg = require('imagemin-mozjpeg')
+const imageminPngquant = require('imagemin-pngquant')
+const imageminSvgo = require('imagemin-svgo')
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
 const { NODE_ENV } = process.env
 
@@ -49,37 +47,47 @@ module.exports = function() {
       ],
     })),
     webpack: {
-      plugins: [
+      plugins: NODE_ENV !== 'development' && [
+        new CompressionPlugin(),
         new ImageminPlugin({
-          disable: NODE_ENV !== 'production', // Disable during development
-          plugins: [
-            imageminPngquant({
-              speed: 1,
-              quality: 98, //lossy settings
-            }),
-            imageminZopfli({
-              more: true,
-            }),
-            imageminMozjpeg({ progressive: true, quality: 80 }),
-            imageminJpegRecompress({
-              loops: 6,
-              min: 40,
-              max: 85,
-              quality: 'low',
-            }),
-            imageminGiflossy({
-              optimizationLevel: 3,
-              optimize: 3, //keep-empty: Preserve empty transparent frames
-              lossy: 2,
-            }),
-            imageminWebp({ quality: 50 }),
-          ],
-          svgo: {
-            removeViewBox: false,
+          bail: false, // Ignore errors on corrupted images
+          cache: true,
+          include: /.*\/src\/assets/,
+          imageminOptions: {
+            plugins: [
+              imageminGiflossy({
+                interlaced: true,
+                optimizationLevel: 3,
+              }),
+              imageminMozJpeg({
+                quality: 70,
+                progressive: true,
+              }),
+              imageminPngquant({
+                speed: 1,
+                quality: [0.85, 1], //lossy settings
+                optimizationLevel: 5,
+                strip: true,
+              }),
+              imageminSvgo({
+                removeViewBox: true,
+              }),
+            ],
           },
+        }),
+        new ImageminWebpWebpackPlugin({
+          config: [
+            {
+              test: /\.webp/,
+              options: {
+                quality: 50,
+              },
+            },
+          ],
         }),
         new HtmlWebpackPlugin(),
         new WebappWebpackPlugin({
+          prefix: 'static/media',
           logo: './public/favicon.png',
           // This is going to create a custom manifest.json
           // Refer to this documentation for more information : https://github.com/itgalaxy/favicons#usage
@@ -91,12 +99,21 @@ module.exports = function() {
             start_url: './',
           },
         }),
-        new BundleAnalyzerPlugin(),
+        new HtmlCriticalPlugin({
+          base: path.join(path.resolve(__dirname), 'build/'),
+          src: 'index.html',
+          dest: 'index.html',
+          inline: true,
+          minify: true,
+          extract: true,
+          penthouse: {
+            blockJSRequests: false,
+          },
+        }),
+        // new BundleAnalyzerPlugin(),
       ],
-      resolve: {
-        plugins: [new DirectoryNamedWebpackPlugin()],
-      },
       alias: {
+        src: path.join(paths.appSrc),
         components: path.join(paths.appSrc, 'components'),
         containers: path.join(paths.appSrc, 'containers'),
         hoc: path.join(paths.appSrc, 'hoc'),
@@ -104,12 +121,16 @@ module.exports = function() {
         libs: path.join(paths.appSrc, 'libs'),
         assets: path.join(paths.appSrc, 'assets'),
         vendor: path.join(paths.appSrc, 'vendor'),
+        store: path.join(paths.appSrc, 'store'),
+        actions: path.join(paths.appSrc, 'store', 'actions'),
+        reducers: path.join(paths.appSrc, 'store', 'reducers'),
       },
     },
     jest: {
       configure: {
         snapshotSerializers: ['enzyme-to-json/serializer'],
         moduleNameMapper: {
+          '^src(.*)$': '<rootDir>/src/$1',
           '^components(.*)$': '<rootDir>/src/components$1',
           '^containers(.*)$': '<rootDir>/src/containers$1',
           '^hoc(.*)$': '<rootDir>/src/hoc$1',
@@ -117,8 +138,12 @@ module.exports = function() {
           '^libs(.*)$': '<rootDir>/src/libs$1',
           '^assets(.*)$': '<rootDir>/src/assets$1',
           '^vendor(.*)$': '<rootDir>/src/vendor$1',
+          '^store(.*)$': '<rootDir>/src/store$1',
+          '^actions(.*)$': '<rootDir>/src/store/actions$1',
+          '^reducers(.*)$': '<rootDir>/src/store/reducers$1',
         },
         moduleDirectories: ['node_modules', 'src'],
+        testPathIgnorePatterns: ['<rootDir>/cypress/', '<rootDir>/node_modules/'],
       },
     },
   }

@@ -7,8 +7,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  clip-path: polygon(0px 8%, 100% 0px, 100% 92%, 0px 100%);
   display: flex;
   min-height: calc(100vh - 104px);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+
+  @media (max-width: 768px) {
+    clip-path: polygon(0px 2%, 100% 0px, 100% 98%, 0px 100%);
+  }
 }
 
 :global(.webp) .Section {
@@ -23,6 +31,7 @@
   & button {
     align-items: center;
     display: inline-flex;
+    margin-bottom: 20px;
 
     &::before {
       background: linear-gradient(to right, blue, ease-out, color(blue tint(15%)));

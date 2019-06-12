@@ -28,7 +28,7 @@ const CardImage = ({ children, className, image, fab, reveal, style }) => (
 )
 
 CardImage.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   style: PropTypes.object,
   image: PropTypes.string,
