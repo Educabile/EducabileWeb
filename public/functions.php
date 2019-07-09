@@ -14,6 +14,32 @@
 
 // }
 
+function send_general_contact_email(WP_REST_Request $request) {
+
+  $nameSurname = $request['nameSurname'];
+  $email = $request['email'];
+  $company = empty($request['company']) ? 'N/A' : $request['company'];
+  $message = $request['message'];
+
+  $mailBody = file_get_contents(get_template_directory_uri() . '/templates/mail/general.html');
+
+  $mailBody = str_replace('_NAME_SURNAME_', $nameSurname, $mailBody);
+  $mailBody = str_replace('_MESSAGE_', $message, $mailBody);
+  $mailBody = str_replace('_EMAIL_', $email, $mailBody);
+
+  function wpse27856_set_content_type(){
+    return "text/html";
+  }
+
+  add_filter( 'wp_mail_content_type','wpse27856_set_content_type' );
+
+  wp_mail( 'claudio.cortese@educabile.it', $nameSurname . ' ti ha inviato un nuovo messaggio', $mailBody, ["From:" => "claudio.cortese@educabile.it"]);
+
+  remove_filter( 'wp_mail_content_type','wpse27856_set_content_type' );
+
+  return new WP_REST_Response($mailBody, 201);
+}
+
 function scotsas_theme_setup() {
   add_theme_support( 'align-wide' );
   add_theme_support( 'post-thumbnails' );
@@ -52,6 +78,16 @@ add_action( 'after_setup_theme', 'scotsas_theme_setup' );
 
 add_action('rest_api_init', function () {
   header( "Access-Control-Allow-Origin: *" );
+
+  register_rest_route( 'email/v1', '/contacts',array(
+    'methods'  => WP_REST_Server::CREATABLE,
+    'callback' => 'send_general_contact_email'
+  ));
+
+  register_rest_route( 'email/v1', '/courses',array(
+    'methods'  => WP_REST_Server::CREATABLE,
+    'callback' => 'send_course_email'
+  ));
 });
 
 add_action( 'wp_enqueue_scripts', 'scotsas_theme_scripts' );

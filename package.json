@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@cloudpower97/react-progressive-picture": "^1.2.0",
-    "@cloudpower97/react-spy": "1.2.1",
     "@mdi/js": "^2.8.94",
     "@mdi/react": "^1.0.1",
     "class-names": "^1.0.0",

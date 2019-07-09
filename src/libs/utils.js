@@ -25,7 +25,7 @@ const scrollTo = (element = null, offset = 0, behavior = 'smooth') => {
     })
   } else {
     window.scrollTo({
-      top: document.body.getBoundingClientRect().top - offset,
+      top: 0,
       behavior: behavior,
     })
   }

@@ -875,13 +875,6 @@
     "@babel/runtime" "^7.2.0"
     "@researchgate/react-intersection-observer" "^0.7.4"
 
-"@cloudpower97/react-spy@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@cloudpower97/react-spy/-/react-spy-1.2.1.tgz#b75f66194be4d424dd62fb3bd9b4c7241c680f71"
-  integrity sha512-9G4YfCvI8BPzOl/clDGdedYcXD7bKRDWALbQLLNFpfHE/3UuYEE0uTrTvvfU+JGNpunzIOzH1laqncXCjUVdjA==
-  dependencies:
-    "@babel/polyfill" "^7.0.0"
-
 "@commitlint/cli@^7.2.1":
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.2.1.tgz#dbb9eeb1f5015a129bb0801fbc1115eb1dcd513b"

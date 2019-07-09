@@ -12,7 +12,6 @@ import {
   mdiCheckboxBlank,
   mdiArrowUp,
 } from '@mdi/js'
-import ScrollToTop from 'react-scroll-up'
 import { NavLink, Link } from 'react-router-dom'
 import { withNamespaces } from 'react-i18next'
 import PropTypes from 'prop-types'
@@ -25,6 +24,8 @@ class Layout extends Component {
   state = { menuItems: [] }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.listenToScroll)
+
     wp.menus()
       .id('header')
       .then(res => {
@@ -37,6 +38,22 @@ class Layout extends Component {
     if (!getCookie('cookie-banner')) {
       window.M.Modal.getInstance(document.getElementById('cookie-modal')).open()
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.listenToScroll)
+  }
+
+  listenToScroll = () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+
+    const position = winScroll / height
+
+    this.setState({
+      position,
+    })
   }
 
   render() {
@@ -86,11 +103,8 @@ class Layout extends Component {
             height={141}
           />
         </NavLink>
-        <ScrollToTop
-          showUnder={800}
-          style={{
-            zIndex: '2',
-          }}>
+
+        {this.state.position > 0.5 && (
           <Button
             floating
             large
@@ -103,10 +117,11 @@ class Layout extends Component {
               display: 'inline-flex',
               justifyContent: 'center',
               alignItems: 'center',
-            }}>
+            }}
+            onClick={() => scrollTo(null, 56)}>
             <Icon path={mdiArrowUp} size={1.125} color="white" />
           </Button>
-        </ScrollToTop>
+        )}
         <footer className="blue darken-3">
           <div className="row center-on-small-only">
             <div

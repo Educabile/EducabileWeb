@@ -6,6 +6,7 @@ import Checkbox from 'components/Checkbox'
 import { Formik, Form } from 'formik'
 import Icon from '@mdi/react'
 import { mdiSend } from '@mdi/js'
+import wp from 'src/wordpress'
 
 const ContactForm = ({ t }) => {
   const validate = values => {
@@ -112,25 +113,28 @@ const ContactForm = ({ t }) => {
               actions.resetForm()
               actions.setSubmitting(false)
 
-              // wp.contactEmail()
-              //   .create(values)
-              //   .then(() => {
-              //     window.M.toast({
-              //       html: t('sendSuccess'),
-              //       classes: 'rounded orangeGradient',
-              //     })
-              //   })
-              //   .catch(() => {
-              //     window.M.toast({
-              //       html: t('sendError'),
-              //       classes: 'rounded orangeGradient',
-              //     })
-              //   })
-              //   .finally(() => {
-              //     actions.resetForm()
-              // actions.setSubmitting(false)
-              //     window.M.Modal.getInstance(document.getElementById('course-modal')).close()
-              //   })
+              wp.contactEmail()
+                .create(values)
+                .then(() => {
+                  window.M.toast({
+                    html: t(
+                      'Grazie per averci contattato, a breve riceverà una risposta alla sua richiesta'
+                    ),
+                    classes: 'rounded greenGradient',
+                  })
+                })
+                .catch(() => {
+                  window.M.toast({
+                    html: t(
+                      "A causa di un problema tecnico non e' stato possibile inviare la mail.Ti invitiamo a riprovare a breve"
+                    ),
+                    classes: 'rounded orangeGradient',
+                  })
+                })
+                .finally(() => {
+                  actions.resetForm()
+                  actions.setSubmitting(false)
+                })
             }}
             validate={validate}
             render={({ errors, handleChange, handleBlur, values, isSubmitting, isValid }) => (
