@@ -4,13 +4,10 @@ const { whenProd, POSTCSS_MODES, paths } = require('@craco/craco')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const HtmlCriticalPlugin = require('html-critical-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack')
-const imageminGiflossy = require('imagemin-giflossy')
-const imageminMozJpeg = require('imagemin-mozjpeg')
-const imageminPngquant = require('imagemin-pngquant')
 const imageminSvgo = require('imagemin-svgo')
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+const imageminPngquant = require('imagemin-pngquant')
+const imageminGiflossy = require('imagemin-giflossy')
 
 const { NODE_ENV } = process.env
 
@@ -50,7 +47,7 @@ module.exports = function() {
       plugins: NODE_ENV !== 'development' && [
         new CompressionPlugin(),
         new ImageminPlugin({
-          bail: false, // Ignore errors on corrupted images
+          bail: false,
           cache: true,
           include: /.*\/src\/assets/,
           imageminOptions: {
@@ -59,13 +56,9 @@ module.exports = function() {
                 interlaced: true,
                 optimizationLevel: 3,
               }),
-              imageminMozJpeg({
-                quality: 70,
-                progressive: true,
-              }),
               imageminPngquant({
                 speed: 1,
-                quality: [0.85, 1], //lossy settings
+                quality: [0.85, 1],
                 optimizationLevel: 5,
                 strip: true,
               }),
@@ -75,22 +68,10 @@ module.exports = function() {
             ],
           },
         }),
-        new ImageminWebpWebpackPlugin({
-          config: [
-            {
-              test: /\.webp/,
-              options: {
-                quality: 50,
-              },
-            },
-          ],
-        }),
         new HtmlWebpackPlugin(),
         new WebappWebpackPlugin({
           prefix: 'static/media',
           logo: './public/favicon.png',
-          // This is going to create a custom manifest.json
-          // Refer to this documentation for more information : https://github.com/itgalaxy/favicons#usage
           favicons: {
             appName: 'Educabile Srl - an Innovative Startup Company',
             appShortName: 'Educabile Srl',
@@ -99,18 +80,6 @@ module.exports = function() {
             start_url: './',
           },
         }),
-        new HtmlCriticalPlugin({
-          base: path.join(path.resolve(__dirname), 'build/'),
-          src: 'index.html',
-          dest: 'index.html',
-          inline: true,
-          minify: true,
-          extract: true,
-          penthouse: {
-            blockJSRequests: false,
-          },
-        }),
-        // new BundleAnalyzerPlugin(),
       ],
       alias: {
         src: path.join(paths.appSrc),
